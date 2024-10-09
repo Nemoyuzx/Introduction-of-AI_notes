@@ -643,17 +643,38 @@ flowchart TB
     
     - Idea: Assume that unlabelled samples are independently and identically distributed with labelled samples, i.e., contain important information about the distribution of the data
       想法: 假设未标记的样品与标记的样品分布独立且相同，即含有关于数据分布的重要信息
-    
-    ![5a43f8ae-d613-410b-a360-e7eb6ef8eea8](file:///C:/Users/20999/Pictures/Typedown/5a43f8ae-d613-410b-a360-e7eb6ef8eea8.png)
-  
-  - Reinforcement Learning 强化学习
-    uses unlabelled data but can know whether it is getting closer or further away from the goal (rewarding feedback)
-    使用未标记的数据，但可以知道它是否离目标越来越近或越来越远(奖励反馈)
-  
-  - ##### Use cases of AI technology  人工智能技术的用例
-1. Automation: AI technologies paired with automation tools like robotic process automation (RPA) **automate repetitive, rules-based tasks, expanding task volume and types**.
-   自动化: 人工智能技术配合自动化工具，如机器人过程自动化(RPA)自动化重复，基于规则的任务，扩大任务量和类型。
 
+```mermaid
+flowchart LR
+    A[["large amount of unlabeled data"]]
+    B[["small amount of labeled data"]]
+    C("machine learning model")
+    D[["Pseudo-labeled Dataset"]]
+    E(ML model trained on pseudo labeled data and labeled data)
+    F>"it will be either an apple or a pineapple"]
+    A-->|"learning process"|C
+    B-->C
+    C-->D-->E
+    E-->|"predicted"|F
+```
+
+```mermaid
+flowchart LR
+
+    G[["data to be predicted"]]
+    H("Trained Machine learning model")
+    I>"two groups are identified, Now a human could label group 1 as apples and group 2 as pineapples"]
+    G-->H-->I
+```
+
+- Reinforcement Learning 强化学习
+  uses unlabelled data but can know whether it is getting closer or further away from the goal (rewarding feedback)
+  使用未标记的数据，但可以知道它是否离目标越来越近或越来越远(奖励反馈)
+
+- ##### Use cases of AI technology  人工智能技术的用例
+  
+  1. Automation: AI technologies paired with automation tools like robotic process automation (RPA) **automate repetitive, rules-based tasks, expanding task volume and types**.
+     自动化: 人工智能技术配合自动化工具，如机器人过程自动化(RPA)自动化重复，基于规则的任务，扩大任务量和类型。
 2. Machine Learning: Enables computers to **act without explicit programming**. Deep learning automates **predictive analytics**.
    机器学习: 使计算机不需要编程就能运行。深度学习使预测分析自动化。
 
@@ -709,7 +730,7 @@ flowchart TB
 
 #### Ethical considerations in AI  人工智能的伦理思考
 
-##### Training Bias
+##### Training Bias 含有歧视的训练
 
 - AI systems can **perpetuate biases present in the training data**, which can lead to **unfair or discriminatory outcomes**.
   人工智能系统可能使培训数据中存在的偏见长期存在，从而导致不公平或歧视性的结果。
@@ -831,3 +852,5 @@ flowchart TB
 
 3. <u>PRACTICAL ignorance:</u> Even if we **know all the rules**,we might be **uncertain** about a particular patient because not **all the necessary tests** have **been or can be run**.
    实际无知: 即使我们知道所有的规则，我们也可能对某个特定的病人不确定，因为并非所有必要的检查都已经或可以运行。
+
+
