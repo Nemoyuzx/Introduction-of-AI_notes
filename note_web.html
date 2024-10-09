@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>note_web</title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+  </style>
+  <style>
+  /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+  </style>
+  <style>
+  
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+</style>
+  
+  
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="introduction-to-artificial-intelligence-ai导论">Introduction to&nbsp;Artificial Intelligence AI导论</h1>
+<p><strong>EBU4203</strong></p>
+<ul>
+<li><p>TB1: Introduction to AI, uncertainty in decision making, machine learning basics
+人工智能入门，决策中的不确定性，机器学习基础</p>
+</li>
+<li><p>TB2: Deep learning and reinforcement learning
+深度学习和强化学习</p>
+</li>
+<li><p>TB3: Practical AI Applications and Computer Vision
+实用人工智能应用与计算机视觉</p>
+</li>
+<li><p>TB4: Natural Language Processing (NLP) and future trends in AI
+自然语言处理与人工智能的发展趋势</p>
+</li>
+</ul>
+<hr>
+<h2 class="atx" id="introduce-简要介绍">Introduce 简要介绍</h2>
+<h3 class="atx" id="assessment">assessment</h3>
+<ul>
+<li><p>1 x Class Test  3% 课堂小测</p>
+<ul>
+<li>After teaching block 2</li>
+</ul>
+</li>
+<li><p>2 x Self-revision Online Quizzes 3% 网上自测</p>
+<ul>
+<li>Open for a week</li>
+</ul>
+</li>
+<li><p>Laboratory 14% 实验</p>
+<ul>
+<li><p>Lab reports 实验报告</p>
+</li>
+<li><p>一共三次,第一次不用写</p>
+</li>
+</ul>
+</li>
+<li><p>Final exam 80%</p>
+<ul>
+<li><p>closed-book written exam 闭卷考试</p>
+</li>
+<li><p>Past papers will be put on QMPlus 过去的试卷将放在 QMPlus 上</p>
+</li>
+<li><p>Note: A minimum total mark of 40% is required to pass this module
+注意: 通过本模块最低总分为40%</p>
+</li>
+</ul>
+</li>
+<li><p>Coursework: </p>
+<ul>
+<li>Note: There is a coursework hurdle of 30% (A minimum total coursework mark of 30% is required to pass this module)
+注: 有一个30% 的课程作业障碍(通过此模块需要最少30% 的课程作业总分)</li>
+</ul>
+</li>
+</ul>
+<h3 class="atx" id="information">Information</h3>
+<ul>
+<li><p>Course website: 课程网站</p>
+<ul>
+<li><p>Login to QMPlus</p>
+</li>
+<li><p>Course Area: EBU4203 (Introduction to AI)</p>
+</li>
+<li><p><mark>Check it regularly, as it is possible there could be additional information e.g. messages, extra practice exercises, tutorials, etc.
+定期检查，因为可能会有额外的信息，如信息，额外的练习，教程等。</mark></p>
+</li>
+</ul>
+</li>
+<li><p>Email</p>
+<ul>
+<li><mark>You are expected to check your QM email every week at least!
+你至少应该每周查看一次 QM 邮件！</mark></li>
+</ul>
+</li>
+</ul>
+<h3 class="atx" id="recommended-text-book-and-references-推荐的教科书和参考资料">Recommended Text book and references 推荐的教科书和参考资料</h3>
+<ul>
+<li><p>["1"] Russell, S., &amp; Norvig, P. (2021). Artificial Intelligence: a modern approach, 4th US ed. University of California, Berkeley.
+["1"]拉塞尔，S。 &amp; 诺维格，P。(2021)。人工智能: 一种现代方法，美国第四版。加州大学伯克利分校。</p>
+</li>
+<li><p>There are plenty of books available on this topic.
+有很多关于这个主题的书。</p>
+</li>
+</ul>
+<h3 class="atx" id="few-tips">Few tips</h3>
+<ul>
+<li><p>Attend every lecture, tutorial, lab and assessment sessions.
+参加每一个讲座，辅导，实验室和评估会议。</p>
+</li>
+<li><p>Revise your lecture materials after every class.
+每节课后都要修改讲义。</p>
+</li>
+<li><p>Make use of available materials, and read books and online materials.
+利用现有的资料，阅读书籍和网上资料。</p>
+</li>
+<li><p>Be interactive during the class and tutorial sessions.
+在课堂和辅导课程中保持互动。</p>
+</li>
+<li><p>Ask your lecturers/TAs and discuss with your classmates.
+询问你的讲师/助教，并与你的同学讨论。</p>
+</li>
+</ul>
+<h3 class="atx" id="mentimeter">mentimeter</h3>
+<p>interaction tools</p>
+<h2 class="atx" id="week-1">week 1</h2>
+<ul>
+<li><p>Part 1: Introduction to AI AI引入</p>
+</li>
+<li><p>Part 2: Uncertainty in decision making 决策的不确定性</p>
+</li>
+<li><p>Part 3: Machine learning basics 机器学习基础</p>
+</li>
+</ul>
+<h3 class="atx" id="part-1-introduction-to-ai-第一部分-人工智能导论">Part 1: Introduction to AI 第一部分: 人工智能导论</h3>
+<ul>
+<li><p>Definition and scope of AI 人工智能的定义和范围</p>
+</li>
+<li><p>Motivation for exploring AI 探索人工智能的动机</p>
+</li>
+<li><p>Brief history of AI 人工智能简史</p>
+</li>
+<li><p>Branches and applications of AI 人工智能的分支与应用</p>
+</li>
+<li><p>Ethical considerations in AI 人工智能的伦理思考</p>
+</li>
+</ul>
+<h4 class="atx" id="what-is-artificial-intelligence？">What is artificial intelligence？</h4>
+<p><u>Definition and scope of AI 人工智能的定义和范围</u></p>
+<h5 class="atx" id="alan-turing-图灵--图灵测试-turing-test">Alan Turing 图灵 —— 图灵测试 Turing Test</h5>
+<ul>
+<li><p>The Turing Test aims to  evaluate <strong>whether a machine  can exhibit intelligence  comparable to that of a human.</strong>
+图灵测试的目的是评估一台机器能否展现出与人类相当的智力。</p>
+</li>
+<li><p>A <strong>text conversation</strong> between a judge, a human, and a machine, where the judge tries to determine whether he is conversing with a human or a machine.
+一种法官、人类和机器之间的文本对话，法官试图确定他是在与人类还是机器交谈。</p>
+</li>
+<li><p>重要性和局限</p>
+<ul>
+<li><p>Significance:</p>
+<ul>
+<li><p>The Turing Test serves as a method for assessing the level of artificial intelligence.
+图灵测试是评估人工智能水平的一种方法。</p>
+</li>
+<li><p>If a machine can pass the Turing Test, it indicates a certain level of intelligence and raises questions about AI capabilities.
+如果一台机器能够通过图灵测试，它表明了一定程度的智能，并提出了关于人工智能能力的问题。</p>
+</li>
+</ul>
+</li>
+<li><p>Limitations：</p>
+<ul>
+<li><p>The Turing Test focuses <strong>solely on external behavior</strong> and does not evaluate internal cognitive processes.
+图灵测试只关注外部行为，不评估内部认知过程。</p>
+</li>
+<li><p>It may be influenced by <strong>subjective judgments</strong> from the judge and other factors.
+它可能受到法官主观判断等因素的影响。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>IBM's Jeopardy Challenge: An intriguing step toward AI passing the Turing Test
+IBM 的危险挑战: 迈向人工智能通过图灵测试的有趣一步</p>
+<ul>
+<li><p>In 2011, IBM's <strong>supercomputer "Watson" won the Jeopardy Challenge</strong>, becoming the first robot champion.
+2011年，IBM 的超级计算机“沃森”赢得了危险挑战赛，成为第一个机器人冠军。</p>
+</li>
+<li><p>Watson's performance in the Jeopardy Challenge: <strong>Comprehending questions, analysing information, and selecting the most probable answer</strong>.
+沃森在危险挑战中的表现: 理解问题，分析信息，选择最可能的答案。</p>
+</li>
+<li><p>IBM's Jeopardy Challenge provided a demonstration of <strong>a technological breakthrough related to the Turing Test</strong>, proving the potential of machines to process natural language and reasoning, and driving further development in the field of artificial intelligence.
+IBM 的 Jeopardy Challenge 展示了与图灵测试相关的技术突破，证明了机器处理自然语言和推理的潜力，并推动了人工智能领域的进一步发展。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="the-four-potential-goals-or-definitions-of-ai-人工智能的四个潜在目标或定义">The Four potential goals or definitions of AI 人工智能的四个潜在目标或定义</h5>
+<ul>
+<li><p>They differentiates computer systems on the basis of rationality and thinking vs. acting
+他们区分计算机系统的基础是理性和思考与行动:</p>
+<img data-align="inline" alt="f32b4a76-c830-4be3-ae9a-bccf083cceb0" title="" src="file:///C:/Users/20999/Pictures/Typedown/f32b4a76-c830-4be3-ae9a-bccf083cceb0.png">
+
+<p><img alt="&quot;b192889a-6532-449a-9e48-f11a2b3a9100&quot;" src="file:///C:/Users/20999/Pictures/Typedown/b192889a-6532-449a-9e48-f11a2b3a9100.png"></p>
+</li>
+<li><p>At its simplest form, artificial intelligence is a field, which <strong>combines computer science and robust datasets</strong>, to enable <strong>problem-solving</strong>.
+简单来说，人工智能是一个将计算机科学和强大的数据集结合起来的领域，它能够解决问题。</p>
+</li>
+<li><p>It also encompasses sub-fields of <strong>machine learning and deep learning</strong>, which are frequently mentioned in conjunction with artificial intelligence. 
+它还包括机器学习和深度学习的子领域，这些领域经常与人工智能一起被提及。</p>
+</li>
+<li><p>These disciplines are comprised of AI algorithms which seek to <strong>create expert systems which make predictions or classifications based on input data</strong>.
+这些学科由人工智能算法组成，该算法寻求创建专家系统，根据输入数据进行预测或分类。</p>
+</li>
+</ul>
+<h5 class="atx" id="the-scope-of-ai-人工智能的范围">The scope of AI 人工智能的范围</h5>
+<ul>
+<li><p>As we begin the new millennium 
+千禧年后开始</p>
+<ul>
+<li><p>science and technology are changing rapidly 
+科学技术正在迅速变化</p>
+</li>
+<li><p>“old” sciences such as physics are relatively well-understood 
+像物理这样的“古老”科学相对来说已经被广为人知了</p>
+</li>
+<li><p>computers are ubiquitous
+电脑无处不在</p>
+</li>
+</ul>
+</li>
+<li><p>Grand Challenges in Science and Technology
+科学技术面临的重大挑战</p>
+<ul>
+<li><p>understanding the brain 
+对脑科学的理解与研究</p>
+</li>
+<li><p>reasoning, cognition, creativity 
+推理、认知、创造力</p>
+</li>
+<li><p>creating intelligent machines
+创造智能机器</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="the-foundations-of-ai-人工智能的基础">The Foundations of AI&nbsp;人工智能的基础</h5>
+<div class="mermaid" data-processed="true"><svg id="mermaid-1728442312468" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="1234.3125" style="max-width: 1377.8984375px;" viewBox="0 0 1377.8984375 1234.3125"><style>#mermaid-1728442312468 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1728442312468 .error-icon{fill:#552222;}#mermaid-1728442312468 .error-text{fill:#552222;stroke:#552222;}#mermaid-1728442312468 .edge-thickness-normal{stroke-width:2px;}#mermaid-1728442312468 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1728442312468 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1728442312468 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1728442312468 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1728442312468 .marker{fill:#333333;stroke:#333333;}#mermaid-1728442312468 .marker.cross{stroke:#333333;}#mermaid-1728442312468 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1728442312468 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1728442312468 .cluster-label text{fill:#333;}#mermaid-1728442312468 .cluster-label span{color:#333;}#mermaid-1728442312468 .label text,#mermaid-1728442312468 span{fill:#333;color:#333;}#mermaid-1728442312468 .node rect,#mermaid-1728442312468 .node circle,#mermaid-1728442312468 .node ellipse,#mermaid-1728442312468 .node polygon,#mermaid-1728442312468 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1728442312468 .node .label{text-align:center;}#mermaid-1728442312468 .node.clickable{cursor:pointer;}#mermaid-1728442312468 .arrowheadPath{fill:#333333;}#mermaid-1728442312468 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1728442312468 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1728442312468 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1728442312468 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1728442312468 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1728442312468 .cluster text{fill:#333;}#mermaid-1728442312468 .cluster span{color:#333;}#mermaid-1728442312468 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1728442312468 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g transform="translate(0, 0)"><marker id="flowchart-pointEnd" class="marker flowchart" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-pointStart" class="marker flowchart" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-circleEnd" class="marker flowchart" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-circleStart" class="marker flowchart" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-crossEnd" class="marker cross flowchart" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-crossStart" class="marker cross flowchart" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M138.03340895784544,490.25215895784544L155.80127829820455,428.35856996487115C173.56914763856363,366.464980971897,209.10488631928183,242.6778029859485,234.12275565964092,180.78421399297426C259.140625,118.890625,273.640625,118.890625,280.890625,118.890625L288.140625,118.890625" id="L-AI-A-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-A" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M385.02781198797,98.59375L399.860416239975,86.87760416666667C414.69302049197995,75.16145833333333,444.35822899599,51.729166666666664,482.8601040813283,40.013020833333336C521.3619791666666,28.296875,568.7005208333334,28.296875,592.3697916666666,28.296875L616.0390625,28.296875" id="L-A-AA-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-AA" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M430.5234375,118.890625L437.7734375,118.890625C445.0234375,118.890625,459.5234375,118.890625,519.5611979166666,118.890625C579.5989583333334,118.890625,685.1744791666666,118.890625,737.9622395833334,118.890625L790.75,118.890625" id="L-A-A2-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-A2" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M385.02781198797,139.1875L399.860416239975,150.90364583333334C414.69302049197995,162.61979166666666,444.35822899599,186.05208333333334,485.032630122995,197.76822916666666C525.70703125,209.484375,577.390625,209.484375,603.232421875,209.484375L629.07421875,209.484375" id="L-A-A3-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-A3" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M148.70529169415715,500.92404169415715L164.69451391179763,467.44972224513094C180.6837361294381,433.9754027961048,212.66218056471905,367.02676389805237,232.81806944902618,333.55244444902615C252.97395833333334,300.078125,261.3072916666667,300.078125,265.4739583333333,300.078125L269.640625,300.078125" id="L-AI-B-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-B" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M449.0234375,300.078125L453.1901041666667,300.078125C457.3567708333333,300.078125,465.6901041666667,300.078125,509.0944010416667,300.078125C552.4986979166666,300.078125,630.9739583333334,300.078125,670.2115885416666,300.078125L709.44921875,300.078125" id="L-B-B1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-B1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M158.68922185254274,510.90797185254274L173.01445571045227,490.868622377119C187.33968956836182,470.8292729016951,215.9901572841809,430.7505739508476,237.5686463504238,410.71122447542376C259.1471354166667,390.671875,273.6536458333333,390.671875,280.9069010416667,390.671875L288.16015625,390.671875" id="L-AI-C-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-C" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M430.50390625,390.671875L437.7571614583333,390.671875C445.0104166666667,390.671875,459.5169270833333,390.671875,504.6041666666667,390.671875C549.69140625,390.671875,625.359375,390.671875,663.193359375,390.671875L701.02734375,390.671875" id="L-C-C1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-C1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M220.140625,572.359375L224.22395833333334,572.2760416666666C228.30729166666666,572.1927083333334,236.47395833333334,572.0260416666666,246.466796875,571.9427083333334C256.4596354166667,571.859375,268.2786458333333,571.859375,274.1881510416667,571.859375L280.09765625,571.859375" id="L-AI-D-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-D" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M385.02781198797,551.5625L399.860416239975,539.8463541666666C414.69302049197995,528.1302083333334,444.35822899599,504.6979166666667,474.827551997995,492.9817708333333C505.296875,481.265625,536.5703125,481.265625,552.20703125,481.265625L567.84375,481.265625" id="L-D-D1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M438.56640625,571.859375L444.4759114583333,571.859375C450.3854166666667,571.859375,462.2044270833333,571.859375,481.615234375,571.859375C501.0260416666667,571.859375,528.0286458333334,571.859375,541.5299479166666,571.859375L555.03125,571.859375" id="L-D-D2-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D2" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M385.02781198797,592.15625L399.860416239975,603.8723958333334C414.69302049197995,615.5885416666666,444.35822899599,639.0208333333334,463.3574999146617,650.7369791666666C482.3567708333333,662.453125,490.6901041666667,662.453125,494.8567708333333,662.453125L499.0234375,662.453125" id="L-D-D3-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-D3" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M158.68922185254274,633.8107781474572L173.01445571045227,653.6834609562144C187.33968956836182,673.5561437649715,215.9901572841809,713.3015093824857,237.2984640587571,733.1741921912429C258.6067708333333,753.046875,272.5729166666667,753.046875,279.5559895833333,753.046875L286.5390625,753.046875" id="L-AI-E-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-E" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M432.125,753.046875L439.1080729166667,753.046875C446.0911458333333,753.046875,460.0572916666667,753.046875,496.4348958333333,753.046875C532.8125,753.046875,591.6015625,753.046875,620.99609375,753.046875L650.390625,753.046875" id="L-E-E1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-E1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M148.70529169415715,643.7947083058428L164.69451391179763,677.1023610882024C180.6837361294381,710.410013870562,212.66218056471905,777.025319435281,233.21911111569284,810.3329722176404C253.77604166666666,843.640625,262.9114583333333,843.640625,267.4791666666667,843.640625L272.046875,843.640625" id="L-AI-F-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-F" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M446.6171875,843.640625L451.1848958333333,843.640625C455.7526041666667,843.640625,464.8880208333333,843.640625,492.505859375,843.640625C520.1236979166666,843.640625,566.2239583333334,843.640625,589.2740885416666,843.640625L612.32421875,843.640625" id="L-F-F1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-F1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M136.32596470884096,656.174035291159L154.3784080907008,725.1658627426326C172.43085147256065,794.1576901941061,208.5357382362803,932.1413450970531,235.10250453480683,1001.1331725485265C261.6692708333333,1070.125,278.6979166666667,1070.125,287.2122395833333,1070.125L295.7265625,1070.125" id="L-AI-G-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AI LE-G" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M376.46255174198,1049.828125L392.7226993683166,1030.5625C408.9828469946533,1011.296875,441.50314224732665,972.765625,479.3550867486633,953.5C517.20703125,934.234375,560.390625,934.234375,581.982421875,934.234375L603.57421875,934.234375" id="L-G-G1-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-G1" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M410.72359272593997,1049.828125L421.27356685494993,1045.6614583333333C431.82354098395996,1041.4947916666667,452.92348924197995,1033.1614583333333,493.0040623293233,1028.9947916666667C533.0846354166666,1024.828125,592.1458333333334,1024.828125,621.6764322916666,1024.828125L651.20703125,1024.828125" id="L-G-G2-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-G2" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M410.72359272593997,1090.421875L421.27356685494993,1094.5885416666667C431.82354098395996,1098.7552083333333,452.92348924197995,1107.0885416666667,508.15770816265666,1111.2552083333333C563.3919270833334,1115.421875,652.7604166666666,1115.421875,697.4446614583334,1115.421875L742.12890625,1115.421875" id="L-G-G3-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-G3" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M376.46255174198,1090.421875L392.7226993683166,1109.6875C408.9828469946533,1128.953125,441.50314224732665,1167.484375,499.1578211236633,1186.75C556.8125,1206.015625,639.6015625,1206.015625,680.99609375,1206.015625L722.390625,1206.015625" id="L-G-G4-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-G4" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-AI-103248" transform="translate(113.8203125, 571.859375)"><polygon points="105.8203125,0 211.640625,-105.8203125 105.8203125,-211.640625 0,-105.8203125" class="label-container" transform="translate(-105.8203125,105.8203125)" style=""></polygon><g class="label" style="" transform="translate(-78.0234375, -12.796875)"><foreignObject width="156.046875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Artificial Intellegence</span></div></foreignObject></g></g><g class="node default default" id="flowchart-A-103249" transform="translate(359.33203125, 118.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-71.19140625" y="-20.296875" width="142.3828125" height="40.59375"></rect><g class="label" style="" transform="translate(-63.69140625, -12.796875)"><foreignObject width="127.3828125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Mathematics 数学</span></div></foreignObject></g></g><g class="node default default" id="flowchart-AA-103251" transform="translate(934.4609375, 28.296875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-318.421875" y="-20.296875" width="636.84375" height="40.59375"></rect><g class="label" style="" transform="translate(-310.921875, -12.796875)"><foreignObject width="621.84375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">What are the formal rules to draw valid conclusions? 得出有效结论的形式规则是什么？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-A2-103253" transform="translate(934.4609375, 118.890625)"><rect class="basic label-container" style="" rx="0" ry="0" x="-143.7109375" y="-20.296875" width="287.421875" height="40.59375"></rect><g class="label" style="" transform="translate(-136.2109375, -12.796875)"><foreignObject width="272.421875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">What can be computed? 什么能被计算</span></div></foreignObject></g></g><g class="node default default" id="flowchart-A3-103255" transform="translate(934.4609375, 209.484375)"><rect class="basic label-container" style="" rx="0" ry="0" x="-305.38671875" y="-20.296875" width="610.7734375" height="40.59375"></rect><g class="label" style="" transform="translate(-297.88671875, -12.796875)"><foreignObject width="595.7734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How do we reason with uncertain information? 我们如何对不确定的信息进行推理？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-B-103257" transform="translate(359.33203125, 300.078125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-89.69140625" y="-20.296875" width="179.3828125" height="40.59375"></rect><g class="label" style="" transform="translate(-82.19140625, -12.796875)"><foreignObject width="164.3828125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Neuroscience 神经科学</span></div></foreignObject></g></g><g class="node default default" id="flowchart-B1-103259" transform="translate(934.4609375, 300.078125)"><rect class="basic label-container" style="" rx="0" ry="0" x="-225.01171875" y="-20.296875" width="450.0234375" height="40.59375"></rect><g class="label" style="" transform="translate(-217.51171875, -12.796875)"><foreignObject width="435.0234375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How do brains process information? 大脑是如何处理信息的？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-C-103261" transform="translate(359.33203125, 390.671875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-71.171875" y="-20.296875" width="142.34375" height="40.59375"></rect><g class="label" style="" transform="translate(-63.671875, -12.796875)"><foreignObject width="127.34375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Linguistics 语言学</span></div></foreignObject></g></g><g class="node default default" id="flowchart-C1-103263" transform="translate(934.4609375, 390.671875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-233.43359375" y="-20.296875" width="466.8671875" height="40.59375"></rect><g class="label" style="" transform="translate(-225.93359375, -12.796875)"><foreignObject width="451.8671875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How does language relate to thought? 语言和思想有什么关系？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-D-103265" transform="translate(359.33203125, 571.859375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-79.234375" y="-20.296875" width="158.46875" height="40.59375"></rect><g class="label" style="" transform="translate(-71.734375, -12.796875)"><foreignObject width="143.46875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Economics 经济发展</span></div></foreignObject></g></g><g class="node default default" id="flowchart-D1-103267" transform="translate(934.4609375, 481.265625)"><rect class="basic label-container" style="" rx="0" ry="0" x="-366.6171875" y="-20.296875" width="733.234375" height="40.59375"></rect><g class="label" style="" transform="translate(-359.1171875, -12.796875)"><foreignObject width="718.234375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How should we make decisions so as to maximize payoff? 我们应该如何做出决策，以使收益最大化？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-D2-103269" transform="translate(934.4609375, 571.859375)"><rect class="basic label-container" style="" rx="0" ry="0" x="-379.4296875" y="-20.296875" width="758.859375" height="40.59375"></rect><g class="label" style="" transform="translate(-371.9296875, -12.796875)"><foreignObject width="743.859375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How should we do this when others may not go along? 当其他人可能不同意的时候，我们应该怎么做呢？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-D3-103271" transform="translate(934.4609375, 662.453125)"><rect class="basic label-container" style="" rx="0" ry="0" x="-435.4375" y="-20.296875" width="870.875" height="40.59375"></rect><g class="label" style="" transform="translate(-427.9375, -12.796875)"><foreignObject width="855.875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How should we do this when the payoff may be far in the future? 我们应该如何做到这一点时，回报可能在遥远的未来？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-E-103273" transform="translate(359.33203125, 753.046875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-72.79296875" y="-20.296875" width="145.5859375" height="40.59375"></rect><g class="label" style="" transform="translate(-65.29296875, -12.796875)"><foreignObject width="130.5859375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Psychology 心理学</span></div></foreignObject></g></g><g class="node default default" id="flowchart-E1-103275" transform="translate(934.4609375, 753.046875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-284.0703125" y="-20.296875" width="568.140625" height="40.59375"></rect><g class="label" style="" transform="translate(-276.5703125, -12.796875)"><foreignObject width="553.140625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How do humans and animals think and act? 人类和动物是如何思考和行动的？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-F-103277" transform="translate(359.33203125, 843.640625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-87.28515625" y="-20.296875" width="174.5703125" height="40.59375"></rect><g class="label" style="" transform="translate(-79.78515625, -12.796875)"><foreignObject width="159.5703125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Control Theory 控制论</span></div></foreignObject></g></g><g class="node default default" id="flowchart-F1-103279" transform="translate(934.4609375, 843.640625)"><rect class="basic label-container" style="" rx="0" ry="0" x="-322.13671875" y="-20.296875" width="644.2734375" height="40.59375"></rect><g class="label" style="" transform="translate(-314.63671875, -12.796875)"><foreignObject width="629.2734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How can artifacts operate under their own control? 人工产物如何在自己的控制下运作？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G-103281" transform="translate(359.33203125, 1070.125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-63.60546875" y="-20.296875" width="127.2109375" height="40.59375"></rect><g class="label" style="" transform="translate(-56.10546875, -12.796875)"><foreignObject width="112.2109375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Philosophy 哲学</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G1-103283" transform="translate(934.4609375, 934.234375)"><rect class="basic label-container" style="" rx="0" ry="0" x="-330.88671875" y="-20.296875" width="661.7734375" height="40.59375"></rect><g class="label" style="" transform="translate(-323.38671875, -12.796875)"><foreignObject width="646.7734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Can formal rules be used to draw valid conclusions? 形式规则可以用来得出有效的结论吗？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G2-103285" transform="translate(934.4609375, 1024.828125)"><rect class="basic label-container" style="" rx="0" ry="0" x="-283.25390625" y="-20.296875" width="566.5078125" height="40.59375"></rect><g class="label" style="" transform="translate(-275.75390625, -12.796875)"><foreignObject width="551.5078125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How does the mind arise from a physical brain? 思想是如何从大脑中产生的？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G3-103287" transform="translate(934.4609375, 1115.421875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-192.33203125" y="-20.296875" width="384.6640625" height="40.59375"></rect><g class="label" style="" transform="translate(-184.83203125, -12.796875)"><foreignObject width="369.6640625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Where does knowledge come from? 知识从何而来？</span></div></foreignObject></g></g><g class="node default default" id="flowchart-G4-103289" transform="translate(934.4609375, 1206.015625)"><rect class="basic label-container" style="" rx="0" ry="0" x="-212.0703125" y="-20.296875" width="424.140625" height="40.59375"></rect><g class="label" style="" transform="translate(-204.5703125, -12.796875)"><foreignObject width="409.140625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">How does knowledge lead to action? 知识如何导致行动？</span></div></foreignObject></g></g></g></g></g></svg></div>
+<h4 class="atx" id="how-does-ai-work--人工智能是如何工作的？">How does AI work?  人工智能是如何工作的？</h4>
+<p><u>Motivation for exploring AI</u> </p>
+<h5 class="atx" id="why-ai-matters-为什么人工智能很重要">Why AI Matters? 为什么人工智能很重要</h5>
+<ol>
+<li><p>Potential to Transform
+AI has the potential <strong>to revolutionize various aspects</strong> of our lives, work, and leisure activities.
+人工智能有可能彻底改变我们生活、工作和休闲活动的各个方面。</p>
+</li>
+<li><p>Business Automation
+AI has been effectively utilized in businesses <strong>to automate tasks</strong> that were previously performed by humans, such as customer service, lead generation, fraud detection, and quality control.
+人工智能已经被有效地应用于企业中，使以前由人类执行的任务自动化，例如客户服务、引导生成、欺诈检测和质量控制。</p>
+</li>
+<li><p>Superior Performance
+In many areas, <strong>AI outperforms humans</strong> in tasks, especially those that are <strong>repetitive and detail-oriented</strong>. AI tools can <strong>quickly analyse large volumes of legal documents</strong>, ensuring accurate and complete information
+在许多领域，人工智能在任务方面胜过人类，尤其是那些重复性和注重细节的任务。人工智能工具可以快速分析大量的法律文件，确保准确和完整的信息</p>
+</li>
+<li><p>Efficiency and Accuracy
+AI tools can <strong>complete tasks quickly and with relatively few errors</strong>, particularly in areas that require analysing extensive data sets. This enables businesses to gain insights into their operations that may have otherwise gone unnoticed.
+人工智能工具可以快速完成任务，错误相对较少，特别是在需要分析大量数据集的领域。这使得企业能够深入了解他们的业务，否则可能会被忽视。</p>
+</li>
+<li><p>Generative AI Tools
+The growing population of generative AI tools holds great importance in fields like education, marketing, and product design. These tools offer <strong>innovative solutions and creative outputs</strong>.
+越来越多的生成性人工智能工具在教育、市场营销和产品设计等领域具有重要意义。这些工具提供了创新的解决方案和创造性的产出。</p>
+</li>
+</ol>
+<h5 class="atx" id="ai-opens-the-door-to-new-opportunities-人工智能为新的机会打开了大门">AI opens the door to new opportunities 人工智能为新的机会打开了大门</h5>
+<ul>
+<li><p>UBER</p>
+</li>
+<li><p>Meta</p>
+</li>
+<li><p>Microsoft</p>
+</li>
+<li><p>Alphabet</p>
+</li>
+<li><p>Apple</p>
+</li>
+</ul>
+<h5 class="atx" id="the-advantages-of-ai-人工智能的优势">The advantages of AI 人工智能的优势</h5>
+<ol>
+<li><p>Good at detail-oriented jobs
+擅长细节导向的工作</p>
+</li>
+<li><p>Saves labour and increases productivity
+节省劳动力，提高生产力</p>
+</li>
+<li><p>Delivers consistent results
+产生一致的结果</p>
+</li>
+<li><p>AI-powered virtual agents are always available
+人工智能驱动的虚拟代理总是可用的</p>
+</li>
+<li><p>Reduced time for data-heavy tasks
+减少数据量大的任务的时间</p>
+</li>
+<li><p>Can improve customer satisfaction through personalization
+可以通过个性化提高客户满意度</p>
+</li>
+</ol>
+<h5 class="atx" id="ai-is-not-everything-limitations-人工智能不是一切局限性">AI is NOT everything (limitations) 人工智能不是一切(局限性)</h5>
+<ol>
+<li><p>Expensive
+昂贵的</p>
+</li>
+<li><p>Requires deep technical expertise
+需要深厚的专业技术</p>
+</li>
+<li><p>Limited supply of qualified workers to build AI tools
+人工智能工具的合格工人供应有限</p>
+</li>
+<li><p>Reflects the biases of its  training data, at scale.
+在规模上反映了其训练数据的偏差。</p>
+</li>
+<li><p>Lack of ability to generalize from one task to another
+缺乏从一项任务归纳到另一项任务的能力</p>
+</li>
+<li><p>Eliminates human jobs, increasing unemployment rates
+减少人类工作，增加失业率</p>
+</li>
+</ol>
+<h4 class="atx" id="brief-history-of-ai-人工智能简史">Brief history of AI 人工智能简史</h4>
+<p><u>Ancient Roots of Intelligent Artifacts
+智能物品的古老根源</u></p>
+<h5 class="atx" id="from-mythical-servants-来自神话仆人">From Mythical Servants 来自神话仆人</h5>
+<ul>
+<li><p>The concept of inanimate objects endowed with intelligence has been around since ancient times.
+被赋予智慧的无生命物体的概念自古以来就存在。</p>
+<ul>
+<li><p>Greek god Hephaestus and robot-like servants out of gold 
+希腊神赫菲斯托斯和机器人般的仆人用金子做的</p>
+</li>
+<li><p>Engineers in ancient Egypt and statues  of gods animated by priests
+古埃及的工程师和祭司制作的神像</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="to-symbolic-thinkers-对象征思想家的思考">To Symbolic Thinkers 对象征思想家的思考</h5>
+<ul>
+<li><p>They used the tools and logic of their times to describe human thought processes as symbols, laying the foundation for AI concepts such as general knowledge representation.
+他们利用当时的工具和逻辑将人类的思维过程描述为符号，为一般知识表示等人工智能概念奠定了基础。</p>
+</li>
+<li><p>Aristotle 亚里士多德
+Ramon Llull 拉蒙·柳利
+René Descartes 勒内 · 笛卡尔
+Thomas Bayes 托马斯·贝叶斯</p>
+</li>
+</ul>
+<h5 class="atx" id="pioneers-of-programmable-machines-可编程机器的先驱">Pioneers of Programmable Machines 可编程机器的先驱</h5>
+<p>The foundational work that would give rise to the modern computer
+产生现代计算机的基础工作</p>
+<ul>
+<li><p>the mill with a printing mechanism of the Analytical Engine 带有分析机打印机构的磨坊</p>
+</li>
+<li><p>Babbage's difference engine 巴贝奇的差分引擎</p>
+</li>
+</ul>
+<h5 class="atx" id="milestones-in-the-journey-of-ai">Milestones in the Journey of AI</h5>
+<div class="mermaid" data-processed="true"><svg id="mermaid-1728442312588" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="2360.25" style="max-width: 1474.2109375px;" viewBox="0 0 1474.2109375 2360.25"><style>#mermaid-1728442312588 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1728442312588 .error-icon{fill:#552222;}#mermaid-1728442312588 .error-text{fill:#552222;stroke:#552222;}#mermaid-1728442312588 .edge-thickness-normal{stroke-width:2px;}#mermaid-1728442312588 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1728442312588 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1728442312588 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1728442312588 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1728442312588 .marker{fill:#333333;stroke:#333333;}#mermaid-1728442312588 .marker.cross{stroke:#333333;}#mermaid-1728442312588 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1728442312588 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1728442312588 .cluster-label text{fill:#333;}#mermaid-1728442312588 .cluster-label span{color:#333;}#mermaid-1728442312588 .label text,#mermaid-1728442312588 span{fill:#333;color:#333;}#mermaid-1728442312588 .node rect,#mermaid-1728442312588 .node circle,#mermaid-1728442312588 .node ellipse,#mermaid-1728442312588 .node polygon,#mermaid-1728442312588 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1728442312588 .node .label{text-align:center;}#mermaid-1728442312588 .node.clickable{cursor:pointer;}#mermaid-1728442312588 .arrowheadPath{fill:#333333;}#mermaid-1728442312588 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1728442312588 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1728442312588 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1728442312588 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1728442312588 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1728442312588 .cluster text{fill:#333;}#mermaid-1728442312588 .cluster span{color:#333;}#mermaid-1728442312588 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1728442312588 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g transform="translate(0, 0)"><marker id="flowchart-pointEnd" class="marker flowchart" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-pointStart" class="marker flowchart" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-circleEnd" class="marker flowchart" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-circleStart" class="marker flowchart" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-crossEnd" class="marker cross flowchart" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-crossStart" class="marker cross flowchart" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M737.10546875,144.1875L737.10546875,148.35416666666666C737.10546875,152.52083333333334,737.10546875,160.85416666666666,737.10546875,169.1875C737.10546875,177.52083333333334,737.10546875,185.85416666666666,737.10546875,190.02083333333334L737.10546875,194.1875" id="L-A-B-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,330.375L737.10546875,334.5416666666667C737.10546875,338.7083333333333,737.10546875,347.0416666666667,737.10546875,355.375C737.10546875,363.7083333333333,737.10546875,372.0416666666667,737.10546875,376.2083333333333L737.10546875,380.375" id="L-B-C-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,567.75L737.10546875,571.9166666666666C737.10546875,576.0833333333334,737.10546875,584.4166666666666,737.10546875,592.75C737.10546875,601.0833333333334,737.10546875,609.4166666666666,737.10546875,613.5833333333334L737.10546875,617.75" id="L-C-D-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,728.34375L737.10546875,732.5104166666666C737.10546875,736.6770833333334,737.10546875,745.0104166666666,737.10546875,753.34375C737.10546875,761.6770833333334,737.10546875,770.0104166666666,737.10546875,774.1770833333334L737.10546875,778.34375" id="L-D-E-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-E" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,1231.3125L737.10546875,1235.4791666666667C737.10546875,1239.6458333333333,737.10546875,1247.9791666666667,737.10546875,1256.3125C737.10546875,1264.6458333333333,737.10546875,1272.9791666666667,737.10546875,1277.1458333333333L737.10546875,1281.3125" id="L-E-F-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-F" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,1417.5L737.10546875,1421.6666666666667C737.10546875,1425.8333333333333,737.10546875,1434.1666666666667,737.10546875,1442.5C737.10546875,1450.8333333333333,737.10546875,1459.1666666666667,737.10546875,1463.3333333333333L737.10546875,1467.5" id="L-F-G-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-G" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,1940.46875L737.10546875,1944.6354166666667C737.10546875,1948.8020833333333,737.10546875,1957.1354166666667,737.10546875,1965.46875C737.10546875,1973.8020833333333,737.10546875,1982.1354166666667,737.10546875,1986.3020833333333L737.10546875,1990.46875" id="L-G-H-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-H" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M737.10546875,2101.0625L737.10546875,2105.2291666666665C737.10546875,2109.3958333333335,737.10546875,2117.7291666666665,737.10546875,2126.0625C737.10546875,2134.3958333333335,737.10546875,2142.7291666666665,737.10546875,2146.8958333333335L737.10546875,2151.0625" id="L-H-I-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-I" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="root" transform="translate(42.875, 2143.0625)"><g class="clusters"><g class="cluster default" id="I"><rect style="" rx="0" ry="0" x="8" y="8" width="1373.4609375" height="201.1875"></rect><g class="cluster-label" transform="translate(609.671875, 13)"><foreignObject width="170.1171875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2020s —— Generative AI</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M568.09375,63.296875L573.5625,63.296875C579.03125,63.296875,589.96875,63.296875,631.3374511325745,67.46354166666667C672.706152265149,71.63020833333333,744.5060545302978,79.96354166666667,780.4060056628723,84.13020833333333L816.3059567954467,88.296875" id="L-IAA-IB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-IAA LE-IB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M575.90625,153.890625L580.0729166666666,153.890625C584.2395833333334,153.890625,592.5729166666666,153.890625,632.6395344659078,149.72395833333334C672.706152265149,145.55729166666666,744.5060545302978,137.22395833333334,780.4060056628723,133.05729166666666L816.3059567954467,128.890625" id="L-IAB-IB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-IAB LE-IB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-IAA-103440" transform="translate(304.453125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-263.640625" y="-20.296875" width="527.28125" height="40.59375"></rect><g class="label" style="" transform="translate(-256.140625, -12.796875)"><foreignObject width="512.28125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Generative AI starts with a prompt that could be in the multiple forms.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-IB-103442" transform="translate(991.18359375, 108.59375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-365.27734375" y="-20.296875" width="730.5546875" height="40.59375"></rect><g class="label" style="" transform="translate(-357.77734375, -12.796875)"><foreignObject width="715.5546875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">The technology is still in early stages, as evidenced by its tendency to hallucinate or skew answers.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-IAB-103441" transform="translate(304.453125, 153.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-271.453125" y="-20.296875" width="542.90625" height="40.59375"></rect><g class="label" style="" transform="translate(-263.953125, -12.796875)"><foreignObject width="527.90625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Various AI algorithms then return new content in response to the prompt.</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(175.21484375, 1982.46875)"><g class="clusters"><g class="cluster default" id="H"><rect style="" rx="0" ry="0" x="8" y="8" width="1108.78125" height="110.59375"></rect><g class="cluster-label" transform="translate(465.77734375, 13)"><foreignObject width="193.2265625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2010s —— AI breakthroughs</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M71.0390625,63.296875L75.20572916666667,63.296875C79.37239583333333,63.296875,87.70572916666667,63.296875,96.0390625,63.296875C104.37239583333333,63.296875,112.70572916666667,63.296875,116.87239583333333,63.296875L121.0390625,63.296875" id="L-HA-HB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HA LE-HB" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M235.328125,63.296875L239.49479166666666,63.296875C243.66145833333334,63.296875,251.99479166666666,63.296875,260.328125,63.296875C268.6614583333333,63.296875,276.9947916666667,63.296875,281.1614583333333,63.296875L285.328125,63.296875" id="L-HB-HC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HB LE-HC" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M424.3671875,63.296875L428.5338541666667,63.296875C432.7005208333333,63.296875,441.0338541666667,63.296875,449.3671875,63.296875C457.7005208333333,63.296875,466.0338541666667,63.296875,470.2005208333333,63.296875L474.3671875,63.296875" id="L-HC-HD-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HC LE-HD" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M574.09375,63.296875L578.2604166666666,63.296875C582.4270833333334,63.296875,590.7604166666666,63.296875,599.09375,63.296875C607.4270833333334,63.296875,615.7604166666666,63.296875,619.9270833333334,63.296875L624.09375,63.296875" id="L-HD-HE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HD LE-HE" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M658.1328125,63.296875L662.2994791666666,63.296875C666.4661458333334,63.296875,674.7994791666666,63.296875,683.1328125,63.296875C691.4661458333334,63.296875,699.7994791666666,63.296875,703.9661458333334,63.296875L708.1328125,63.296875" id="L-HE-HF-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HE LE-HF" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M764.8828125,63.296875L769.0494791666666,63.296875C773.2161458333334,63.296875,781.5494791666666,63.296875,789.8828125,63.296875C798.2161458333334,63.296875,806.5494791666666,63.296875,810.7161458333334,63.296875L814.8828125,63.296875" id="L-HF-HG-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HF LE-HG" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M909.5390625,63.296875L913.7057291666666,63.296875C917.8723958333334,63.296875,926.2057291666666,63.296875,934.5390625,63.296875C942.8723958333334,63.296875,951.2057291666666,63.296875,955.3723958333334,63.296875L959.5390625,63.296875" id="L-HG-HI-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HG LE-HI" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-HA-103425" transform="translate(52.01953125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-19.01953125" y="-20.296875" width="38.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-11.51953125, -12.796875)"><foreignObject width="23.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Siri</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HB-103426" transform="translate(178.18359375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-57.14453125" y="-20.296875" width="114.2890625" height="40.59375"></rect><g class="label" style="" transform="translate(-49.64453125, -12.796875)"><foreignObject width="99.2890625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Amazon Alexa</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HC-103427" transform="translate(354.84765625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-69.51953125" y="-20.296875" width="139.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-62.01953125, -12.796875)"><foreignObject width="124.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Google DeepMind</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HD-103428" transform="translate(524.23046875, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-49.86328125" y="-20.296875" width="99.7265625" height="40.59375"></rect><g class="label" style="" transform="translate(-42.36328125, -12.796875)"><foreignObject width="84.7265625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Deep faking</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HE-103436" transform="translate(641.11328125, 63.296875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-17.01953125" y="-20.296875" width="34.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-9.51953125, -12.796875)"><foreignObject width="19.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">HE</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HF-103429" transform="translate(736.5078125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-28.375" y="-20.296875" width="56.75" height="40.59375"></rect><g class="label" style="" transform="translate(-20.875, -12.796875)"><foreignObject width="41.75" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">GPT-3</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HG-103430" transform="translate(862.2109375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-47.328125" y="-20.296875" width="94.65625" height="40.59375"></rect><g class="label" style="" transform="translate(-39.828125, -12.796875)"><foreignObject width="79.65625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">TensorFlow</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HI-103431" transform="translate(1025.66015625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-66.12109375" y="-20.296875" width="132.2421875" height="40.59375"></rect><g class="label" style="" transform="translate(-58.62109375, -12.796875)"><foreignObject width="117.2421875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Computer Vision</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(63.90625, 1459.5)"><g class="clusters"><g class="cluster default" id="G"><rect style="" rx="0" ry="0" x="8" y="8" width="1331.3984375" height="472.96875"></rect><g class="cluster-label" transform="translate(588.7890625, 13)"><foreignObject width="169.8203125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2000s —— AI in our lives</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M579.909124105295,224.1875L656.0232284210791,197.37239583333334C732.1373327368633,170.55729166666666,884.3655413684315,116.92708333333333,976.0649321425491,90.11197916666667C1067.7643229166667,63.296875,1098.9348958333333,63.296875,1114.5201822916667,63.296875L1130.10546875,63.296875" id="L-GA-GBA-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBA" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M637.5213732105899,224.1875L704.0334360088249,212.47135416666666C770.54549880706,200.75520833333334,903.5696244035299,177.32291666666666,974.2483538684315,165.60677083333334C1044.9270833333333,153.890625,1053.2604166666667,153.890625,1057.4270833333333,153.890625L1061.59375,153.890625" id="L-GA-GBB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M1011.59375,244.484375L1015.7604166666666,244.484375C1019.9270833333334,244.484375,1028.2604166666667,244.484375,1043.1653645833333,244.484375C1058.0703125,244.484375,1079.546875,244.484375,1090.28515625,244.484375L1101.0234375,244.484375" id="L-GA-GBC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M637.5213732105899,264.78125L704.0334360088249,276.4973958333333C770.54549880706,288.2135416666667,903.5696244035299,311.6458333333333,987.0829892850983,323.3619791666667C1070.5963541666667,335.078125,1104.5989583333333,335.078125,1121.6002604166667,335.078125L1138.6015625,335.078125" id="L-GA-GBD-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBD" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M579.909124105295,264.78125L656.0232284210791,291.5963541666667C732.1373327368633,318.4114583333333,884.3655413684315,372.0416666666667,975.8286040175491,398.8567708333333C1067.2916666666667,425.671875,1097.9895833333333,425.671875,1113.3385416666667,425.671875L1128.6875,425.671875" id="L-GA-GBE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBE" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-GA-103409" transform="translate(522.296875, 244.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-489.296875" y="-20.296875" width="978.59375" height="40.59375"></rect><g class="label" style="" transform="translate(-481.796875, -12.796875)"><foreignObject width="963.59375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Further advances in machine learning, deep learning, NLP, speech recognition and computer vision gave rise to products and services.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBA-103410" transform="translate(1187.99609375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-57.890625" y="-20.296875" width="115.78125" height="40.59375"></rect><g class="label" style="" transform="translate(-50.390625, -12.796875)"><foreignObject width="100.78125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Google search</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBB-103411" transform="translate(1187.99609375, 153.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-126.40234375" y="-20.296875" width="252.8046875" height="40.59375"></rect><g class="label" style="" transform="translate(-118.90234375, -12.796875)"><foreignObject width="237.8046875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">NETFLIX recommendation system</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBC-103412" transform="translate(1187.99609375, 244.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-86.97265625" y="-20.296875" width="173.9453125" height="40.59375"></rect><g class="label" style="" transform="translate(-79.47265625, -12.796875)"><foreignObject width="158.9453125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Meta Face recognition</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBD-103413" transform="translate(1187.99609375, 335.078125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-49.39453125" y="-20.296875" width="98.7890625" height="40.59375"></rect><g class="label" style="" transform="translate(-41.89453125, -12.796875)"><foreignObject width="83.7890625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Microsoft AI</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBE-103414" transform="translate(1187.99609375, 425.671875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-59.30859375" y="-20.296875" width="118.6171875" height="40.59375"></rect><g class="label" style="" transform="translate(-51.80859375, -12.796875)"><foreignObject width="103.6171875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Driverless cars</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(0.5, 1273.3125)"><g class="clusters"><g class="cluster default" id="F"><rect style="" rx="0" ry="0" x="8" y="8" width="1458.2109375" height="136.1875"></rect><g class="cluster-label" transform="translate(648.67578125, 13)"><foreignObject width="176.859375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1990s —— AI Renaissance</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M821.6875,76.09375L825.8541666666666,76.09375C830.0208333333334,76.09375,838.3541666666666,76.09375,846.6875,76.09375C855.0208333333334,76.09375,863.3541666666666,76.09375,867.5208333333334,76.09375L871.6875,76.09375" id="L-FA-FB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-FA LE-FB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-FA-103405" transform="translate(427.34375, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-394.34375" y="-20.296875" width="788.6875" height="40.59375"></rect><g class="label" style="" transform="translate(-386.84375, -12.796875)"><foreignObject width="773.6875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">The Increases in computational power and an explosion of data sparked an AI renaissance in the late 1990s.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-FB-103406" transform="translate(1156.44921875, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-284.76171875" y="-33.09375" width="569.5234375" height="66.1875"></rect><g class="label" style="" transform="translate(-277.26171875, -25.59375)"><foreignObject width="554.5234375" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">In 1997, IBM's Deep Blue defeated Russian chess grandmaster Garry Kasparov, <br>becoming the first computer program to beat a world chess champion.</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(101.00390625, 770.34375)"><g class="clusters"><g class="cluster default" id="E"><rect style="" rx="0" ry="0" x="8" y="8" width="1257.203125" height="452.96875"></rect><g class="cluster-label" transform="translate(541.65234375, 13)"><foreignObject width="189.8984375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1970s-1980s —— AI winters</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M238.8984375,73.59375L238.8984375,77.76041666666667C238.8984375,81.92708333333333,238.8984375,90.26041666666667,282.435361151834,98.59375C325.97228480366795,106.92708333333333,413.04613210733584,115.26041666666667,456.58305575916984,119.42708333333333L500.1199794110038,123.59375" id="L-EAA-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAA LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M712.19921875,73.59375L712.19921875,77.76041666666667C712.19921875,81.92708333333333,712.19921875,90.26041666666667,712.19921875,98.59375C712.19921875,106.92708333333333,712.19921875,115.26041666666667,712.19921875,119.42708333333333L712.19921875,123.59375" id="L-EAB-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAB LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M1109.90234375,73.59375L1109.90234375,77.76041666666667C1109.90234375,81.92708333333333,1109.90234375,90.26041666666667,1073.3193266176556,98.59375C1036.736309485311,106.92708333333333,963.5702752206221,115.26041666666667,926.9872580882776,119.42708333333333L890.4042409559331,123.59375" id="L-EAC-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAC LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M712.19921875,164.1875L712.19921875,168.35416666666666C712.19921875,172.52083333333334,712.19921875,180.85416666666666,712.19921875,189.1875C712.19921875,197.52083333333334,712.19921875,205.85416666666666,712.19921875,210.02083333333334L712.19921875,214.1875" id="L-EB-EC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EB LE-EC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M712.19921875,254.78125L712.19921875,258.9479166666667C712.19921875,263.1145833333333,712.19921875,271.4479166666667,712.19921875,279.78125C712.19921875,288.1145833333333,712.19921875,296.4479166666667,712.19921875,300.6145833333333L712.19921875,304.78125" id="L-EC-EE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EC LE-EE" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M712.19921875,345.375L712.19921875,349.5416666666667C712.19921875,353.7083333333333,712.19921875,362.0416666666667,712.19921875,370.375C712.19921875,378.7083333333333,712.19921875,387.0416666666667,712.19921875,391.2083333333333L712.19921875,395.375" id="L-EE-ED-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EE LE-ED" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-EAA-103388" transform="translate(238.8984375, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-195.8984375" y="-20.296875" width="391.796875" height="40.59375"></rect><g class="label" style="" transform="translate(-188.3984375, -12.796875)"><foreignObject width="376.796875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">The achievement of AI proved elusive, not imminent</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EB-103391" transform="translate(712.19921875, 143.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-283.07421875" y="-20.296875" width="566.1484375" height="40.59375"></rect><g class="label" style="" transform="translate(-275.57421875, -12.796875)"><foreignObject width="551.1484375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Government and corporations backed away from their support of AI research</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EAB-103389" transform="translate(712.19921875, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-227.40234375" y="-20.296875" width="454.8046875" height="40.59375"></rect><g class="label" style="" transform="translate(-219.90234375, -12.796875)"><foreignObject width="439.8046875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">hampered by limitations in computer processing and memory</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EAC-103390" transform="translate(1109.90234375, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-120.30078125" y="-20.296875" width="240.6015625" height="40.59375"></rect><g class="label" style="" transform="translate(-112.80078125, -12.796875)"><foreignObject width="225.6015625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">the complexity of the problem.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EC-103392" transform="translate(712.19921875, 234.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-167.21484375" y="-20.296875" width="334.4296875" height="40.59375"></rect><g class="label" style="" transform="translate(-159.71484375, -12.796875)"><foreignObject width="319.4296875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1974 to 1980 known as the first “AI Winter”.</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EE-103394" transform="translate(712.19921875, 325.078125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-183.28515625" y="-20.296875" width="366.5703125" height="40.59375"></rect><g class="label" style="" transform="translate(-175.78515625, -12.796875)"><foreignObject width="351.5703125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">a short-lived new wave of AI enthusiasm in 1980s</span></div></foreignObject></g></g><g class="node default default" id="flowchart-ED-103393" transform="translate(712.19921875, 415.671875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-186.13671875" y="-20.296875" width="372.2734375" height="40.59375"></rect><g class="label" style="" transform="translate(-178.63671875, -12.796875)"><foreignObject width="357.2734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">the second “AI winter” lasted until the mid-1990s</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(242.01953125, 609.75)"><g class="clusters"><g class="cluster default" id="D"><rect style="" rx="0" ry="0" x="8" y="8" width="975.171875" height="110.59375"></rect><g class="cluster-label" transform="translate(370.359375, 13)"><foreignObject width="250.453125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1950s-1960s —— Birth of modern AI</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M306.2421875,63.296875L310.4088541666667,63.296875C314.5755208333333,63.296875,322.9088541666667,63.296875,331.2421875,63.296875C339.5755208333333,63.296875,347.9088541666667,63.296875,352.0755208333333,63.296875L356.2421875,63.296875" id="L-DA-DB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-DA LE-DB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M575.4765625,63.296875L579.6432291666666,63.296875C583.8098958333334,63.296875,592.1432291666666,63.296875,600.4765625,63.296875C608.8098958333334,63.296875,617.1432291666666,63.296875,621.3098958333334,63.296875L625.4765625,63.296875" id="L-DB-DC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-DB LE-DC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-DA-103382" transform="translate(169.62109375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-136.62109375" y="-20.296875" width="273.2421875" height="40.59375"></rect><g class="label" style="" transform="translate(-129.12109375, -12.796875)"><foreignObject width="258.2421875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Lisp, a language for AI programming</span></div></foreignObject></g></g><g class="node default default" id="flowchart-DB-103383" transform="translate(465.859375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-109.6171875" y="-20.296875" width="219.234375" height="40.59375"></rect><g class="label" style="" transform="translate(-102.1171875, -12.796875)"><foreignObject width="204.234375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">ELIZA, an early NLP program</span></div></foreignObject></g></g><g class="node default default" id="flowchart-DC-103384" transform="translate(791.82421875, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-166.34765625" y="-20.296875" width="332.6953125" height="40.59375"></rect><g class="label" style="" transform="translate(-158.84765625, -12.796875)"><foreignObject width="317.6953125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">The General Problem Solver (GPS) algorithm</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(395.0234375, 372.375)"><g class="clusters"><g class="cluster default" id="C"><rect style="" rx="0" ry="0" x="8" y="8" width="669.1640625" height="187.375"></rect><g class="cluster-label" transform="translate(243.55078125, 13)"><foreignObject width="198.0625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1956 —— Birth of modern AI</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M302.6484375,101.6875L306.8151041666667,101.6875C310.9817708333333,101.6875,319.3151041666667,101.6875,327.6484375,101.6875C335.9817708333333,101.6875,344.3151041666667,101.6875,348.4817708333333,101.6875L352.6484375,101.6875" id="L-CA-CB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-CA LE-CB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-CA-103378" transform="translate(167.82421875, 101.6875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-134.82421875" y="-20.296875" width="269.6484375" height="40.59375"></rect><g class="label" style="" transform="translate(-127.32421875, -12.796875)"><foreignObject width="254.6484375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">The summer Dartmouth conference</span></div></foreignObject></g></g><g class="node default default" id="flowchart-CB-103379" transform="translate(502.40625, 101.6875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-149.7578125" y="-58.6875" width="299.515625" height="117.375"></rect><g class="label" style="" transform="translate(-142.2578125, -51.1875)"><foreignObject width="284.515625" height="102.375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Allen Newell and Herbert A. Simon <br>    —— Logic Theorist,<br>    proving certain mathematical theorems <br>    and referred to as the first AI program.</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(664.9296875, 186.1875)"><g class="clusters"><g class="cluster default" id="B"><rect style="" rx="0" ry="0" x="-14.4609375" y="8" width="189.2734375" height="136.1875"></rect><g class="cluster-label" transform="translate(-14.4609375, 13)"><foreignObject width="189.2734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1950s —— Emergence of AI</span></div></foreignObject></g></g></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="node default default" id="flowchart-BA-103377" transform="translate(80.17578125, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-47.17578125" y="-33.09375" width="94.3515625" height="66.1875"></rect><g class="label" style="" transform="translate(-39.67578125, -25.59375)"><foreignObject width="79.3515625" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Alan Turing<br>    Turing Test</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(445.13671875, 0)"><g class="clusters"><g class="cluster default" id="A"><rect style="" rx="0" ry="0" x="8" y="8" width="568.9375" height="136.1875"></rect><g class="cluster-label" transform="translate(197.83203125, 13)"><foreignObject width="189.2734375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1940s —— Emergence of AI</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M239.2109375,76.09375L243.37760416666666,76.09375C247.54427083333334,76.09375,255.87760416666666,76.09375,264.2109375,76.09375C272.5442708333333,76.09375,280.8776041666667,76.09375,285.0442708333333,76.09375L289.2109375,76.09375" id="L-AA-AB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AA LE-AB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-AA-103373" transform="translate(136.10546875, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-103.10546875" y="-33.09375" width="206.2109375" height="66.1875"></rect><g class="label" style="" transform="translate(-95.60546875, -25.59375)"><foreignObject width="191.2109375" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">John Von Neumann<br>      Von Neumann Architecture</span></div></foreignObject></g></g><g class="node default default" id="flowchart-AB-103374" transform="translate(420.57421875, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-131.36328125" y="-33.09375" width="262.7265625" height="66.1875"></rect><g class="label" style="" transform="translate(-123.86328125, -25.59375)"><foreignObject width="247.7265625" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Warren McCulloch and Walter Pitts<br>      McCulloch-Pitts Neuron</span></div></foreignObject></g></g></g></g></g></g></g></svg></div>
+<div class="mermaid" data-processed="true"><svg id="mermaid-1728442312774" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="2360.25" style="max-width: 1192.9765625px;" viewBox="0 0 1192.9765625 2360.25"><style>#mermaid-1728442312774 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1728442312774 .error-icon{fill:#552222;}#mermaid-1728442312774 .error-text{fill:#552222;stroke:#552222;}#mermaid-1728442312774 .edge-thickness-normal{stroke-width:2px;}#mermaid-1728442312774 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1728442312774 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1728442312774 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1728442312774 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1728442312774 .marker{fill:#333333;stroke:#333333;}#mermaid-1728442312774 .marker.cross{stroke:#333333;}#mermaid-1728442312774 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1728442312774 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1728442312774 .cluster-label text{fill:#333;}#mermaid-1728442312774 .cluster-label span{color:#333;}#mermaid-1728442312774 .label text,#mermaid-1728442312774 span{fill:#333;color:#333;}#mermaid-1728442312774 .node rect,#mermaid-1728442312774 .node circle,#mermaid-1728442312774 .node ellipse,#mermaid-1728442312774 .node polygon,#mermaid-1728442312774 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1728442312774 .node .label{text-align:center;}#mermaid-1728442312774 .node.clickable{cursor:pointer;}#mermaid-1728442312774 .arrowheadPath{fill:#333333;}#mermaid-1728442312774 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1728442312774 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1728442312774 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1728442312774 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1728442312774 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1728442312774 .cluster text{fill:#333;}#mermaid-1728442312774 .cluster span{color:#333;}#mermaid-1728442312774 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1728442312774 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g transform="translate(0, 0)"><marker id="flowchart-pointEnd" class="marker flowchart" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-pointStart" class="marker flowchart" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-circleEnd" class="marker flowchart" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-circleStart" class="marker flowchart" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="flowchart-crossEnd" class="marker cross flowchart" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="flowchart-crossStart" class="marker cross flowchart" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M596.48828125,144.1875L596.48828125,148.35416666666666C596.48828125,152.52083333333334,596.48828125,160.85416666666666,596.48828125,169.1875C596.48828125,177.52083333333334,596.48828125,185.85416666666666,596.48828125,190.02083333333334L596.48828125,194.1875" id="L-A-B-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,330.375L596.48828125,334.5416666666667C596.48828125,338.7083333333333,596.48828125,347.0416666666667,596.48828125,355.375C596.48828125,363.7083333333333,596.48828125,372.0416666666667,596.48828125,376.2083333333333L596.48828125,380.375" id="L-B-C-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,567.75L596.48828125,571.9166666666666C596.48828125,576.0833333333334,596.48828125,584.4166666666666,596.48828125,592.75C596.48828125,601.0833333333334,596.48828125,609.4166666666666,596.48828125,613.5833333333334L596.48828125,617.75" id="L-C-D-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,728.34375L596.48828125,732.5104166666666C596.48828125,736.6770833333334,596.48828125,745.0104166666666,596.48828125,753.34375C596.48828125,761.6770833333334,596.48828125,770.0104166666666,596.48828125,774.1770833333334L596.48828125,778.34375" id="L-D-E-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-E" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,1231.3125L596.48828125,1235.4791666666667C596.48828125,1239.6458333333333,596.48828125,1247.9791666666667,596.48828125,1256.3125C596.48828125,1264.6458333333333,596.48828125,1272.9791666666667,596.48828125,1277.1458333333333L596.48828125,1281.3125" id="L-E-F-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-F" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,1417.5L596.48828125,1421.6666666666667C596.48828125,1425.8333333333333,596.48828125,1434.1666666666667,596.48828125,1442.5C596.48828125,1450.8333333333333,596.48828125,1459.1666666666667,596.48828125,1463.3333333333333L596.48828125,1467.5" id="L-F-G-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-F LE-G" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,1940.46875L596.48828125,1944.6354166666667C596.48828125,1948.8020833333333,596.48828125,1957.1354166666667,596.48828125,1965.46875C596.48828125,1973.8020833333333,596.48828125,1982.1354166666667,596.48828125,1986.3020833333333L596.48828125,1990.46875" id="L-G-H-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-G LE-H" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M596.48828125,2101.0625L596.48828125,2105.2291666666665C596.48828125,2109.3958333333335,596.48828125,2117.7291666666665,596.48828125,2126.0625C596.48828125,2134.3958333333335,596.48828125,2142.7291666666665,596.48828125,2146.8958333333335L596.48828125,2151.0625" id="L-H-I-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-H LE-I" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="root" transform="translate(120.22265625, 2143.0625)"><g class="clusters"><g class="cluster default" id="I"><rect style="" rx="0" ry="0" x="8" y="8" width="937.53125" height="201.1875"></rect><g class="cluster-label" transform="translate(409.23046875, 13)"><foreignObject width="135.0703125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2020s —— 生成式AI</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M375.53125,63.296875L379.6979166666667,63.296875C383.8645833333333,63.296875,392.1979166666667,63.296875,421.43069808554674,67.46354166666667C450.6634795044268,71.63020833333333,500.79570900885363,79.96354166666667,525.8618237610671,84.13020833333333L550.9279385132804,88.296875" id="L-IAA-IB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-IAA LE-IB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M351.53125,153.890625L359.6979166666667,153.890625C367.8645833333333,153.890625,384.1979166666667,153.890625,417.43069808554674,149.72395833333334C450.6634795044268,145.55729166666666,500.79570900885363,137.22395833333334,525.8618237610671,133.05729166666666L550.9279385132804,128.890625" id="L-IAB-IB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-IAB LE-IB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-IAA-103615" transform="translate(204.265625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-171.265625" y="-20.296875" width="342.53125" height="40.59375"></rect><g class="label" style="" transform="translate(-163.765625, -12.796875)"><foreignObject width="327.53125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">生成式 AI 从一个可以是多种形式的提示开始。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-IB-103617" transform="translate(673.03125, 108.59375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-247.5" y="-20.296875" width="495" height="40.59375"></rect><g class="label" style="" transform="translate(-240, -12.796875)"><foreignObject width="480" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">这项技术仍处于早期阶段，其产生幻觉或扭曲答案的倾向就是明证。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-IAB-103616" transform="translate(204.265625, 153.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-147.265625" y="-20.296875" width="294.53125" height="40.59375"></rect><g class="label" style="" transform="translate(-139.765625, -12.796875)"><foreignObject width="279.53125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">然后各种 AI 算法响应提示返回新内容。</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(34.59765625, 1982.46875)"><g class="clusters"><g class="cluster default" id="H"><rect style="" rx="0" ry="0" x="8" y="8" width="1108.78125" height="110.59375"></rect><g class="cluster-label" transform="translate(469.80078125, 13)"><foreignObject width="185.1796875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2010s —— 人工智能的突破</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M71.0390625,63.296875L75.20572916666667,63.296875C79.37239583333333,63.296875,87.70572916666667,63.296875,96.0390625,63.296875C104.37239583333333,63.296875,112.70572916666667,63.296875,116.87239583333333,63.296875L121.0390625,63.296875" id="L-HA-HB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HA LE-HB" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M235.328125,63.296875L239.49479166666666,63.296875C243.66145833333334,63.296875,251.99479166666666,63.296875,260.328125,63.296875C268.6614583333333,63.296875,276.9947916666667,63.296875,281.1614583333333,63.296875L285.328125,63.296875" id="L-HB-HC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HB LE-HC" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M424.3671875,63.296875L428.5338541666667,63.296875C432.7005208333333,63.296875,441.0338541666667,63.296875,449.3671875,63.296875C457.7005208333333,63.296875,466.0338541666667,63.296875,470.2005208333333,63.296875L474.3671875,63.296875" id="L-HC-HD-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HC LE-HD" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M574.09375,63.296875L578.2604166666666,63.296875C582.4270833333334,63.296875,590.7604166666666,63.296875,599.09375,63.296875C607.4270833333334,63.296875,615.7604166666666,63.296875,619.9270833333334,63.296875L624.09375,63.296875" id="L-HD-HE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HD LE-HE" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M658.1328125,63.296875L662.2994791666666,63.296875C666.4661458333334,63.296875,674.7994791666666,63.296875,683.1328125,63.296875C691.4661458333334,63.296875,699.7994791666666,63.296875,703.9661458333334,63.296875L708.1328125,63.296875" id="L-HE-HF-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HE LE-HF" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M764.8828125,63.296875L769.0494791666666,63.296875C773.2161458333334,63.296875,781.5494791666666,63.296875,789.8828125,63.296875C798.2161458333334,63.296875,806.5494791666666,63.296875,810.7161458333334,63.296875L814.8828125,63.296875" id="L-HF-HG-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HF LE-HG" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path><path d="M909.5390625,63.296875L913.7057291666666,63.296875C917.8723958333334,63.296875,926.2057291666666,63.296875,934.5390625,63.296875C942.8723958333334,63.296875,951.2057291666666,63.296875,955.3723958333334,63.296875L959.5390625,63.296875" id="L-HG-HI-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-HG LE-HI" style="fill:none;" marker-start="url(#flowchart-pointStart)" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-HA-103600" transform="translate(52.01953125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-19.01953125" y="-20.296875" width="38.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-11.51953125, -12.796875)"><foreignObject width="23.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Siri</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HB-103601" transform="translate(178.18359375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-57.14453125" y="-20.296875" width="114.2890625" height="40.59375"></rect><g class="label" style="" transform="translate(-49.64453125, -12.796875)"><foreignObject width="99.2890625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Amazon Alexa</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HC-103602" transform="translate(354.84765625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-69.51953125" y="-20.296875" width="139.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-62.01953125, -12.796875)"><foreignObject width="124.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Google DeepMind</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HD-103603" transform="translate(524.23046875, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-49.86328125" y="-20.296875" width="99.7265625" height="40.59375"></rect><g class="label" style="" transform="translate(-42.36328125, -12.796875)"><foreignObject width="84.7265625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Deep faking</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HE-103611" transform="translate(641.11328125, 63.296875)"><rect class="basic label-container" style="" rx="0" ry="0" x="-17.01953125" y="-20.296875" width="34.0390625" height="40.59375"></rect><g class="label" style="" transform="translate(-9.51953125, -12.796875)"><foreignObject width="19.0390625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">HE</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HF-103604" transform="translate(736.5078125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-28.375" y="-20.296875" width="56.75" height="40.59375"></rect><g class="label" style="" transform="translate(-20.875, -12.796875)"><foreignObject width="41.75" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">GPT-3</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HG-103605" transform="translate(862.2109375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-47.328125" y="-20.296875" width="94.65625" height="40.59375"></rect><g class="label" style="" transform="translate(-39.828125, -12.796875)"><foreignObject width="79.65625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">TensorFlow</span></div></foreignObject></g></g><g class="node default default" id="flowchart-HI-103606" transform="translate(1025.66015625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-66.12109375" y="-20.296875" width="132.2421875" height="40.59375"></rect><g class="label" style="" transform="translate(-58.62109375, -12.796875)"><foreignObject width="117.2421875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Computer Vision</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(69.0859375, 1459.5)"><g class="clusters"><g class="cluster default" id="G"><rect style="" rx="0" ry="0" x="8" y="8" width="1039.8046875" height="472.96875"></rect><g class="cluster-label" transform="translate(411.3125, 13)"><foreignObject width="233.1796875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">2000s —— 我们生活中的人工智能</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M417.779880993446,224.1875L472.31656749453833,197.37239583333334C526.8532539956307,170.55729166666666,635.9266269978153,116.92708333333333,706.0485999572411,90.11197916666667C776.1705729166666,63.296875,807.3411458333334,63.296875,822.9264322916666,63.296875L838.51171875,63.296875" id="L-GA-GBA-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBA" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M459.059761986892,224.1875L506.71646832241004,212.47135416666666C554.373174657928,200.75520833333334,649.686587328964,177.32291666666666,701.5099603311487,165.60677083333334C753.3333333333334,153.890625,761.6666666666666,153.890625,765.8333333333334,153.890625L770,153.890625" id="L-GA-GBB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M720,244.484375L724.1666666666666,244.484375C728.3333333333334,244.484375,736.6666666666666,244.484375,751.5716145833334,244.484375C766.4765625,244.484375,787.953125,244.484375,798.69140625,244.484375L809.4296875,244.484375" id="L-GA-GBC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M459.059761986892,264.78125L506.71646832241004,276.4973958333333C554.373174657928,288.2135416666667,649.686587328964,311.6458333333333,714.3445957478153,323.3619791666667C779.0026041666666,335.078125,813.0052083333334,335.078125,830.0065104166666,335.078125L847.0078125,335.078125" id="L-GA-GBD-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBD" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M417.779880993446,264.78125L472.31656749453833,291.5963541666667C526.8532539956307,318.4114583333333,635.9266269978153,372.0416666666667,705.8122718322411,398.8567708333333C775.6979166666666,425.671875,806.3958333333334,425.671875,821.7447916666666,425.671875L837.09375,425.671875" id="L-GA-GBE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-GA LE-GBE" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-GA-103584" transform="translate(376.5, 244.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-343.5" y="-20.296875" width="687" height="40.59375"></rect><g class="label" style="" transform="translate(-336, -12.796875)"><foreignObject width="672" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">机器学习、深度学习、自然语言处理、语音识别和计算机视觉的进一步发展带来了产品和服务。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBA-103585" transform="translate(896.40234375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-57.890625" y="-20.296875" width="115.78125" height="40.59375"></rect><g class="label" style="" transform="translate(-50.390625, -12.796875)"><foreignObject width="100.78125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Google search</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBB-103586" transform="translate(896.40234375, 153.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-126.40234375" y="-20.296875" width="252.8046875" height="40.59375"></rect><g class="label" style="" transform="translate(-118.90234375, -12.796875)"><foreignObject width="237.8046875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">NETFLIX recommendation system</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBC-103587" transform="translate(896.40234375, 244.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-86.97265625" y="-20.296875" width="173.9453125" height="40.59375"></rect><g class="label" style="" transform="translate(-79.47265625, -12.796875)"><foreignObject width="158.9453125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Meta Face recognition</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBD-103588" transform="translate(896.40234375, 335.078125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-49.39453125" y="-20.296875" width="98.7890625" height="40.59375"></rect><g class="label" style="" transform="translate(-41.89453125, -12.796875)"><foreignObject width="83.7890625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Microsoft AI</span></div></foreignObject></g></g><g class="node default default" id="flowchart-GBE-103589" transform="translate(896.40234375, 425.671875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-59.30859375" y="-20.296875" width="118.6171875" height="40.59375"></rect><g class="label" style="" transform="translate(-51.80859375, -12.796875)"><foreignObject width="103.6171875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Driverless cars</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(0.5, 1273.3125)"><g class="clusters"><g class="cluster default" id="F"><rect style="" rx="0" ry="0" x="8" y="8" width="1176.9765625" height="136.1875"></rect><g class="cluster-label" transform="translate(510.984375, 13)"><foreignObject width="171.0078125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1990s —— AI 的文艺复兴</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M609.5625,76.09375L613.7291666666666,76.09375C617.8958333333334,76.09375,626.2291666666666,76.09375,634.5625,76.09375C642.8958333333334,76.09375,651.2291666666666,76.09375,655.3958333333334,76.09375L659.5625,76.09375" id="L-FA-FB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-FA LE-FB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-FA-103580" transform="translate(321.28125, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-288.28125" y="-20.296875" width="576.5625" height="40.59375"></rect><g class="label" style="" transform="translate(-280.78125, -12.796875)"><foreignObject width="561.5625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">计算能力的提高和数据的爆炸式增长在20世纪90年代末引发了人工智能的复兴。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-FB-103581" transform="translate(909.76953125, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-250.20703125" y="-33.09375" width="500.4140625" height="66.1875"></rect><g class="label" style="" transform="translate(-242.70703125, -25.59375)"><foreignObject width="485.4140625" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1997年，IBM 的“深蓝”击败了俄罗斯国际象棋大师加里 · 卡斯帕罗夫,<br>成为第一个击败世界象棋冠军的计算机程序。</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(105.48828125, 770.34375)"><g class="clusters"><g class="cluster default" id="E"><rect style="" rx="0" ry="0" x="8" y="8" width="967" height="452.96875"></rect><g class="cluster-label" transform="translate(407.0390625, 13)"><foreignObject width="168.921875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1970s-1980s —— AI 寒冬</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M250.5,73.59375L250.5,77.76041666666667C250.5,81.92708333333333,250.5,90.26041666666667,289.4166666666667,99.00579342532467C328.3333333333333,107.7511701839827,406.1666666666667,116.90859036796537,445.0833333333333,121.48730045995671L484,126.06601055194805" id="L-EAA-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAA LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M635.5,73.59375L635.5,77.76041666666667C635.5,81.92708333333333,635.5,90.26041666666667,635.5,98.59375C635.5,106.92708333333333,635.5,115.26041666666667,635.5,119.42708333333333L635.5,123.59375" id="L-EAB-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAB LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M876.5,73.59375L876.5,77.76041666666667C876.5,81.92708333333333,876.5,90.26041666666667,854.3314361274003,98.59375C832.1628722548006,106.92708333333333,787.825744509601,115.26041666666667,765.6571806370013,119.42708333333333L743.4886167644015,123.59375" id="L-EAC-EB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EAC LE-EB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M635.5,164.1875L635.5,168.35416666666666C635.5,172.52083333333334,635.5,180.85416666666666,635.5,189.1875C635.5,197.52083333333334,635.5,205.85416666666666,635.5,210.02083333333334L635.5,214.1875" id="L-EB-EC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EB LE-EC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M635.5,254.78125L635.5,258.9479166666667C635.5,263.1145833333333,635.5,271.4479166666667,635.5,279.78125C635.5,288.1145833333333,635.5,296.4479166666667,635.5,300.6145833333333L635.5,304.78125" id="L-EC-EE-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EC LE-EE" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M635.5,345.375L635.5,349.5416666666667C635.5,353.7083333333333,635.5,362.0416666666667,635.5,370.375C635.5,378.7083333333333,635.5,387.0416666666667,635.5,391.2083333333333L635.5,395.375" id="L-EE-ED-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-EE LE-ED" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-EAA-103563" transform="translate(250.5, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-207.5" y="-20.296875" width="415" height="40.59375"></rect><g class="label" style="" transform="translate(-200, -12.796875)"><foreignObject width="400" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">人工智能的成就被证明是难以捉摸的，而不是迫在眉睫的</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EB-103566" transform="translate(635.5, 143.890625)"><rect class="basic label-container" style="" rx="5" ry="5" x="-151.5" y="-20.296875" width="303" height="40.59375"></rect><g class="label" style="" transform="translate(-144, -12.796875)"><foreignObject width="288" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">政府和企业放弃了对人工智能研究的支持</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EAB-103564" transform="translate(635.5, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-127.5" y="-20.296875" width="255" height="40.59375"></rect><g class="label" style="" transform="translate(-120, -12.796875)"><foreignObject width="240" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">受到计算机处理和内存限制的阻碍</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EAC-103565" transform="translate(876.5, 53.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-63.5" y="-20.296875" width="127" height="40.59375"></rect><g class="label" style="" transform="translate(-56, -12.796875)"><foreignObject width="112" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">问题的复杂性。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EC-103567" transform="translate(635.5, 234.484375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-177.453125" y="-20.296875" width="354.90625" height="40.59375"></rect><g class="label" style="" transform="translate(-169.953125, -12.796875)"><foreignObject width="339.90625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1974年至1980年被称为第一个“人工智能冬天”。</span></div></foreignObject></g></g><g class="node default default" id="flowchart-EE-103569" transform="translate(635.5, 325.078125)"><rect class="basic label-container" style="" rx="5" ry="5" x="-128.28125" y="-20.296875" width="256.5625" height="40.59375"></rect><g class="label" style="" transform="translate(-120.78125, -12.796875)"><foreignObject width="241.5625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">20世纪80年代短暂的人工智能热潮</span></div></foreignObject></g></g><g class="node default default" id="flowchart-ED-103568" transform="translate(635.5, 415.671875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-192.28125" y="-20.296875" width="384.5625" height="40.59375"></rect><g class="label" style="" transform="translate(-184.78125, -12.796875)"><foreignObject width="369.5625" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">第二个“人工智能冬天”一直持续到上世纪90年代中期</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(211.890625, 609.75)"><g class="clusters"><g class="cluster default" id="D"><rect style="" rx="0" ry="0" x="8" y="8" width="754.1953125" height="110.59375"></rect><g class="cluster-label" transform="translate(253.55078125, 13)"><foreignObject width="263.09375" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1950s-1960s —— 现代人工智能的诞生</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M220.0546875,63.296875L224.22135416666666,63.296875C228.38802083333334,63.296875,236.72135416666666,63.296875,245.0546875,63.296875C253.38802083333334,63.296875,261.7213541666667,63.296875,265.8880208333333,63.296875L270.0546875,63.296875" id="L-DA-DB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-DA LE-DB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path><path d="M489.0078125,63.296875L493.1744791666667,63.296875C497.3411458333333,63.296875,505.6744791666667,63.296875,514.0078125,63.296875C522.3411458333334,63.296875,530.6744791666666,63.296875,534.8411458333334,63.296875L539.0078125,63.296875" id="L-DB-DC-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-DB LE-DC" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-DA-103557" transform="translate(126.52734375, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-93.52734375" y="-20.296875" width="187.0546875" height="40.59375"></rect><g class="label" style="" transform="translate(-86.02734375, -12.796875)"><foreignObject width="172.0546875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">Lisp，人工智能编程语言</span></div></foreignObject></g></g><g class="node default default" id="flowchart-DB-103558" transform="translate(379.53125, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-109.4765625" y="-20.296875" width="218.953125" height="40.59375"></rect><g class="label" style="" transform="translate(-101.9765625, -12.796875)"><foreignObject width="203.953125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">ELIZA，一个早期的 NLP 程序</span></div></foreignObject></g></g><g class="node default default" id="flowchart-DC-103559" transform="translate(638.1015625, 63.296875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-99.09375" y="-20.296875" width="198.1875" height="40.59375"></rect><g class="label" style="" transform="translate(-91.59375, -12.796875)"><foreignObject width="183.1875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">一般问题解决器(GPS)算法</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(355.98828125, 372.375)"><g class="clusters"><g class="cluster default" id="C"><rect style="" rx="0" ry="0" x="8" y="8" width="466" height="187.375"></rect><g class="cluster-label" transform="translate(135.6484375, 13)"><foreignObject width="210.703125" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1956 —— 现代人工智能的诞生</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M176,101.6875L180.16666666666666,101.6875C184.33333333333334,101.6875,192.66666666666666,101.6875,201,101.6875C209.33333333333334,101.6875,217.66666666666666,101.6875,221.83333333333334,101.6875L226,101.6875" id="L-CA-CB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-CA LE-CB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-CA-103553" transform="translate(104.5, 101.6875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-71.5" y="-20.296875" width="143" height="40.59375"></rect><g class="label" style="" transform="translate(-64, -12.796875)"><foreignObject width="128" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">达特茅斯夏季会议</span></div></foreignObject></g></g><g class="node default default" id="flowchart-CB-103554" transform="translate(337.5, 101.6875)"><rect class="basic label-container" style="" rx="5" ry="5" x="-111.5" y="-58.6875" width="223" height="117.375"></rect><g class="label" style="" transform="translate(-104, -51.1875)"><foreignObject width="208" height="102.375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">艾伦·纽厄尔 and 赫伯特·西蒙 <br>    —— 逻辑理论家,<br>    证明某些数学定理 <br>    被称为第一个人工智能程序。</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(529.05078125, 186.1875)"><g class="clusters"><g class="cluster default" id="B"><rect style="" rx="0" ry="0" x="-17.15234375" y="8" width="185.1796875" height="136.1875"></rect><g class="cluster-label" transform="translate(-17.15234375, 13)"><foreignObject width="185.1796875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1950s —— 人工智能的出现</span></div></foreignObject></g></g></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="node default default" id="flowchart-BA-103552" transform="translate(75.4375, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-42.4375" y="-33.09375" width="84.875" height="66.1875"></rect><g class="label" style="" transform="translate(-34.9375, -25.59375)"><foreignObject width="69.875" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">阿兰·图灵<br>    图灵测试</span></div></foreignObject></g></g></g></g><g class="root" transform="translate(369.29296875, 0)"><g class="clusters"><g class="cluster default" id="A"><rect style="" rx="0" ry="0" x="8" y="8" width="439.390625" height="136.1875"></rect><g class="cluster-label" transform="translate(135.10546875, 13)"><foreignObject width="185.1796875" height="25.59375"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">1940s —— 人工智能的出现</span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M181.875,76.09375L186.04166666666666,76.09375C190.20833333333334,76.09375,198.54166666666666,76.09375,206.875,76.09375C215.20833333333334,76.09375,223.54166666666666,76.09375,227.70833333333334,76.09375L231.875,76.09375" id="L-AA-AB-0" class=" edge-thickness-normal edge-pattern-solid flowchart-link LS-AA LE-AB" style="fill:none;" marker-end="url(#flowchart-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default default" id="flowchart-AA-103548" transform="translate(107.4375, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-74.4375" y="-33.09375" width="148.875" height="66.1875"></rect><g class="label" style="" transform="translate(-66.9375, -25.59375)"><foreignObject width="133.875" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">约翰·冯·诺依曼<br>      冯·诺依曼体系结构</span></div></foreignObject></g></g><g class="node default default" id="flowchart-AB-103549" transform="translate(327.1328125, 76.09375)"><rect class="basic label-container" style="" rx="5" ry="5" x="-95.2578125" y="-33.09375" width="190.515625" height="66.1875"></rect><g class="label" style="" transform="translate(-87.7578125, -25.59375)"><foreignObject width="175.515625" height="51.1875"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="nodeLabel">麦卡洛克 和 沃尔特·皮茨<br>      McCulloch-Pitts 神经元</span></div></foreignObject></g></g></g></g></g></g></g></svg></div>
+<h4 class="atx" id="branches-and-applications-of-ai-人工智能的分支与应用">Branches and applications of AI 人工智能的分支与应用</h4>
+<h5 class="atx" id="weak-ai-vs-strong-ai">Weak AI vs. Strong AI</h5>
+<ul>
+<li><p>Weak AI</p>
+<ul>
+<li><p>also called Narrow AI or Artificial Narrow Intelligence (ANI)</p>
+</li>
+<li><p>is <strong>AI trained and focused to perform specific tasks.</strong> </p>
+</li>
+<li><p>Weak AI drives most of the AI that surrounds us today. ‘Narrow’ might be a more accurate descriptor for this type of AI as it is anything but weak; it enables some very robust applications.
+今天我们周围的大部分人工智能都是由弱人工智能驱动的。“窄”可能是一个更准确的描述这种类型的人工智能，因为它是任何东西，但弱，它使一些非常健壮的应用程序。</p>
+</li>
+</ul>
+</li>
+<li><p>Strong AI</p>
+<ul>
+<li><p>made up of <strong>Artificial General Intelligence (AGI)</strong> and <strong>Artificial Super Intelligence (ASI)</strong>.
+由人工通用智能(AGI)和人工超级智能(ASI)组成。</p>
+</li>
+<li><p>AGI, or general AI, is a theoretical form of AI where a machine would have <strong>an intelligence equal to humans</strong>; it would have a <strong>self-aware consciousness</strong> that has the ability to solve problems, learn, and plan for the future. 
+人工智能(AGI)是人工智能的一种理论形式，在这种形式中，机器拥有与人类相当的智能; 它具有自我意识，能够解决问题、学习和规划未来。</p>
+</li>
+<li><p>ASI—also known as superintelligence—would <strong>surpass the intelligence and ability of the human brain</strong>. 
+人工智能ーー也被称为超级智能ーー将超越人类大脑的智力和能力。</p>
+</li>
+<li><p>While strong AI is still entirely theoretical with no practical examples in use today, that doesn't mean AI researchers aren't also exploring its development.
+虽然强大的人工智能仍然完全是理论上的，没有实际应用的例子，但这并不意味着人工智能研究人员没有探索它的发展。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="four-types-of-ai">Four Types of AI</h5>
+<ul>
+<li><p><u>Type 1: Reactive machines 类型1: 活性机器</u></p>
+<ul>
+<li><p>have no memory 没有记忆</p>
+</li>
+<li><p>task-specific 只能执行特定任务</p>
+</li>
+<li><p>EXP.</p>
+<ul>
+<li><p>An example is <strong>Deep Blue</strong>, the IBM chess program that beat Garry Kasparov in the 1990s.
+一个例子是深蓝(Deep Blue) ，IBM 的国际象棋程序在上世纪90年代击败了加里•卡斯帕罗夫(Garry Kasparov)。</p>
+</li>
+<li><p>Deep Blue can identify pieces on a chessboard and make predictions, but because it has no memory, it <strong>cannot use past experiences to inform future ones.</strong>
+深蓝可以识别棋盘上的棋子并做出预测，但是因为它没有记忆，所以它不能用过去的经历来告诉未来的经历。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><u>Type 2: Limited memor &nbsp;第2类: 记忆力有限</u></p>
+<ul>
+<li><p>have memory 拥有记忆</p>
+</li>
+<li><p>use past experiences to inform future decisions. 
+利用过去的经验为将来的决策提供依据。
+Some of the decision-making functions in self-driving cars are designed this way.
+自动驾驶汽车的一些决策功能就是这样设计的。</p>
+</li>
+</ul>
+</li>
+<li><p><u>Type 3: Theory of mind 类型3: 心理理论</u></p>
+<ul>
+<li><p>have the social intelligence to <strong>understand emotions</strong>
+具有理解情感的社会智慧</p>
+</li>
+<li><p>This type of AI will be able to infer human intentions and predict behavior, a necessary skill for AI systems to become integral members of human teams.
+这种类型的人工智能将能够推断人类的意图和预测行为，这是人工智能系统成为人类团队不可或缺的成员所必需的技能。</p>
+</li>
+</ul>
+</li>
+<li><p><u>Type 4: Self-awareness 类型4: 自我意识</u></p>
+<ul>
+<li><p>have <strong>a sense of self</strong>, which gives them consciousness. 
+有自我意识，这给了他们意识。</p>
+</li>
+<li><p>understand their own current stateThis type of AI does not yet exist.
+了解自己的现状这种类型的人工智能尚不存在。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="relationship-between-artificial-intelligence-machine-learning-and-deep-learning-人工智能、机器学习与深度学习的关系">Relationship between artificial intelligence, machine learning, and deep learning 人工智能、机器学习与深度学习的关系</h5>
+<img data-align="inline" alt="****" title="" src="file:///C:/Users/20999/Pictures/Typedown/b47d5180-b4e5-41b1-b035-5751e6b0ce11.png">
+
+<h5 class="atx" id="how-machine-learning-works">How machine learning works?</h5>
+<ul>
+<li><p>➢ Models 模型</p>
+<ul>
+<li><p>Assumptions to be mapped to the learning problem
+映射到学习问题的假设</p>
+</li>
+<li><p><strong>(problem modelling, defining the assumption space)</strong> 
+(问题建模，定义假设空间)</p>
+</li>
+</ul>
+</li>
+<li><p>➢ Strategies 策略</p>
+<ul>
+<li><p>Criteria for learning/selecting the optimal model from the hypothesis space
+从假设空间学习/选择最优模型的准则</p>
+</li>
+<li><p><strong>(Determine objective function)</strong>
+(确定目标函数)</p>
+</li>
+</ul>
+</li>
+<li><p>➢ Algorithm 算法</p>
+<ul>
+<li><p>Specific calculations for solving the optimal model based on the objective function
+基于目标函数求解最优模型的具体计算</p>
+</li>
+<li><p><strong>(solving for model parameters)</strong> 
+(模型参数求解)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 class="atx" id="classification-of-models-by-data-label">Classification of models by data label</h5>
+<ul>
+<li><p>Data Label</p>
+<ul>
+<li><p>Supervised learning 监督学习
+Supervised learning samples have labels (output targets); learns labelled interfaces from data (input-output mapping function), suitable for predictive data labelling
+监督式学习样本有标签(输出目标) ，从数据中学习有标签的界面(输入输出映射功能) ，适用于预测性数据标签</p>
+</li>
+<li><p>unsupervised learning 无监督学习
+Unsupervised learning samples have no labelling; learns patterns from data, suitable for describing data
+非监督式学习样本没有标签，从数据中学习模式，适合描述数据</p>
+</li>
+<li><p>Semi-supervised learning 半监督学习</p>
+<ul>
+<li><p>Starting point: labelled samples difficult to obtain, unlabelled samples relatively inexpensive.
+起始点: 标记样品难以获得，未标记样品相对便宜。</p>
+</li>
+<li><p>Idea: Assume that unlabelled samples are independently and identically distributed with labelled samples, i.e., contain important information about the distribution of the data
+想法: 假设未标记的样品与标记的样品分布独立且相同，即含有关于数据分布的重要信息</p>
+</li>
+</ul>
+<p><img alt="5a43f8ae-d613-410b-a360-e7eb6ef8eea8" src="file:///C:/Users/20999/Pictures/Typedown/5a43f8ae-d613-410b-a360-e7eb6ef8eea8.png"></p>
+</li>
+<li><p>Reinforcement Learning 强化学习
+uses unlabelled data but can know whether it is getting closer or further away from the goal (rewarding feedback)
+使用未标记的数据，但可以知道它是否离目标越来越近或越来越远(奖励反馈)</p>
+</li>
+</ul>
+</li>
+<li><p>classification and clustering
+<img alt="15d45d28-1fe7-47da-911b-31e275cdefdf" src="file:///C:/Users/20999/Pictures/Typedown/15d45d28-1fe7-47da-911b-31e275cdefdf.png"></p>
+</li>
+</ul>
+<h5 class="atx" id="use-cases-of-ai-technology--人工智能技术的用例">Use cases of AI technology  人工智能技术的用例</h5>
+<ol>
+<li><p>Automation: AI technologies paired with automation tools like robotic process automation (RPA) <strong>automate repetitive, rules-based tasks, expanding task volume and types</strong>.
+自动化: 人工智能技术配合自动化工具，如机器人过程自动化(RPA)自动化重复，基于规则的任务，扩大任务量和类型。</p>
+</li>
+<li><p>Machine Learning: Enables computers to <strong>act without explicit programming</strong>. Deep learning automates <strong>predictive analytics</strong>.
+机器学习: 使计算机不需要编程就能运行。深度学习使预测分析自动化。</p>
+</li>
+<li><p>Computer Vision (CV): Gives machines the ability to <strong>see and analyse visual information</strong> using cameras and digital signal processing.
+计算机视觉(CV) : 使机器能够看到和分析视觉信息使用相机和数字信号处理。</p>
+</li>
+<li><p>Natural Language Processing (NLP): <strong>Processes human language by computer programs</strong>, including tasks like translation, sentiment analysis, and speech recognition.
+自然语言处理(NLP) : 通过计算机程序处理人类语言，包括翻译、情感分析和语音识别等任务。</p>
+</li>
+<li><p>Robotics: Engineering field focused on designing and manufacturing robots for tasks challenging for humans or requiring consistent performance.
+机器人学: 工程领域专注于设计和制造机器人来完成对人类具有挑战性或需要一致性能的任务。</p>
+</li>
+<li><p>Self-Driving Cars: Utilize computer vision, image recognition, and deep learning to navigate roads and avoid obstacles. 
+自动驾驶汽车: 利用计算机视觉、图像识别和深度学习来驾驶道路和避开障碍物。</p>
+</li>
+<li><p>Text, Image, and Audio Generation: Generative AI techniques create various media types based on text prompts, applied extensively across businesses for content creation.
+文本、图像和音频生成: 生成式人工智能技术基于文本提示创建各种媒体类型，广泛应用于企业内容创建。</p>
+</li>
+</ol>
+<h5 class="atx" id="ai-applications">AI applications</h5>
+<ol>
+<li><p>Healthcare: AI is used to improve diagnoses, mine patient data, and assist with administrative tasks like scheduling appointments.
+医疗保健: 人工智能用于改善诊断，挖掘患者数据，并协助行政任务，如安排预约。</p>
+</li>
+<li><p>Business: Machine learning and chatbots enhance customer service, while generative AI has the potential to revolutionize product design and disrupt business models.
+业务: 机器学习和聊天机器人提高了客户服务，而生成性人工智能有可能彻底改革产品设计和颠覆商业模式。</p>
+</li>
+<li><p>Education: AI automates grading, adapts to student needs, and provides additional support. It also aids in crafting course materials and changing the learning process.
+教育: 人工智能自动评分，适应学生的需要，并提供额外的支持。它还有助于精心制作课程材料和改变学习过程。</p>
+</li>
+<li><p>Finance: AI disrupts the financial industry through personal finance applications, automated trading, and the buying process for homes.
+金融: 人工智能通过个人理财应用、自动交易和购房过程扰乱了金融业。</p>
+</li>
+<li><p>Law: AI assists with legal processes such as document classification, data description, and outcome prediction.
+法律: 人工智能协助法律程序，如文档分类，数据描述和结果预测。</p>
+</li>
+<li><p>Entertainment and Media: AI is used for targeted advertising, content recommendation, script creation, automated journalism, and movie production.
+娱乐和媒体: 人工智能用于定向广告、内容推荐、剧本创作、自动化新闻和电影制作。</p>
+</li>
+<li><p>Software Coding and IT Processes: Generative AI tools aid in code generation, while AI automates IT processes like data entry and security measures.
+软件编码和 IT 过程: 生成 AI 工具帮助代码生成，而 AI 自动化 IT 过程，如数据输入和安全措施。</p>
+</li>
+<li><p>Security: AI is applied to cybersecurity for threat detection, anomaly detection, and behavior analytics.
+安全性: 人工智能应用于网络安全，用于威胁检测、异常检测和行为分析。</p>
+</li>
+<li><p>Manufacturing: Robots collaborate with human workers in tasks previously done separately, increasing efficiency and multitasking capabilities.
+制造业: 机器人与人类工人协作完成以前单独完成的任务，提高效率和多任务处理能力。</p>
+</li>
+<li><p>Banking: Chatbots and virtual assistants improve customer service and compliance with regulations, while AI aids in decision-making for loans and investments.
+银行业务: 聊天机器人和虚拟助理改善客户服务和遵守规定，而人工智能协助贷款和投资决策。</p>
+</li>
+<li><p>Transportation: AI manages traffic, predicts flight delays, enhances supply chain management, and promotes safer and more efficient transportation methods.
+运输: 人工智能管理交通，预测航班延误，加强供应链管理，促进更安全和更有效的运输方法。</p>
+</li>
+</ol>
+</article>
+  
+</body>
+</html>
