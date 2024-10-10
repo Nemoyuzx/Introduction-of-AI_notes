@@ -853,4 +853,145 @@ flowchart LR
 3. <u>PRACTICAL ignorance:</u> Even if we **know all the rules**,we might be **uncertain** about a particular patient because not **all the necessary tests** have **been or can be run**.
    实际无知: 即使我们知道所有的规则，我们也可能对某个特定的病人不确定，因为并非所有必要的检查都已经或可以运行。
 
+##### Reasoning under uncertainty 不确定性推理
+
+- A rational agent is one that makes rational decisions — to maximize its performance measure
+  理性代理人是做出理性决策的人ーー为了最大限度地提高其绩效指标
+
+- A rational decision depends on
+  理性的决定取决于
+  
+  - the relative importance of various goals
+    不同目标的相对重要性
+  
+  - the likelihood they will be achieved
+    实现这些目标的可能性
+  
+  - the degree to which they will be achieved
+    达到的程度
+
+##### Types of uncertainty 不确定性类型
+
+- Uncertainty in prior knowledge
+
+- Uncertainty in actions
+
+- Uncertainty in perception
+
+Uncertainty is a summary of all that is not explicitly considered in the agent’s knowledge base.
+不确定性是代理的知识库中没有明确考虑的所有不确定性的总结。
+
+##### Handling uncertainty 不确定性处理
+
+- Default reasoning [Optimistic] 
+  正向推理〔乐观〕
+  an agent assumes normality, until there is evidence of thecontrary.
+  除非有相反的证据，否则智能就会假装一切正常。
+
+- Worst-case reasoning [Pessimistic]
+  最坏情况推理〔悲观者〕
+  The agent assumes the **worst case**, and chooses the actions that maximizes a **utility function** in this case.
+  智能假设最坏的情况，并在这种情况下选择使效用函数最大化的操作。
+  <u>Disadvantages:</u>
+  ❑ not **worth the effort** to develop or explore such a scenario; 不值得努力发展或探索这种情况
+  ❑ may **waste resources** preparing for highly unlikelycontingencies; 可能会浪费资源，为极不可能发生的突发事件做准备
+  ❑ **restricted** way of handling an emergency. 处理紧急事件的有限方式
+
+- Probabilistic reasoning [Realist]
+  概率性推理 [现实]
+
+#### Probability theory 概率论
+
+##### Probabilistic reasoning 概率性推理
+
+- The agent has **probabilistic beliefs**
+  
+  - pieces of knowledge with associated probabilities (strengths)
+    具有相关概率(优势)的知识片段
+  
+  - chooses its actions to maximize the expected value of someutility function
+    选择自己的行为来使某种效用函数的期望值最大化
+
+- Rationale: The world is not divided between “normal” and“abnormal”, nor is it adversarial. Possible situations have various **likelihoods/chance** (probabilities)
+  理由: 这个世界没有“正常”和“不正常”之分，也没有对抗。可能的情况有各种各样的可能性/机会(概率)
+
+##### Probabilistic reasoning and degrees of belief 概率推理和信任度
+
+- The agent’s knowledge can only provide a **degree of belief** in the relevant sentences
+  代理人的知识只能提供对相关句子的一定程度的信任
+
+- The agent cannot say whether a sentence is true, but only that is **true 𝒙%** of the times
+  代理不能说出一个句子是否为真，但只能说出真的 x% 的次数
+
+- The main tool for handling degrees of belief is **Probability Theory** 
+  处理信任度的主要工具是概率论
+
+- The use of probability **summarizes** the **uncertainty** that stems from human’s **laziness or ignorance** about the domain
+  概率的使用概括了由于人类的懒惰或对领域的无知而产生的不确定性
+
+##### Probability theory & facts 概率论与事实
+
+- Probability Theory makes the same ontological commitments as First-order Logic:
+  概率论作出与一阶逻辑相同的本体论承诺:
+  Every sentence 𝜑 is either true or false
+  每个句子 φ 不是真就是假
+
+- The **degree** of belief that 𝜑 is true is a number P between 0 and 1
+  
+  - P(𝜑) = 1 → 𝜑 is certainly true
+  
+  - P(𝜑) = 0 → 𝜑 is certainly not true
+  
+  - P(𝜑) = 0.65 → 𝜑 is true with a 65% chance
+
+##### Probability facts 概率事实
+
+- Let 𝑨 be a propositional variable, a symbol denoting aproposition that is either true or false.
+  设 a 是一个命题变量，一个表示命题是真或假的符号。
+
+- 𝑷(𝑨) denotes the probability that 𝑨 is true in the absence of any other information.
+  P (A)表示在没有任何其他信息的情况下 A 为真的概率。
+
+- Similarly:
+  
+  - 𝑃(¬𝐴) = probability that 𝐴 is false (~ or NOT)
+    𝑃(¬𝐴) = A 为假(或非假)的概率
+  
+  - 𝑷(𝑨 ∩ 𝑩) = probability that both 𝑨 and 𝑩 are true
+    P (A ∩ B) = A 和 B 都为真的概率
+  
+  - 𝑷(𝑨 ∪ 𝑩) = probability that either 𝑨 or 𝑩 (or both) are true
+    P (A ∪ B) = A 或 B (或两者)为真的概率
+
+- Interpretation
+  
+  - If P is the probability of an event:𝟎 ≤ 𝑷 ≤ 𝟏
+  
+  - P = 0 means the event cannot occur
+  
+  - P = 1 means the event is certain tooccur
+  
+  - The closer to 1, the more likely the event
+    
+    ![488251d3-def3-4e14-ade8-ba2e466591b5](file:///C:/Users/20999/Pictures/Typedown/488251d3-def3-4e14-ade8-ba2e466591b5.png)
+    
+    - A priori 先前信息
+    
+    - Relative frequency 相对频率
+    
+    - Subjective 主观
+
+##### Recap: axioms of probability 概述: 概率公理
+
+- Complementary events 互补事件
+  
+  - 𝑃(𝐴)+ 𝑃(¬𝐴) = 1
+    Hence, 𝑃(𝐴) = 1 − 𝑃(¬𝐴)
+
+- Combining events 复合事件
+  
+  - 𝐴 or 𝐵; 𝑃(𝐴∪𝐵) = 𝑃(𝐴)+𝑃(𝐵)−𝑃(𝐴∩𝐵) [Union (dark blue and yellow)]
+  
+  - 𝐴 and 𝐵; 𝑃(𝐴∩𝐵) = 𝑃(𝐴) × 𝑃(𝐵) [Intersection]
+
 
