@@ -636,7 +636,7 @@ flowchart TB
     
     - 聚类 clustering
   
-  - Semi-supervised learning 半监督学习
+  - Semi-supervised learning 半监督学习 （不算到三种里面，而是作为前两种的融合）
     
     - Starting point: labelled samples difficult to obtain, unlabelled samples relatively inexpensive.  
       起始点: 标记样品难以获得，未标记样品相对便宜。
@@ -728,7 +728,7 @@ flowchart LR
 11. Transportation: AI manages traffic, predicts flight delays, enhances supply chain management, and promotes safer and more efficient transportation methods.  
     运输: 人工智能管理交通，预测航班延误，加强供应链管理，促进更安全和更有效的运输方法。
 
-#### Ethical considerations in AI  人工智能的伦理思考
+#### Ethical considerations in AI  人工智能的伦理思考 （limitations）
 
 ##### Training Bias 含有歧视的训练
 
@@ -842,7 +842,7 @@ flowchart LR
 4. Uncertainty also arises because of an agent’s incomplete or incorrect understanding of itsenvironment.  
    不确定性的产生也是由于智能对其环境的不完全或不正确的理解。
 
-##### Why application fails? 实际应用为何失败
+##### Why application fails (when uncertainties are not considered appropriately) ? 实际应用为何失败
 
 1. <u>**LAZINESS**:</u> **too much work** to list the complete set ofantecedents or consequents needed to ensure an **exceptionless rule** and **too hard** to use such rules.  
    懒惰: 为了确保一个无例外的规则和太难使用这样的规则，需要列出一整套完整的前因后果，工作量太大。
@@ -1233,7 +1233,7 @@ Then \ 𝑃(𝑊𝑒𝑎𝑡ℎ𝑒𝑟) = \{ 0.6,0.2,0.18,0.02\}
 
 - Limitation of Joint Probability Distribution 联合概率分布的局限
   
-  - However, JPD’s are often **hard to create** (incomplete knowledge of thedomain).   
+  - However, JPD’s are often **hard to create** (incomplete knowledge of the domain).   
     然而，联合概率分布通常很难创建(不完整的领域知识)。
   
   - Even when available,  JPD **tables are very expensive**, or **impossible**, to store because of **their size**.    
@@ -1256,9 +1256,92 @@ $$
 
 $$
 
-- 通常是知道在B发生的情况下A发生的概率有多少，反过来难求
+- 通常是知道在B发生的情况下A发生的概率有多少，反过来难求  
 
-- 两个事件发生的各自概率也能被很好的统计
+- 两个事件发生的各自概率也能被很好的统计  
+
+##### Bayes rule – another version 贝叶斯规则-另一个版本
+
+- $$
+  P(A|B)=\frac{P(B|A)P(A)}{P(B)}=\frac{P(B|A)P(A)}{P(A)P(B|A)+P(\neg A)P(B|\neg A)}
+  $$
+
+- $$
+  P(B)=P(A)P(B|A)+P(\neg A)P(B|\neg A)
+  $$
+
+- 不需要知道$P(B)$
+
+---
+
+- EXP  
+  12% of the men and 4% of the women are taller than6 feet. Furthermore, 20% of the students in the classare women.  
+  Suppose that a randomly selected student is taller than 6 feet.Find the probability 𝑝 that the student is a woman.
+  
+  $$
+   𝑃(𝑤𝑜𝑚𝑎𝑛|𝑡𝑎𝑙𝑙) = \frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙)}=\frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)+𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)}\\ \ \\ =\frac{0.04 \times 0.2}{0.104} = 0.0769
+  $$
+
+---
+
+##### Bayes theorem application 贝叶斯定理的应用
+
+- Bayes Theorem has found numerous applications in manyfields, including Computer Science  
+  贝叶斯定理在许多领域都有广泛的应用，包括计算机科学
+  
+  - Bayesian Networks 贝叶斯网络
+  
+  - Bayesian Classifiers 贝叶斯分类机
+  
+  - spam filtering, web page classification (e.g. Yahoostyle hierarchies), object classification, etc.  
+    垃圾邮件过滤、网页分类(如 Yahoostyle 层次结构)、对象分类等。
+
+- **Bayesian Machine Learning**: Bayesian Inference / Bayesian Decision Theory  
+  贝叶斯机器学习: 贝叶斯推断/贝叶斯决策理论
+
+##### Conditional independence 条件独立性
+
+- Two random variables 𝐴 and 𝐵 are (absolutely) independent if  
+  两个随机变量 A 和 B 是(绝对)独立的，如果
+  
+  $$
+  P(A,B)=P(A)P(B)
+  $$
+
+- Using product rule for 𝐴 & 𝐵 independent, we can show  
+  使用独立于 A & B 的乘积规则，我们可以知道
+  
+  $$
+  𝑃(𝐴,𝐵) = 𝑃(𝐴 | 𝐵)𝑃(𝐵) = 𝑃(𝐴)𝑃(𝐵) \\ \ \\ Therefore \ 𝑃(𝐴 | 𝐵) = 𝑃(𝐴)
+
+  $$
+
+- If 𝑛 Boolean variables are independent, the full JPD is:  
+  如果 n 个布尔变量是独立的，则完整的 JPD 是:    
+  
+  $$
+  P(X_1,...,X_2) = {\textstyle \prod_{i}^{}} P(X_i)
+  $$
+  
+  Full joint is generally specified by $2^n-1$ numbers, but when independent only $n$ numbers are needed.  
+  完全连接通常由 $2 ^ n-1 $数字指定，但是当独立时只需要 $n $数字。
+
+- Absolute independence is a very strong requirement, seldom met
+  绝对独立是一个非常强烈的要求，很少得到满足
+
+- Conditional Independence - expressed as:
+  
+  $$
+  P(A|B,C)=P(A|C)
+  $$
+
+##### The chain rule for JPD JPD的链式法则
+
+$$
+P(X_1,...,X_n)\\=P(X_1,...,X_{n-1})P(N_n|X_1,...,X_{n-1})\\=P(X_1,...,X_{n-2})P(X_{n-1}|X_1,...,X_{n-2})P(Xn|X_1,...,X_{n-1})\\ . \\ . \\ . \\= {\textstyle \prod_{i}^{n}} P(X_i|X_1,...,X_{i-1})
+$$
+
+
 
 
 
