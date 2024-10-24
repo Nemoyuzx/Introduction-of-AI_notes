@@ -21,4 +21,38 @@
 
 ### Q2: STATE and EXPLAIN the THREE main types of learning in AI. 问题2: 陈述并解释人工智能中的三种主要学习方式。
 
+- The type of learning depends on the feedback to learn from, there are 3 main types of learning, namely **unsupervised learning, supervised learning and reinforcement learning**.  
+  学习的类型取决于学习的反馈，有三种主要的学习类型，即非监督式学习、监督式学习和强化学习。
+  
+  - <u>Unsupervised learning: </u>the agent learns patterns in the input even though no explicit feedback is supplied.  
+    非监督式学习: 即使没有提供明确的反馈，代理也会在输入中学习模式。
+  
+  - <u>Supervised learning: </u>the agent observes some example input–output pairs and learns a function that maps from input to output.   
+    监督式学习: 代理观察一些示例输入输出对，并学习一个从输入到输出的映射函数。
+  
+  - <u>Reinforcement learning: </u>the agent learns from a series of reinforcements—rewards or punishments.    
+    强化学习: 代理人从一系列的增援中学习ーー奖励或惩罚。  
+
+### Q3: Discuss the challenges and limitations of current AI technologies.  问题3: 讨论当前人工智能技术的挑战和局限性。
+
+- <u>Data limitations:</u> AI heavily relies on large amounts of high-quality data for training and learning. Limited or biased data can lead to inaccurate or biased AI systems.   
+  数据局限性: 人工智能严重依赖大量高质量的数据用于培训和学习。有限或有偏见的数据可能导致不准确或有偏见的人工智能系统。
+
+- <u>Lack of interpretability:</u> Many AI algorithms, such as deep neural networks, are considered black boxes, making it challenging to understand and interpret their decision-making processes.   
+  缺乏可解释性: 许多人工智能算法，如深度神经网络，被认为是黑盒子，使其具有挑战性的理解和解释他们的决策过程。
+
+- <u>Computing power and resource requirements:</u> AI algorithms, particularly deep learning, often require significant computing power and resources, which can be a limitation for certain applications or organizations.  
+  计算能力和资源需求: 人工智能算法，尤其是深度学习，往往需要大量的计算能力和资源，这可能是某些应用程序或组织的限制。
+
+### Q6: Discuss the importance of understanding prior probabilities when interpreting predictions from AI models.  问题6: 讨论在解释人工智能模型预测时理解先验概率的重要性。
+
+Prior probabilities represent the **baseline likelihood of an event or condition before considering new evidence**.   
+先验概率代表在考虑新证据前发生事件或情况的基线可能性。  
+
+In AI predictions, especially in medical or criminal justice applications, understanding these priors is crucial as they influence the model's overall prediction confidence. Ignoring prior probabilities may lead to over-reliance on the model's output without considering the context.   
+在人工智能预测中，特别是在医疗或刑事司法应用中，理解这些先验是至关重要的，因为它们影响模型的整体预测信心。忽视先验概率可能导致过度依赖模型的输出而不考虑上下文。
+
+For example, even if a model predicts high probability for a rare disease, the low prior probability of the disease should temper the interpretation. Bayes' theorem exemplifies this by combining prior probabilities with likelihoods to produce more balanced, context-aware predictions.  
+例如，即使一个模型预测某种罕见疾病的发生几率很高，疾病的低先验概率也会影响对该模型的解释。贝叶斯定理将先验概率和可能性结合起来，产生更加平衡、上下文感知的预测，就是一个例子。
+
 
