@@ -1279,7 +1279,7 @@ $$
   Suppose that a randomly selected student is taller than 6 feet.Find the probability 𝑝 that the student is a woman.
   
   $$
-   𝑃(𝑤𝑜𝑚𝑎𝑛|𝑡𝑎𝑙𝑙) = \frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙)}=\frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)+𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)}\\ \ \\ =\frac{0.04 \times 0.2}{0.104} = 0.0769
+  𝑃(𝑤𝑜𝑚𝑎𝑛|𝑡𝑎𝑙𝑙) = \frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙)}=\frac{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑤𝑜𝑚𝑎n)}{𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)+𝑃(𝑡𝑎𝑙𝑙|𝑤𝑜𝑚𝑎𝑛)𝑃(𝑚𝑎n)}\\ \ \\ =\frac{0.04 \times 0.2}{0.104} = 0.0769
   $$
 
 ---
@@ -1341,8 +1341,761 @@ $$
 P(X_1,...,X_n)\\=P(X_1,...,X_{n-1})P(N_n|X_1,...,X_{n-1})\\=P(X_1,...,X_{n-2})P(X_{n-1}|X_1,...,X_{n-2})P(Xn|X_1,...,X_{n-1})\\ . \\ . \\ . \\= {\textstyle \prod_{i}^{n}} P(X_i|X_1,...,X_{i-1})
 $$
 
+#### Bayes (Belief) Network 贝叶斯(信念)网络
 
+- Bayesian Networks are a successful example of probabilistic systems that exploit conditional independence to reason efficiently under uncertainty.   
+  贝叶斯网络是一个成功的例子，它利用条件独立系统在不确定情况下有效地进行推理。
 
+- A simple, graphical notation for conditional independence assertions and hence for compact specification of full joint distributions.  
+  一个简单的，图形化的符号用于条件独立断言，因此也用于完整联合分布的紧凑规范。
 
+- Syntax:  句法:
+  
+  - a set of nodes, one per random variable   
+    一组节点，每个随机变量一个
+  
+  - links mean parent “directly influences” child   
+    链接意味着父母“直接影响”孩子
+  
+  - a directed acyclic graph   
+    有向无环图
+  
+  - a conditional distribution (a table) for each node given its parents  $P(X_i|parents(X_i))$  
+    给定其父节点 $P (X _ i | 父节点(X _ i)) $的每个节点的条件分布(表) 
 
+- In the simplest case, conditional distribution represented as a conditional probability table (CPT)  
+  在最简单的情况下，条件分布表示为一个条件概率表(CPT)
 
+##### A two node network & conditional probability 双节点网络及条件概率
+
+- Node𝐴is independent of Node 𝐵, so it is described by an unconditional probability $P(A)$
+
+- $P(\neg A)$ is given by $1-P(A)$ 
+
+- Node 𝐵 is conditionally dependent on 𝐴. It is described by four numbers, $P(B|\neg A)$,$P(B|\neg A)$, $P(\neg B|A)$and $P(\neg B|\neg A)$. 
+
+- This can be expressed as 2 by 2 **conditional probability table (CPT)**. 
+
+- But$P(\neg B|A)= 1=P(B|A)$ and $P(\neg B|\neg A) = 1-P(B|\neg A)$. 
+
+- Therefore, only **two** independent numbers in CPT.
+
+### Part 3: Machine learning basics 第3部分: 机器学习基础
+
+- Definition of Learning 
+
+- Three Types of Machine Learning 
+
+- Supervised Learning: Decision Trees 
+
+- Linear and non-linear classification methods
+
+#### Machine Learning Basics 机器学习基础
+
+- Artificial Intelligence is a scientific field concerned with the development of algorithms that allow computers to learn without being explicitly programmed   
+  人工智能是一门研究算法的科学，这种算法使得计算机不需要明确的编程就能学习
+
+- Machine Learning is a branch of Artificial Intelligence, which focuses on methods that learn from data and make predictions on unseen data  
+  机器学习是人工智能的一个分支，主要研究从数据中学习和对未知数据进行预测的方法
+
+![0782867a-57b1-4db6-acdd-10bba74438c6](./images/0782867a-57b1-4db6-acdd-10bba74438c6.png)
+
+##### Learning 学习
+
+- Definition: “learning is a goal-directed process of a system that **improves the knowledge** or the **knowledge representation** of the system by exploring **experience** and prior **knowledge**”   
+  定义: “学习是一个以目标为导向的系统过程，它通过探索经验和先验知识来提高系统的知识或知识表示。”
+
+- Acquisition of **new declarative knowledge**  
+  获取新的陈述性知识
+
+- Development of motor and cognitive skills through **instruction** and **practice**  
+  通过指导和练习发展运动和认知技能
+
+- Organization of new knowledge into general effective representation   
+  将新知识组织成一般有效的表示形式
+
+- Discovery of new facts and theories through **observation** and **experimentation** 
+  通过观察和实验发现新的事实和理论
+
+##### Forms of Learning 学习形式
+
+Any component of an agent can be improved by learning from data. The improvements, and the techniques used to make them, depend on four major factors:  
+代理的任何组件都可以通过从数据中学习来改进。这些改进以及制造它们的技术，取决于四个主要因素:
+
+- **component** 
+
+- **prior knowledge**
+
+- **representation**
+
+- **feedback**
+
+##### Components 组成
+
+##### Representation and prior knowledge 表征和先验知识
+
+- We have seen several examples of representations for agent components: Propositional and first-order logical sentences for the components in a logical agent;   
+  我们已经看到了代理组件表示的几个例子: 逻辑代理中组件的命题和一阶逻辑句;
+
+- Bayesian networks for the inferential components of a decision-theoretic agent, and so on.   
+  贝叶斯网络用于推断分量的决策理论代理，等等。
+
+- Markov Chain and Hidden Markov Models   
+  马尔可夫链与隐马尔可夫模型
+
+- We say that learning a (possibly incorrect) general function or rule from specific input–output pairs is called inductive learning (more about this later).   
+  我们说从特定的输入输出对中学习一个(可能不正确的)一般函数或规则叫做归纳学习(稍后详述)。
+
+![a4cf86d9-ed7b-4002-bd2d-e42a4d466f5d](./images/a4cf86d9-ed7b-4002-bd2d-e42a4d466f5d.png)
+
+#### Three Types of Machine Learning 机器学习的三种类型
+
+##### Feedback to learn from 需要学习的反馈
+
+- Three types of feedback that determine the three main types of learning: 
+  
+  - Unsupervised learning: the agent learns patterns in the input even though no explicit feedback is supplied.   
+    非监督式学习: 即使没有提供明确的反馈，代理也会在输入中学习模式。（聚类 clustering）
+    
+    > Unsupervised learning categories and techniques 
+    > 
+    > - Clustering 
+    >   
+    >   - ok-means clustering 
+    >   
+    >   - Mean-shift clustering Spectral clustering 
+    > 
+    > - Density estimation 
+    >   
+    >   - Gaussian mixture model (GMM) 
+    >   
+    >   - Graphical models 
+    > 
+    > - Dimensionality reduction 
+    >   
+    >   - Principal component analysis (PCA) 
+    >   
+    >   - Factor analysis
+  
+  - Supervised learning: the agent **observes** some example inputoutput pairs and learns a function that maps from input to output.  
+    监督式学习: 代理观察一些示例输入输出对，并学习一个从输入到输出的映射函数。
+    
+    > Supervised learning categories and techniques 
+    > 
+    > - Numerical classifier functions 
+    >   
+    >   - Linear classifier, perceptron, logistic regression, support vector machines (SVM), neural networks 
+    > 
+    > - Parametric (probabilistic) functions 
+    >   
+    >   - Naïve Bayes, Gaussian discriminant analysis (GDA), hidden Markov models (HMM), probabilistic graphical models 
+    > 
+    > - Non-parametric (instance-based) functions 
+    >   
+    >   - k-nearest neighbors, kernel regression, kernel density estimation, local regression 
+    > 
+    > - Symbolic functions 
+    >   
+    >   - Decision trees, classification and regression trees (CART)
+  
+  - Reinforcement learning: the agent learns from a series of reinforcements—rewards or punishments.  
+    强化学习: 代理人从一系列的增援中学习-奖励或惩罚。
+
+- Summary of Machine Learning Types 机器学习类型综述
+  
+  - Supervised: learning with labeled data 监督: 使用标记数据学习
+  
+  - Unsupervised: discover patterns in unlabeled data  无监督: 在未标记的数据中发现模式
+  
+  - Reinforcement learning: learn to act based on feedback/reward  强化学习: 学会根据反馈/回报行事
+
+![ba57d48e-4088-47fd-9496-9d95ab16b8fd](./images/ba57d48e-4088-47fd-9496-9d95ab16b8fd.png)
+
+#### Supervised Learning: Decision Trees 监督式学习: 决策树
+
+- A simple yet effective form of learning from examples   
+  一种简单而有效的从实例中学习的形式
+
+- is a function that: 
+  
+  - maps objects with a certain set of discrete attributes to discrete values based on the values of those attributes  
+    将具有某组离散属性的对象映射为基于这些属性的值的离散值
+
+- It is representable as a tree in which   
+  它可以表示为一棵树，其中
+  
+  - every non-leaf node corresponds to a test on the value of one of the attributes   
+    每个非叶节点对应于一个属性值的测试
+  
+  - every leaf node specifies the value to be returned if that leaf is reached   
+    每个叶子节点指定到达该叶子时要返回的值
+
+- A decision tree based on attributes $A_1, ...,A_n$ acts as classifier for objects that have those attributes  
+  基于属性 $A _ 1，... ，A _ n $的决策树充当具有这些属性的对象的分类器
+
+##### Decision Trees 决策树
+
+- Decision trees make predictions by recursively splitting on different attributes according to a tree structure.  
+  决策树通过根据树结构对不同的属性进行递归分裂来进行预测。
+
+- A decision tree with Boolean output defines a logical predicate
+  具有布尔输出的决策树定义了逻辑谓词
+
+---
+
+![2339e9bd-2a1e-49da-9cf2-ce907d9ad74d](./images/2339e9bd-2a1e-49da-9cf2-ce907d9ad74d.png)
+
+![4efdbb52-2a2f-4c8b-afda-a0e22e0fa1b9](./images/4efdbb52-2a2f-4c8b-afda-a0e22e0fa1b9.png)
+
+![089c19c9-f41d-4066-9a91-dddbd50d6b3d](./images/089c19c9-f41d-4066-9a91-dddbd50d6b3d.png)
+
+---
+
+##### Some terminology  一些术语
+
+- The **goal predicate** is the predicate to be implemented by a decision tree.   
+  目标谓词是由决策树实现的谓词。
+
+- The **training set** is the set of examples used to build the tree.   
+  训练集是用于构建树的示例集。
+
+- A member of the training set is a **positive example** if it satisfies the goal predicate, it is a **negative example** if it does not.  
+  如果训练集的成员满足目标谓词，那么它就是一个正面例子; 如果不满足目标谓词，那么它就是一个负面例子。
+
+##### A Good Decision Tree  一个好的决策树
+
+- extrapolates a **common pattern** from the examples   
+  从例子中推断出一个公共模式
+
+- **correctly classifies all possible examples**, not just those in the training set  
+  正确分类所有可能的例子，而不仅仅是那些在训练集
+
+---
+
+##### Choosing an attribute  选择属性
+
+patrons is a better choice: it gives more information about the classification  
+patrons是一个更好的选择: 它提供了更多关于分类的信息 （训练数据即patrons）
+
+Prefer more informative attributes leads to smaller trees
+更喜欢信息更丰富的属性会导致更小的树
+
+Main Idea: start building the tree by testing at its root an attribute that better splits the training set into homogeneous classes  
+主要思想: 通过测试一个能够更好地将训练集划分为同构类的属性，开始构建树
+
+![21e821c6-fa46-4442-90ec-28e9be0c217d](./images/21e821c6-fa46-4442-90ec-28e9be0c217d.png)
+
+![5c6cbeff-cbf9-4b94-97f7-cbbecdf79179](./images/5c6cbeff-cbf9-4b94-97f7-cbbecdf79179.png)
+
+##### Choosing the best attribute 选择最好的属性
+
+- 需要解决什么
+  
+  - What do we exactly mean by “best partitions the training set into homogeneous classes?”  
+    我们究竟是什么意思“最佳分区的训练集到同质类?”
+  
+  - What if every attribute splits the training set into non-homogeneous classes?  
+    如果每个属性都将训练集划分为非同构类会怎样？
+  
+  - Which one is better?  
+    哪个更好？
+
+- 解决方法
+  
+  - **Information Theory** can help us **choosing**  
+    信息论可以帮助我们选择
+
+##### Information theory 信息论
+
+* Studies the mathematical laws governing systems designed to **communicate** or **manipulate** information.  
+  研究用于交流或操纵信息的系统的数学规律。
+
+* It defines **quantitative** measures of information and the capacity of various systems to **transmit**, **store**, and **process** information.  
+  它定义了信息的定量度量以及各种系统传输、存储和处理信息的能力。
+
+* it measures **the information content**, or e**ntropy**, of **messages/events**.  
+  它度量消息/事件的信息内容或熵。
+
+* Information is measured in **bits**.  
+  信息是以位来衡量的。
+
+* One bit represents the information we need to answer a yes/no question when we have no idea about the answer.  
+  一个位表示当我们不知道答案时回答是或否问题所需要的信息。
+
+---
+
+##### Information Content / entropy 信息内容/熵
+
+If an event has 𝑛 possible outcomes $(X=i)$, each with prior probability $P(X=i)$, the **information content or entropy** 𝐻 of the event’s actual outcome is  
+如果一个事件有 n 个可能的结果 $(X=i)$ ，每个都有先验概率 $P(X=i)$ ，那么该事件实际结果的信息含量或熵 H 是  
+
+$$
+\mathrm{H}(X)=-\sum_{i=1}^{n} P(X=i) \log _{2} P(X=i)
+$$
+
+i.e., the average information content $-\log_2 P(X = i)$  of each possible outcome $X=i$ weighted by the outcome’s probability  
+即，每个可能结果的平均信息内容 $- log _ 2P (X = i) $由结果的概率加权
+
+**<u>！！！熵越高数据分布和普适性越好，越有利于训练！！！</u>**
+
+- Entropy is a measure of **disorder or uncertainty** 
+  熵是对无序或不确定性的度量
+
+- a measure of ”Expected surprise”   
+  “意料之中的惊喜”的衡量标准
+
+- The goal of machine learning model in general is to reduce uncertainty.   
+  机器学习模型的总体目标是降低不确定性。
+
+- Measured in **bits**.
+  用位来衡量
+
+**“Low Entropy”** 低熵
+
+- Distribution of variable has many peaks and valleys   
+  变量的分布有多个峰谷
+
+- Histograms has many low and highs   
+  直方图有许多低点和高点
+
+- Value sampled are more predictable (low disorder/high level of purity)   
+  取样的值更可预测(低无序/高纯度)
+
+**“High Entropy”**  高熵
+
+- Variable has uniform like distribution  
+  变量具有均匀似分布
+
+- Flat histogram  
+  平直直方图
+
+- Value sampled are less predictable (high disorder/low level of purity)   
+  取样的数值不易预测(高无序度/低纯度)
+
+##### Entropy Formula 熵公式
+
+- entropy
+  
+  $$
+  \mathrm{H}(X)=-\sum_{i=1}^{n} P(X=i) \log _{2} P(X=i)
+  $$
+
+- Conditional Entropy 条件熵
+  
+  $$
+  H(Y|X) = - \sum_{x \in X} \sum_{y \in Y} p(x, y) \log_2 p(y | x)
+  $$
+
+---
+
+EXAMPLES：
+
+- Entropy of fair coin toss  公平掷硬币的熵
+  
+  $$
+  H(P(h), P(t)) = H\left( \frac{1}{2}, \frac{1}{2} \right) = -\frac{1}{2} \log_2 \frac{1}{2} - \frac{1}{2} \log_2 \frac{1}{2} = \frac{1}{2} + \frac{1}{2} = 1 \ \text{bit}
+
+  $$
+
+- Entropy of a loaded coin toss where $P(head) = 0.99$  加载后抛硬币的熵，其中 $P (head) = 0.99 $
+  
+  $$
+  H(P(h), P(t)) = H\left( \frac{99}{100}, \frac{1}{100} \right) = -0.99 \log_2 0.99 - 0.01 \log_2 0.01 \approx 0.08 \ \text{bits}
+  $$
+
+- Entropy of a loaded coin toss with heads on both side  两边都有人头的加载硬币投掷的熵
+  
+  $$
+  H(P(h), P(t)) = H(1, 0) = -1 \log_2 1 - 0 \log_2 0 = 0 - 0 = 0 \ \text{bits}
+
+  $$
+
+- What is the entropy of a group in which all examples belong to the same 一个群的熵是多少，其中所有的例子都属于同一个群
+  
+  $$
+  = H(1) = -1 \log_2 1 = 0
+  $$
+  
+  <u>not a good training set for learning 不是很好的训练数据</u> 
+
+- What is the entropy of a group in which all examples belong to the same class?  一个群中所有的例子都属于同一个类的熵是多少？
+  
+  $$
+  = H\left( \frac{1}{2}, \frac{1}{2} \right) = -0.5 \log_2 0.5 - 0.5 \log_2 0.5 = 1
+  $$
+  
+  <u>good training set for learning  良好的学习训练数据</u>
+
+---
+
+##### Entropy of a decision tree 决策树的熵
+
+- For decision trees, the event is question is whether the tree will return “yes” or “no” for a given input example 𝑒   
+  对于决策树，问题是对于给定的输入示例 e，树是否将返回“ yes”或“ no”
+
+- Assume the training set 𝐸 is a **representative sample** of the domain   
+  假设训练集 E 是域的一个代表性样本
+
+- Then, the relative frequency of positive examples in 𝐸 closely approximates the prior probability of a positive example   
+  然后，E 中正面例子的相对频率与正面例子的先验概率非常接近
+
+- If 𝐸 contains 𝑝 positive examples and 𝑛 negative examples, the probability distribution of answers by a correct decision tree is:  
+  如果 E 包含 p 正例子和 n 负例子，正确的决策树的答案概率分布是:
+  
+  $$
+  P(\text{yes}) = \frac{p}{p + n} \quad \quad P(\text{no}) = \frac{n}{p + n}
+
+  $$
+
+- Entropy of a correct decision tree: 正确决策树的熵:
+  
+  $$
+  H\left( \frac{p}{p + n}, \frac{n}{p + n} \right) = -\frac{p}{p + n} \log_2 \frac{p}{p + n} - \frac{n}{p + n} \log_2 \frac{n}{p + n}
+  $$
+
+##### Information gain 信息增益
+
+Measures the reduction in entropy or surprise by splitting a dataset according to a given value of a random variable.  
+测量按照一个随机变量的给定值将数据集分割后所引起的熵或意外减少程度。
+
+$$
+I(X_n, Y) = H(Y) - H(Y | X_n)
+
+$$
+
+𝑛 = number of splits  N = 分割的次数
+
+---
+
+EXAMPLES
+
+![bdb012de-c5ca-4c52-9ef9-dec8d2cf24cd](./images/bdb012de-c5ca-4c52-9ef9-dec8d2cf24cd.png)
+
+Find: 
+
+1. Entropy 𝛨(𝑃𝑒𝑜𝑝𝑙𝑒); 
+   $H(\text{People}) = - \left( \frac{14}{30} \log_2 \frac{14}{30} \right) - \left( \frac{16}{30} \log_2 \frac{16}{30} \right) = 0.996$ 
+2) Entropy 𝛨(𝐶ℎ𝑖𝑙𝑑1); 
+   $H(\text{Child}_1) = - \left( \frac{13}{17} \log_2 \frac{13}{17} \right) - \left( \frac{4}{17} \log_2 \frac{4}{17} \right) = 0.787$ 
+
+3) Entropy 𝛨(𝐶ℎ𝑖𝑙𝑑2); 
+   $H(\text{Child}_2) = - \left( \frac{1}{13} \log_2 \frac{1}{13} \right) - \left( \frac{12}{13} \log_2 \frac{12}{13} \right) = 0.391$ 
+
+4) Information Gain I for 1) - 3).
+   Weighted average entropy of children 儿童的加权平均数熵 $= -\left( \frac{17}{30} \cdot 0.787 \right) - \left( \frac{13}{30} \cdot 0.391 \right) = 0.615$   
+   Information Gain $I = 0.996 - 0.615 = 0.38$  for the split.
+
+---
+
+##### Decision Tree - Summary 决策树-总结
+
+- At each level, one must choose:  在每个层次，必须做出一个选择
+  
+  - Which variable to split. 要拆分哪个变量。
+  
+  - Possibly where to split it.  可能在哪里分。
+
+- Choose them based on how much information we would gain from the decision!   
+  根据我们能从决策中获得多少信息来选择它们！  
+  (choose attribute that gives the highest gain)!   
+  (选择获益最高的属性) ！
+
+##### Decision tree - limitations 决策树-局限性
+
+- **Noise.** Two training examples may have identical values for all the attributes but be classified differently.  
+  噪声。两个训练例子可能对所有属性具有相同的值，但是分类不同。
+
+- **Overfitting.** Irrelevant attributes may make spurious distinctions among training examples.  
+  过拟合。不相关的属性可能会在训练例子中造成虚假的区别。
+
+- **Missing data.** The value of some attributes of some training examples may be missing.   
+  部分数据缺失。某些训练示例的某些属性的值可能缺少。
+
+- **Multi-valued attributes.** The information gain of an attribute with many different values tends to be non-zero even when the attribute is irrelevant.  
+  多值属性。具有许多不同值的属性的信息增益往往是非零的，即使该属性是不相关的。
+
+- **Continuous-valued attributes.** They must be discretized to be used.  
+  连续值属性。它们必须离散化才能使用。
+
+#### Linear and non-linear classification methods  线性和非线性分类方法
+
+##### linear techniques 线性方法
+
+###### Nearest Neighbor Classifier 最近邻分类器
+
+Nearest Neighbor – for each test data point, assign the class label of the nearest training data point  
+最近邻-对于每个测试数据点，分配最近训练数据点的类标签
+
+- Adopt a distance function to find the nearest neighbor   
+  采用距离函数求最近邻
+  
+  - Calculate the distance to each data point in the training set, and assign the class of the nearest data point (minimum distance)   
+    计算到训练集中每个数据点的距离，并分配最近数据点的类(最小距离)
+
+- It does not require learning a set of weights  
+  它不需要学习一组权重
+
+![13d27133-8783-4746-a821-afb2c8574cda](./images/13d27133-8783-4746-a821-afb2c8574cda.png)
+
+- For image classification, the distance between all pixels is calculated (e.g., using $l_1$ norm, or $l_2$ norm) 
+  对于图像分类，计算所有像素之间的距离(例如，使用 $l _ 1 $标准或 $l _ 2 $标准)
+
+- Disadvantages: 缺点:
+  
+  - The classifier **must remember** all training data and store it for future comparisons with the test data   
+    分类器必须记住所有的训练数据并存储它，以便将来与测试数据进行比较
+  
+  - Classifying a test image is **expensive** since it requires a comparison to all training images  
+    分类测试图像是昂贵的，因为它需要比较所有的训练图像
+
+![a87972e5-657d-4a08-b7ee-3e7dab6899d5](./images/a87972e5-657d-4a08-b7ee-3e7dab6899d5.png)
+
+###### k-Nearest Neighbors Classifier k-近邻分类器
+
+k-Nearest Neighbors approach considers multiple neighboring data points to classify a test data point  
+k近邻方法考虑多个相邻数据点对测试数据点进行分类
+
+![869fec1d-b42c-4ab6-b1e4-2591334baf68](./images/869fec1d-b42c-4ab6-b1e4-2591334baf68.png)
+
+###### Linear Classifier 线性分类器
+
+- Find a linear function f of the inputs $x_i$ that separates the classes   
+  找到分隔类的输入的线性函数
+
+- $f(x_i,W,b) = Wx_i+b$  **$W,b$为参数**
+
+- Use pairs of inputs and labels to find the **weights matrix W** and the **bias vector b** The weights and biases are the **parameters** of the function f  
+  使用输入和标签对来寻找权重矩阵 W 和偏差向量 b 权重和偏差是函数 f 的参数
+
+- Several methods have been used to find the optimal set of parameters of a linear classifier.   
+  A common method of choice is the **Perceptron algorithm**, where the parameters are updated until a minimal error is reached (single layer, does not use backpropagation)   
+  有几种方法已经被用来寻找线性分类器的最佳参数集。  
+  一个常见的选择方法是感知器算法，其中的参数被更新，直到达到最小的错误(单层，不使用反向传播)
+
+- Linear classifier is a simple approach, but it is a building block of advanced classification algorithms, such as SVM and neural networks Earlier multi-layer neural networks were referred to as multi-layer perceptrons (MLPs)  
+  线性分类器是一种简单的方法，但它是先进的分类算法，如支持向量机和神经网络的一个组成部分。早期的多层神经网络被称为多层感知器(MLPs)
+  
+  
+
+- The decision boundary is linear  决策边界是线性的
+  
+  - A straight line in 2D, a flat plane in 3D, a hyperplane in 3D and higher dimensional space  
+    二维的直线，三维的平面，三维的超平面和高维空间
+
+###### Support Vector Machines  支持向量机
+
+- How to find the best decision boundary?   
+  如何找到最好的决策边界？
+  
+  - All lines in the figure correctly separate the 2 classes   
+    图中的所有线条正确地将两个类分开
+  
+  - The line that is farthest from all training examples will have better generalization capabilities   
+    距离所有培训实例最远的线将具有更好的泛化能力
+
+- SVM solves an optimization problem:   
+  SVM 解决了一个最佳化问题:
+  
+  - First, identify a decision boundary that correctly classifies the examples   
+    首先，确定一个正确分类示例的决策边界
+  
+  - Next, increase the geometric margin between the boundary and all examples   
+    接下来，增加边界和所有示例之间的几何边界
+
+- The data points that define the **maximum margin width** are called **support vectors**   
+  定义最大边距宽度的数据点称为支持向量
+
+- Find W and b by solving:
+  
+  $$
+  \min \frac{1}{2} \| w \|^2 \\
+\text{s.t. } y_i (w \cdot x_i + b) \geq 1, \quad \forall x_i
+  $$
+
+![eb47cdcf-6214-4f0f-8683-332551cdbf1d](./images/eb47cdcf-6214-4f0f-8683-332551cdbf1d.png)
+
+##### Linear vs Non-linear Techniques
+
+- techniques
+  
+  - Linear classification techniques 线性分类方法
+    
+    - Linear classifier 线性分类器
+    
+    - Perceptron 感知机
+    
+    - Logistic regression 逻辑回归
+    
+    - Linear SVM 线性支持向量机
+    
+    - Naïve Bayes 贝叶斯机
+  
+  - Non-linear classification techniques 非线性分类方法
+    
+    - k-nearest neighbors  K-近邻
+    
+    - Non-linear SVM 非线性支持向量机
+    
+    - Neural networks  神经网络
+    
+    - Decision trees  决策树
+    
+    - Random forest  随机森林
+
+- compare
+  
+  - For some tasks, input data can be linearly separable, and linear classifiers can be suitably applied   
+    对于某些任务，输入数据可以线性分离，适当应用线性分类器
+  
+  - For other tasks, linear classifiers may have difficulties to produce adequate decision boundaries  
+    对于其他任务，线性分类器可能难以产生足够的决策边界
+
+![20312627-1b61-4b46-b625-46c429f303c9](./images/20312627-1b61-4b46-b625-46c429f303c9.png)
+
+##### Non-linear Techniques 非线性方法
+
+###### Non-linear classification 非线性分类
+
+- Features $z_i$ are obtained as **non-linear functions** of the inputs $x_i$   
+  特征 $z _ i $作为输入 $x _ i $的 **非线性函数** 获得
+
+- It results in non-linear decision boundaries   
+  它导致非线性决策边界
+
+- Can deal with non-linearly separable data   
+  可以处理非线性可分数据
+
+![3cfa53a6-975f-4e54-87de-01977fc85609](./images/3cfa53a6-975f-4e54-87de-01977fc85609.png)
+
+###### Non-linear Support Vector Machines  非线性支持向量机
+
+- The original input space is mapped to a higher-dimensional feature space where the training set is linearly separable  
+  将原始输入空间映射到训练集线性可分的高维特征空间
+
+- Define a non-linear kernel function to calculate a non-linear decision boundary in the original feature space  
+  定义一个非线性核函数来计算原始特征空间中的非线性决策边界
+
+![820a9c9c-a20b-4c6b-9fb0-9a558421db82](./images/820a9c9c-a20b-4c6b-9fb0-9a558421db82.png)
+
+###### Binary vs Multi-class Classification  二分类与多分类
+
+- A classification problem with only 2 classes is referred to as binary classification. The output labels are 0 or 1.   
+  只有两个类的分类问题称为二进制分类，输出标签为0或1。
+
+- A problem with 3 or more classes is referred to as multi-class classification  
+  有3个或更多类的问题称为多类分类
+
+- Both the binary and multi-class classification problems can be linearly or nonlinearly separated   
+  二进制和多类分类问题都可以线性或非线性分离   
+  ![4f5829f8-91a0-415a-a059-13ff08b7ccc6](./images/4f5829f8-91a0-415a-a059-13ff08b7ccc6.png)
+
+##### No-Free-Lunch Theorem 不免费午餐定理
+
+- The derived classification models for supervised learning are simplifications of the reality   
+  衍生出来的监督式学习分类模型是对现实的简化
+  
+  - The simplifications are based on certain assumptions.   
+    这些简化是基于某些假设。
+  
+  - The assumptions fail in some situations.   
+    这些假设在某些情况下会失败。
+
+- <u>In summary, No-Free-Lunch Theorem states:   
+  总而言之，“没有免费午餐”定理指出:</u>
+  
+  - <u>No single classifier works the best for all possible problems   
+    对于所有可能的问题，没有一个分类器是最好的</u>
+  
+  - <u>Since we need to make assumptions to generalize  
+    因为我们需要做一些假设来推广</u>
+
+## Week 2: Deep Learning & Reinforcement Learning 第二周: 深度学习与强化学习
+
+- Part 1: Deep Learning 
+  
+  - Introduction to deep learning 
+  
+  - Elements of neural networks and activation functions 
+  
+  - Training NNs 
+  
+  - Gradient descent 
+  
+  - Regularization methods 
+  
+  - NN architectures 
+
+- Part 2: Reinforcement Learning 
+  
+  - Introduction to Reinforcement Learning 
+  
+  - Markov Decision Processes (MDPs) 
+  
+  - RL Techniques: From Q-learning to Actor-Critic 
+  
+  - Applications of RL
+
+### Part 1: Deep Learning 第一部分: 深度学习
+
+- Introduction to deep learning 
+
+- Elements of neural networks and activation functions 
+
+- Training NNs 
+
+- Gradient descent 
+
+- Regularization methods 
+
+- NN architectures
+
+#### Introduction to deep learning  深度学习入门
+
+##### ML vs. Deep Learning 机器学习与深度学习
+
+- Conventional machine learning methods rely on human-designed feature representations   
+  传统的机器学习方法依赖于人工设计的特征表示
+  
+  - ML becomes just optimizing weights to best make a final prediction   
+    机器学习只是优化权重，以最好地做出最终预测 
+
+- Deep learning (DL) is a machine learning subfield that uses multiple layers for learning data representations   
+  深度学习(DL)是一个机器学习子领域，它使用多个层次来学习数据表示
+  
+  - DL is exceptionally effective at learning patterns  
+    DL 在学习模式方面特别有效
+
+![e5288aae-dfc3-405d-b06d-fa2277099766](./images/e5288aae-dfc3-405d-b06d-fa2277099766.png)
+
+- DL applies a multi-layer process for learning rich hierarchical features (i.e., data representations)   
+  DL 应用多层过程来学习丰富的层次特性(即数据表示)
+  
+  - Input image pixels → Edges → Textures → Parts → Objects
+
+##### Why is DL Useful?
+
+- DL provides a flexible, learnable framework for representing visual, text, linguistic information   
+  DL 为表示视觉、文本和语言信息提供了一个灵活的、可学习的框架
+  
+  - Can learn in supervised and unsupervised manner   
+    可以在有监督和无监督的情况下学习
+
+- DL represents an effective end-to-end learning system   
+  DL 是一种有效的端到端学习系统
+
+- Requires large amounts of training data   
+  需要大量的训练数据
+
+- Since about 2010, DL has outperformed other ML techniques   
+  自2010年以来，DL 已经超越了其他机器学习技术
+  
+  - First in vision and speech, then NLP, and other applications  
+    首先是视觉和语言，然后是自然语言处理和其他应用
+
+##### A biological neuron vs. artificial neuron 生物神经元对比人工神经元
+
+##### Representational Power 表象性
+
+##### Introduction to Neural Networks 神经网络导论
+
+#### Elements of neural networks and activation functions 神经网络元素和激活函数
