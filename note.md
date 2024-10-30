@@ -1835,7 +1835,7 @@ Nearest Neighbor – for each test data point, assign the class label of the nea
 - It does not require learning a set of weights  
   它不需要学习一组权重
 
-![13d27133-8783-4746-a821-afb2c8574cda](./images/13d27133-8783-4746-a821-afb2c8574cda.png)
+<img src="./images/13d27133-8783-4746-a821-afb2c8574cda.png" title="" alt="13d27133-8783-4746-a821-afb2c8574cda" style="zoom:33%;">
 
 - For image classification, the distance between all pixels is calculated (e.g., using $l_1$ norm, or $l_2$ norm) 
   对于图像分类，计算所有像素之间的距离(例如，使用 $l _ 1 $标准或 $l _ 2 $标准)
@@ -1855,7 +1855,7 @@ Nearest Neighbor – for each test data point, assign the class label of the nea
 k-Nearest Neighbors approach considers multiple neighboring data points to classify a test data point  
 k近邻方法考虑多个相邻数据点对测试数据点进行分类
 
-![869fec1d-b42c-4ab6-b1e4-2591334baf68](./images/869fec1d-b42c-4ab6-b1e4-2591334baf68.png)
+<img src="./images/869fec1d-b42c-4ab6-b1e4-2591334baf68.png" title="" alt="869fec1d-b42c-4ab6-b1e4-2591334baf68" style="zoom:50%;">
 
 ###### Linear Classifier 线性分类器
 
@@ -1912,7 +1912,7 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 \text{s.t. } y_i (w \cdot x_i + b) \geq 1, \quad \forall x_i
   $$
 
-![eb47cdcf-6214-4f0f-8683-332551cdbf1d](./images/eb47cdcf-6214-4f0f-8683-332551cdbf1d.png)
+<img src="./images/eb47cdcf-6214-4f0f-8683-332551cdbf1d.png" title="" alt="eb47cdcf-6214-4f0f-8683-332551cdbf1d" style="zoom:50%;">
 
 ##### Linear vs Non-linear Techniques
 
@@ -1950,7 +1950,7 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
   - For other tasks, linear classifiers may have difficulties to produce adequate decision boundaries  
     对于其他任务，线性分类器可能难以产生足够的决策边界
 
-![20312627-1b61-4b46-b625-46c429f303c9](./images/20312627-1b61-4b46-b625-46c429f303c9.png)
+<img src="./images/20312627-1b61-4b46-b625-46c429f303c9.png" title="" alt="20312627-1b61-4b46-b625-46c429f303c9" style="zoom:33%;">
 
 ##### Non-linear Techniques 非线性方法
 
@@ -1965,7 +1965,7 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 - Can deal with non-linearly separable data   
   可以处理非线性可分数据
 
-![3cfa53a6-975f-4e54-87de-01977fc85609](./images/3cfa53a6-975f-4e54-87de-01977fc85609.png)
+<img src="./images/3cfa53a6-975f-4e54-87de-01977fc85609.png" title="" alt="3cfa53a6-975f-4e54-87de-01977fc85609" style="zoom:33%;">
 
 ###### Non-linear Support Vector Machines  非线性支持向量机
 
@@ -1975,7 +1975,7 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 - Define a non-linear kernel function to calculate a non-linear decision boundary in the original feature space  
   定义一个非线性核函数来计算原始特征空间中的非线性决策边界
 
-![820a9c9c-a20b-4c6b-9fb0-9a558421db82](./images/820a9c9c-a20b-4c6b-9fb0-9a558421db82.png)
+<img src="./images/820a9c9c-a20b-4c6b-9fb0-9a558421db82.png" title="" alt="820a9c9c-a20b-4c6b-9fb0-9a558421db82" style="zoom:33%;">
 
 ###### Binary vs Multi-class Classification  二分类与多分类
 
@@ -1987,7 +1987,8 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 
 - Both the binary and multi-class classification problems can be linearly or nonlinearly separated   
   二进制和多类分类问题都可以线性或非线性分离   
-  ![4f5829f8-91a0-415a-a059-13ff08b7ccc6](./images/4f5829f8-91a0-415a-a059-13ff08b7ccc6.png)
+  
+  <img src="./images/4f5829f8-91a0-415a-a059-13ff08b7ccc6.png" title="" alt="4f5829f8-91a0-415a-a059-13ff08b7ccc6" style="zoom:33%;">
 
 ##### No-Free-Lunch Theorem 不免费午餐定理
 
@@ -2053,7 +2054,7 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 
 ##### ML vs. Deep Learning 机器学习与深度学习
 
-- Conventional machine learning methods rely on human-designed feature representations   
+- Conventional machine learning methods **rely on human-designed feature representations**   
   传统的机器学习方法依赖于人工设计的特征表示
   
   - ML becomes just optimizing weights to best make a final prediction   
@@ -2062,10 +2063,10 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 - Deep learning (DL) is a machine learning subfield that uses multiple layers for learning data representations   
   深度学习(DL)是一个机器学习子领域，它使用多个层次来学习数据表示
   
-  - DL is exceptionally effective at learning patterns  
+  - DL is exceptionally effective at **learning patterns**  
     DL 在学习模式方面特别有效
 
-![e5288aae-dfc3-405d-b06d-fa2277099766](./images/e5288aae-dfc3-405d-b06d-fa2277099766.png)
+<img src="./images/e5288aae-dfc3-405d-b06d-fa2277099766.png" title="" alt="e5288aae-dfc3-405d-b06d-fa2277099766" style="zoom:50%;">
 
 - DL applies a multi-layer process for learning rich hierarchical features (i.e., data representations)   
   DL 应用多层过程来学习丰富的层次特性(即数据表示)
@@ -2076,26 +2077,468 @@ k近邻方法考虑多个相邻数据点对测试数据点进行分类
 
 - DL provides a flexible, learnable framework for representing visual, text, linguistic information   
   DL 为表示视觉、文本和语言信息提供了一个灵活的、可学习的框架
-  
-  - Can learn in supervised and unsupervised manner   
-    可以在有监督和无监督的情况下学习
 
-- DL represents an effective end-to-end learning system   
-  DL 是一种有效的端到端学习系统
+- Can learn in supervised and unsupervised manner   
+  可以在有监督和无监督的情况下学习
+
+- an effective end-to-end learning system   
+  有效的端到端学习系统
 
 - Requires large amounts of training data   
   需要大量的训练数据
+  
+  
 
 - Since about 2010, DL has outperformed other ML techniques   
-  自2010年以来，DL 已经超越了其他机器学习技术
-  
-  - First in vision and speech, then NLP, and other applications  
-    首先是视觉和语言，然后是自然语言处理和其他应用
+  自2010年以来，DL 已经超越了其他机器学习技术  
+  First in vision and speech, then NLP, and other applications  
+  首先是视觉和语言，然后是自然语言处理和其他应用
 
 ##### A biological neuron vs. artificial neuron 生物神经元对比人工神经元
 
+Brains advantages with respect to digital computers:  
+与数字计算机相比，大脑的优势
+
+- Massively parallel  大规模并行处理
+
+- Fault-tolerant  容错
+
+- Reliable  可靠的
+
+- Graceful degradation 优雅降级
+
 ##### Representational Power 表象性
+
+NNs with at least one hidden layer are **universal approximators**  
+具有至少一个隐层的神经网络是通用逼近器
+
+(具有至少一个隐藏层的神经网络是通用逼近器。具体来说，对于任何连续函数 $h(x)$ 和任意的小误差 $\epsilon >0$，总存在一个只有一个隐藏层的神经网络 $f(x)$，使得对于所有 $x$，都满足 $∣h(x)−f(x)∣< \epsilon $。)
+
+NN can approximate any arbitrary complex continuous function  
+神经网络可以逼近任意复杂的连续函数
+
+NNs use nonlinear mapping of the inputs x to the outputs f(x) to compute complex decision boundaries  
+神经网络使用输入 x 到输出 f (x)的非线性映射来计算复杂的决策边界
+
+- reason of use deeper NNs:
+  
+  - The fact that deep NNs work better is an empirical observation   
+    事实上，深层神经网络工作得更好是一个经验观察
+  
+  - Mathematically, deep NNs have the same representational power as a one-layer NN  
+    从数学上讲，深层神经网络具有与单层神经网络相同的表示能力
 
 ##### Introduction to Neural Networks 神经网络导论
 
+Handwritten digit recognition (MNIST dataset)   
+手写数字识别(MNIST 数据集)
+
+- The intensity of each pixel is considered an input element  
+  每个像素的强度被认为是一个输入元素
+
+- Output is the class of the digit  
+  输出是数字的类
+
+对于手写数字识别，输入为一个图片矩阵，输出为从1到0的数字的概率（Each dimension represents the confidence of a digit  每个维表示一个数字的置信度）
+
 #### Elements of neural networks and activation functions 神经网络元素和激活函数
+
+##### Elements of Neural Networks 神经网络要素
+
+- NNs consist of hidden layers with neurons (i.e., computational units)   
+  神经网络由带有神经元(即计算单元)的隐层组成
+
+- A single neuron maps a set of inputs into an output number, or $f:R^k \to R $  
+  单个神经元将一组输入映射到一个输出数字，即 $f: R ^ k\to R $
+
+- neuron 神经元
+  
+  $$
+  z = a_1 w_1 + a_2 w_2 + \cdots + a_K w_K + b
+\\
+a = \sigma(z)
+
+  $$
+  
+  $a_i$ input 输入, $w_k$ weights 权重, $b$ bias 基础值, $\sigma (z)$ avtivation function 激活函数, $a$ output输出.
+
+- hidden layer（图片中间的层）
+  
+  <img title="" src="./images/62ba9238-5f3e-4046-90dd-a55dd5cf485d.png" alt="62ba9238-5f3e-4046-90dd-a55dd5cf485d" style="zoom:33%;">
+  $hidden \ layer \ h=\sigma (W_1x+b_1)$
+  
+  - 图片中：
+    4 + 2 = 6 neurons (not counting inputs)   
+    [3 × 4] + [4 × 2] = 20 weights  
+    4 + 2 = 6 biases   
+    26 learnable parameters
+
+- Deep NNs have many **hidden layers**   
+  深层神经网络有许多隐藏层
+  
+  - **Fully-connected (dense)** layers (a.k.a. **Multi-Layer Perceptron or MLP**)   
+    完全连接(密集)层(又称多层感知器或 MLP)
+  
+  - Each neuron is connected to all neurons in the succeeding layer  
+    每个神经元连接到下一层的所有神经元
+  
+  - <img src="./images/ed7c6e99-e3e1-4ffd-b3d2-ffc99af62b15.png" title="" alt="ed7c6e99-e3e1-4ffd-b3d2-ffc99af62b15" style="zoom:50%;">
+
+###### Matrix Operation 矩阵操作
+
+- Matrix operations are helpful when working with multidimensional inputs and outputs  
+  矩阵运算在处理多维输入和输出时很有帮助
+
+- $$
+  \sigma(Wx+b)=a
+\\ \
+\\
+\sigma \left( \begin{bmatrix} 1 & -2 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + \begin{bmatrix} 1 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 0.98 \\ 0.12 \end{bmatrix}
+
+  $$
+
+- Multilayer NN, matrix calculations for the first layer  
+  多层神经网络，第一层的矩阵计算
+  $\text{Input vector } x, \text{ weights matrix } W^1, \text{ bias vector } b^1, \text{ output vector } a^1$ 
+  
+  <img src="./images/f722ac4f-37b1-4c08-98ec-283b20bf57c7.png" title="" alt="f722ac4f-37b1-4c08-98ec-283b20bf57c7" style="zoom:50%;">
+
+##### Activation Functions 激活函数
+
+- **Non-linear activations** are needed to learn complex (non-linear) data representations  
+  学习复杂(非线性)数据表示需要非线性激活  
+  Otherwise, NNs would be just a linear function (such as $W_1W_2𝑥 = 𝑊𝑥$)   
+  否则，NN 将只是一个线性函数(例如 $W _ 1W _ 2x = Wx $)
+
+- NNs with large number of layers (and neurons) can approximate more complex functions   
+   具有大量层(和神经元)的神经网络可以逼近更复杂的函数
+  
+  - Figure: more neurons improve representation (but, may overfit)  
+    图: 更多的神经元改善表征(但是，可能过度)
+
+###### Activation: Linear Function 激活: 线性函数
+
+- **Linear function** means that the output signal is proportional to the input signal to the neuron  
+  线性函数表示输出信号与神经元的输入信号成正比
+  
+  $$
+  f(x) = cx,\mathbb{R}^n \rightarrow \mathbb{R}^n
+  $$
+
+- <img title="" src="./images/3a7b52d8-11f6-4d42-b663-8e7485af30cc.png" alt="3a7b52d8-11f6-4d42-b663-8e7485af30cc" style="zoom:33%;" data-align="center">
+  
+  - If the value of the constant c is 1, it is also called **identity activation function**  
+    如果常数 c 的值为1，它也被称为恒等式激活函数
+  
+  - This activation type is used in **regression problems**  
+    此激活类型用于回归问题
+
+###### Activation: Sigmoid sigmoid函数
+
+- **Sigmoid function** σ: takes a real-valued number and “squashes” it into the range between 0 and 1   
+  S形函数 σ: 取一个实值数，并将其“压缩”到0到1之间的范围内
+  
+  $$
+  f(x) = \frac{1}{1+e^{-x}},\mathbb{R}^n \rightarrow [0, 1]
+  $$
+  
+  - The output can be interpreted as the firing rate of a biological neuron  
+    输出可以解释为生物神经元的放电速率
+  
+  - When the neuron’s activation are 0 or 1, sigmoid neurons saturate 
+    当神经元激活为0或1时，sigmoid神经元饱和
+    
+    - Gradients at these regions are almost zero (almost no signal will flow)  
+      这些区域的梯度几乎为零(几乎没有信号会流动)
+  
+  - Sigmoid activations are less common in modern NNs  
+    sigmoid激活在现代神经网络中不常见
+  
+  <img title="" src="./images/c4ea676b-b0bf-48d4-9657-8bfa453903a7.png" alt="c4ea676b-b0bf-48d4-9657-8bfa453903a7" style="zoom:50%;" data-align="center">
+
+###### Activation: Tanh
+
+- Tanh function: takes a real-valued number and “squashes” it into range between -1 and 1   
+  Tanh 函数: 获取一个实值数字，并将其“压缩”到 -1到1之间
+  
+  $$
+  \tanh(x) = \frac{2}{1 + e^{-2x}} - 1, \mathbb{R}^n \rightarrow [-1, 1]
+
+  $$
+  
+  - Like sigmoid, tanh neurons saturate 饱和
+  
+  - Unlike sigmoid, the output is zero-centered 与 sigmoid 不同，输出是以零为中心的
+    
+    - It is therefore preferred than sigmoid  比sigmoid更好
+  
+  - Tanh is a scaled sigmoid: $\tanh(x) = 2 \cdot \sigma(2x) - 1$ 
+  
+  <img title="" src="./images/06d83913-7c96-4a6f-baec-e26d70af6bd7.png" alt="06d83913-7c96-4a6f-baec-e26d70af6bd7" style="zoom:33%;" data-align="center">
+
+###### Activation: ReLU
+
+- ReLU (Rectified Linear Unit): takes a real-valued number and thresholds it at zero  
+  修正线性单位(ReLU) : 取一个实值数，阈值为零
+  
+  $$
+  f(x) = \max(0, x)
+\\ \ \\
+f(x) = \begin{cases} 
+0 & \text{for } x < 0 \\ 
+x & \text{for } x \geq 0 
+\end{cases}
+\\ \ \\
+\mathbb{R}^n \rightarrow \mathbb{R}_{+}^n
+  $$
+
+- 应用
+  
+  - Most modern deep NNs use ReLU activations   
+    大多数现代深层神经网络使用 ReLU 激活
+
+- 优势
+  
+  - ReLU is fast to compute (Compared to sigmoid, tanh ; Simply threshold a matrix at zero)
+    ReLU 计算速度很快 (与 sigmoid 相比，tanh; 简单地阈值为零的矩阵)
+  
+  - Accelerates the convergence of gradient descent  (Due to linear, non-saturating form)
+    加速梯度下降法的融合 (由于线性，非饱和形式)
+  
+  - Prevents the gradient vanishing problem  
+    防止渐变消失问题
+
+            <img title="" src="./images/180bc5dc-317d-436d-b0e8-f1b5a79acb40.png" alt="180bc5dc-317d-436d-b0e8-f1b5a79acb40" style="zoom:50%;" data-align="center">
+
+###### Activation: Leaky ReLU
+
+- 普通ReLU的问题  
+  
+  - The problem of ReLU activations: they can “die”  
+    ReLU 激活的问题: 它们可能“死亡”  
+  
+  - ReLU could cause weights to update in a way that the gradients can become zero and the neuron will not activate again on any data  
+    ReLU 可能导致权重更新的方式，梯度可以成为零，神经元不会再次激活任何数据
+
+- **Leaky ReLU** activation function is a variant of ReLU 
+  
+  - Instead of the function being 0 when 𝑥<0, a leaky ReLU has a small negative slope (e.g., α = 0.01, or similar)  
+    当 x < 0时，函数不是0，而是一个小的负斜率(例如，α = 0.01，或类似)
+  
+  $$
+  f(x) = \begin{cases} 
+ax & \text{for } x < 0 \\ 
+x & \text{for } x \gg 0 
+\end{cases}
+  $$
+  
+  - 优势（解决问题）  
+     resolves the dying ReLU problem 
+  
+  - 应用   
+    
+    - Most current works still use ReLU  
+      目前大部分的作品仍然使用 ReLU
+    
+    - With a proper setting of the learning rate, the problem of dying ReLU can be avoided    
+      通过合理设置学习速率，可以避免 RLU 死亡的问题
+
+                <img title="" src="./images/bd95c434-47bf-4ac1-9674-4e5e68be8d6f.png" alt="bd95c434-47bf-4ac1-9674-4e5e68be8d6f" style="zoom:67%;">
+
+###### Activation: Softmax
+
+- The softmax layer applies softmax activations to output a probability value in the range [0, 1]  
+  Softmax 层应用 softmax 激活来输出范围[0,1]内的概率值
+
+- 即将所有的输入规范成一个从0到1的概率值，且每一个概率的值加起来就是1
+
+- The values z inputted to the softmax layer are referred to as **logits**   
+  输入到 softmax 层的值 z 称为 logits
+
+$$
+\sigma(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \quad (\text{满足} \sum_{i=1}^n \sigma(z_i) = 1)
+\\ \ \\
+\sigma(z_i) \text{ 表示第 } i \text{ 个类别的Softmax输出。} \\ \ \\
+z_i \text{ 是每个类别的输入值。} \\
+\sum_{j=1}^n e^{z_j} \text{ 是所有类别输入值的指数和，用于归一化。}
+
+
+$$
+
+<img title="" src="./images/4daef102-6e01-4e1d-81f8-6946a5d998f1.png" alt="4daef102-6e01-4e1d-81f8-6946a5d998f1" style="zoom:33%;" data-align="center">
+
+#### Training NNs 神经网络训练
+
+- The network **parameters 𝜃** include the **weight matrices** and **bias vectors** from all layers  
+  网络 **参数 θ** 包括来自所有层的 **权矩阵** 和 **偏向向量** 
+  
+  $$
+  \theta = \{ W^1, b^1, W^2, b^2, \dots, W^L, b^L \}
+
+  $$
+  
+  Often, the model parameters 𝜃 are referred to as weights  
+  通常，模型参数 θ 被称为权重
+
+- Training a model **to learn a set of parameters 𝜃 that are optimal** (according to a criterion) is one of the greatest challenges in ML  
+  训练一个模型来学习一组最优的参数 θ (根据一个标准)是机器学习中最大的挑战之一
+  
+  
+
+- **Data preprocessing** - helps **convergence** during training   
+  数据预处理-有助于在训练期间收敛
+  
+  - **Mean subtraction**, to obtain zero-centered data   
+    平均减法，得到零中心的数据 
+    
+    - Subtract the mean for each individual data dimension (feature)  
+      减去每个独立数据维度(特性)的平均值
+  
+  - **Normalization**  规范化
+    
+    - Divide each feature by its standard deviation  
+      将每个特征按其标准差划分
+      
+      - To obtain standard deviation of 1 for each data dimension (feature)  
+        为每个数据维度(特征)取得1的标准差
+    
+    - Or, scale the data within the range [0,1] or [-1, 1]  
+      或者，在[0,1]或[-1,1]范围内缩放数据
+  
+  - <img title="" src="./images/77f7decc-38df-43c9-9083-9a20e177285a.png" alt="77f7decc-38df-43c9-9083-9a20e177285a" style="zoom:50%;">
+
+- To train a NN, set the parameters 𝜃 such that for a training subset of images, the corresponding elements in the predicted output have maximum values  
+  为了训练神经网络，需要设置参数 θ，使得对于图像的训练子集，预测输出中的相应元素具有最大值
+
+- Define a **loss function/objective function/cost function** $\mathcal{L}(\theta)$ that calculates the difference (error) between the model prediction and the true label  
+  定义一个损失函数/目标函数/成本函数 $\mathcal{L}(\theta)$，用于计算模型预测与真实标签之间的差异(误差)
+
+- Find the optimal parameters $\theta^*$ that minimize the total loss $\mathcal{L}(\theta)$   
+  寻找最小化总损失 $\mathcal{L}(\theta)$ 的最佳参数 $\theta ^ * $ 
+  
+  > For a training set of 𝑁 images, calculate the total loss overall all images:  
+  > 对于 N 幅图像的训练集，计算所有图像的总损失:
+  > $$
+  > \mathcal{L}(\theta) = \sum_{n=1}^N \mathcal{L}_n(\theta)
+  
+  > $$
+
+##### Loss Functions  损失函数
+
+- Classification tasks 分类任务
+  
+  - Training examples  训练样本
+    
+    $$
+    \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth class labels } y_i
+\\ 
+N \text{ 个输入 } x_i \text{ 与真实类别标签 } y_i \text{ 的配对}
+    $$
+  
+  - Output Layer 输出层
+    Softmax Activations [maps to a probability distribution]  
+    Softmax 激活[映射到一个概率分布]
+    
+    $$
+    P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{x}^\top \mathbf{w}_j}}{\sum_{k=1}^K e^{\mathbf{x}^\top \mathbf{w}_k}}
+
+    $$
+  
+  - Loss function 损失函数
+    Cross-entropy  交叉熵
+    
+    $$
+    \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \left[ y_k^{(i)} \log \hat{y}_k^{(i)} + \left( 1 - y_k^{(i)} \right) \log \left( 1 - \hat{y}_k^{(i)} \right) \right]
+\\
+\text{Ground-truth class labels （实际值） } y_i \text{ and model predicted class labels （模型预测值） } \hat{y}_i
+
+    $$
+
+- Regression tasks  回归任务
+  
+  - Training examples  训练样本
+    
+    $$
+    \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth output values } y_i
+\\
+N \text{ 个输入 } x_i \text{ 与真实输出值 } y_i \text{ 的对}
+
+    $$
+  
+  - Output Layer 输出层
+    
+    $$
+    \text{Linear (Identity) or Sigmoid Activation}
+\\
+\text{线性或者sigmoid激活函数}
+    $$
+  
+  - Loss function 损失函数
+    
+    - Mean Squared Error  均方误差
+      
+      $$
+      \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left( y^{(i)} - \hat{y}^{(i)} \right)^2
+      $$
+    
+    - Mean Absolute Error  平均绝对误差
+      
+      $$
+      \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left| y^{(i)} - \hat{y}^{(i)} \right|
+      $$
+
+##### Training NNs (2)
+
+- Optimizing the loss function $\mathcal{L}(\theta)$  优化损失函数
+  
+  - **gradient descent (GD)** algorithm  
+    梯度下降法算法
+    
+    - GD applies iterative refinement of the network parameters $\theta$   
+      GD 对网络参数$\theta$进行迭代求精
+    
+    - GD uses the opposite direction of the **gradient** of the loss with respect to the NN parameters for updating $\theta$ ($\nabla \mathcal{L}(\theta) = \left[ \frac{\partial \mathcal{L}}{\partial \theta_i} \right]$) 
+      GD 使用相对于神经网络参数的损失梯度的相反方向来更新 $\theta $ 
+    
+    - The gradient of the loss function $\nabla \mathcal{L}(\theta)$ gives the direction of fastest increase of the loss function $\mathcal{L}(\theta)$ when the parameters $\theta$ are changed  
+      损失函数 $\nabla \mathcal { L }(\theta) $的梯度给出了当参数 $\theta $改变时损失函数 $\mathcal{L}(\theta ) $增长最快的方向
+      
+      <img title="" src="./images/746b78ac-0896-4c21-9762-ae45ba077ed2.png" alt="746b78ac-0896-4c21-9762-ae45ba077ed2" style="zoom:33%;">
+
+#### Gradient descent  梯度下降
+
+- Steps in the gradient descent algorithm:  
+  梯度下降法算法中的步骤:
+  
+  <img title="" src="./images/Gradient Descent Process Flowchart (English).png" alt="loading-ag-61851" style="zoom:100%;">
+  
+  <img title="" src="./images/梯度下降流程图 (Chinese).png" alt="loading-ag-61853" data-align="inline" style="zoom:100%;">
+
+- 关键算法：
+  
+  $$
+  \theta^{\text{new}} = \theta^0 - \alpha \nabla \mathcal{L}(\theta^0)
+  $$
+
+- 图解：
+  
+  <img src="./images/87db027f-655c-464e-a11b-99a78aad1fdd.png" title="" alt="87db027f-655c-464e-a11b-99a78aad1fdd" style="zoom:50%;">
+
+- Gradient Descent Algorithm  梯度下降算法
+  
+  <img title="" src="./images/2a571465-3c6a-4ec0-9698-abb760eee3a4.png" alt="2a571465-3c6a-4ec0-9698-abb760eee3a4" style="zoom:33%;" data-align="inline">
+  
+  <img title="" src="./images/3a609cf7-02b5-4101-b11b-025b05489f9e.png" alt="3a609cf7-02b5-4101-b11b-025b05489f9e" style="zoom:33%;">
+  
+  - Gradient descent algorithm stops when a local minimum of the loss surface is reached  
+    当损耗面达到局部最小时，梯度下降法算法停止
+    
+    - GD does not guarantee reaching a global minimum   
+      GD 并不能保证达到全球最低水平
+    
+    - However, empirical evidence suggests that GD works well for NNs  
+      但是，经验证据体现出梯度下降对于神经网络具有良好的效果
+    
+    <img title="" src="./images/48fc59ea-b99a-4d74-8876-35b67588b16a.png" alt="48fc59ea-b99a-4d74-8876-35b67588b16a" style="zoom:67%;">
+
+
