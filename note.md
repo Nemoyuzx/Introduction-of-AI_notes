@@ -2418,76 +2418,76 @@ $$
   
   > For a training set of 𝑁 images, calculate the total loss overall all images:  
   > 对于 N 幅图像的训练集，计算所有图像的总损失:
+  > 
   > $$
   > \mathcal{L}(\theta) = \sum_{n=1}^N \mathcal{L}_n(\theta)
-  
   > $$
 
 ##### Loss Functions  损失函数
 
-- Classification tasks 分类任务
+###### Classification tasks 分类任务
+
+- Training examples  训练样本
   
-  - Training examples  训练样本
-    
-    $$
-    \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth class labels } y_i
+  $$
+  \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth class labels } y_i
 \\ 
 N \text{ 个输入 } x_i \text{ 与真实类别标签 } y_i \text{ 的配对}
-    $$
-  
-  - Output Layer 输出层
-    Softmax Activations [maps to a probability distribution]  
-    Softmax 激活[映射到一个概率分布]
-    
-    $$
-    P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{x}^\top \mathbf{w}_j}}{\sum_{k=1}^K e^{\mathbf{x}^\top \mathbf{w}_k}}
+  $$
 
-    $$
+- Output Layer 输出层
+  Softmax Activations [maps to a probability distribution]  
+  Softmax 激活[映射到一个概率分布]
   
-  - Loss function 损失函数
-    Cross-entropy  交叉熵
-    
-    $$
-    \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \left[ y_k^{(i)} \log \hat{y}_k^{(i)} + \left( 1 - y_k^{(i)} \right) \log \left( 1 - \hat{y}_k^{(i)} \right) \right]
+  $$
+  P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{x}^\top \mathbf{w}_j}}{\sum_{k=1}^K e^{\mathbf{x}^\top \mathbf{w}_k}}
+
+  $$
+
+- Loss function 损失函数
+  Cross-entropy  交叉熵
+  
+  $$
+  \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \left[ y_k^{(i)} \log \hat{y}_k^{(i)} + \left( 1 - y_k^{(i)} \right) \log \left( 1 - \hat{y}_k^{(i)} \right) \right]
 \\
 \text{Ground-truth class labels （实际值） } y_i \text{ and model predicted class labels （模型预测值） } \hat{y}_i
 
-    $$
+  $$
 
-- Regression tasks  回归任务
+###### Regression tasks  回归任务
+
+- Training examples  训练样本
   
-  - Training examples  训练样本
-    
-    $$
-    \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth output values } y_i
+  $$
+  \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth output values } y_i
 \\
 N \text{ 个输入 } x_i \text{ 与真实输出值 } y_i \text{ 的对}
 
-    $$
+  $$
+
+- Output Layer 输出层
   
-  - Output Layer 输出层
-    
-    $$
-    \text{Linear (Identity) or Sigmoid Activation}
+  $$
+  \text{Linear (Identity) or Sigmoid Activation}
 \\
 \text{线性或者sigmoid激活函数}
+  $$
+
+- Loss function 损失函数
+  
+  - Mean Squared Error  均方误差
+    
+    $$
+    \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left( y^{(i)} - \hat{y}^{(i)} \right)^2
     $$
   
-  - Loss function 损失函数
+  - Mean Absolute Error  平均绝对误差
     
-    - Mean Squared Error  均方误差
-      
-      $$
-      \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left( y^{(i)} - \hat{y}^{(i)} \right)^2
-      $$
-    
-    - Mean Absolute Error  平均绝对误差
-      
-      $$
-      \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left| y^{(i)} - \hat{y}^{(i)} \right|
-      $$
+    $$
+    \mathcal{L}(\theta) = \frac{1}{n} \sum_{i=1}^n \left| y^{(i)} - \hat{y}^{(i)} \right|
+    $$
 
-##### Training NNs (2)
+#### Training NNs (2)
 
 - Optimizing the loss function $\mathcal{L}(\theta)$  优化损失函数
   
@@ -2540,5 +2540,1073 @@ N \text{ 个输入 } x_i \text{ 与真实输出值 } y_i \text{ 的对}
       但是，经验证据体现出梯度下降对于神经网络具有良好的效果
     
     <img title="" src="./images/48fc59ea-b99a-4d74-8876-35b67588b16a.png" alt="48fc59ea-b99a-4d74-8876-35b67588b16a" style="zoom:67%;">
+  
+  - Random initialization in NNs results in different initial parameters $\theta^0$ every time the NN is trained  
+    神经网络中的随机初始化在每次训练神经网络时都会产生不同的初始参数 $\theta ^ 0 $ 
+    
+    - Gradient descent may reach different minima at every run ▪  
+      每次运行时，梯度下降法可能达到不同的最小值。
+    
+    - Therefore, NN will produce different predicted outputs  
+      因此，神经网络将产生不同的预测输出
+  
+  - currently we don’t have algorithms that guarantee reaching a global minimum for an arbitrary loss function.  
+    目前我们还没有算法可以保证达到任意损失函数的全局最小值。
+
+##### Backpropagation (“backward propagation”) 反向传播
+
+- Modern NNs employ the backpropagation method for calculating the gradients of the loss function $\nabla \mathcal{L}(\theta) =  \frac{\partial \mathcal{L}}{\partial \theta_i} $
+
+- For training NNs, forward propagation (forward pass) refers to passing the inputs 𝑥 through the hidden layers to obtain the model outputs (predictions)   
+  对于训练神经网络，前向传播(前向传递)是指将输入 x 通过隐藏层以获得模型输出(预测)
+  
+  - The loss $\mathcal{L}(y, \hat{y})$ function is then calculated  
+    然后计算亏损函数
+  
+  - Backpropagation traverses the network in reverse order, from the outputs 𝑦 backward toward the inputs 𝑥 to calculate the gradients of the loss $\nabla \mathcal{L} (\theta)$   
+    反向传播以相反的顺序遍历网络，从输出 y 向后到输入 x 计算损失的梯度
+  
+  - The chain rule is used for calculating the partial derivatives of the loss function with respect to the parameters 𝜃 in the different layers in the network  
+    利用链式规则计算网络各层损失函数对参数 θ 的偏导数
+
+- Each update of the model parameters 𝜃 during training takes one forward and one backward pass (e.g., of a batch of inputs)  
+  在训练期间对模型参数 θ 的每次更新都需要一次向前和一次向后传递(例如，一批输入)
+
+- Automatic calculation of the gradients (automatic differentiation) is available in all current deep learning libraries  
+  目前所有的深度学习库都可以自动计算梯度(自动微分) 
+  
+  - It significantly simplifies the implementation of deep learning algorithms, since it obviates deriving the partial derivatives of the loss function by hand  
+    该方法避免了手工求损失函数的偏导数，大大简化了深度学习算法的实现
+
+##### Mini-batch Gradient Descent 迷你梯度下降法
+
+- It is wasteful to compute the loss over the entire training dataset to perform a single parameter update for large datasets  
+  为了对大型数据集执行单个参数更新，计算整个训练数据集上的损失是很浪费的
+  （GD通常被mini-batch GD取代）
+
+- Mini-batch gradient descent  迷你梯度下降法
+  
+  - Approach: 
+    
+    - Compute the loss $\mathcal{L} (\theta)$ on a mini-batch of images, update the parameters $\theta $, and repeat until all images are used   
+      在一小批图像上计算丢失 $\mathcal { L }(\theta) $，更新参数 $\theta $，然后重复，直到使用所有图像
+    
+    - At the next epoch, shuffle the training data, and repeat the above process  
+      在下一个时期，重组训练数据，并重复上述过程
+  
+  - Mini-batch GD results in much faster training  
+    小批量 GD 导致更快的训练
+  
+  - Typical mini-batch size: 32 to 256 images  
+    典型的小批量: 32至256张图像
+  
+  - It works because the gradient from a mini-batch is a good approximation of the gradient from the entire training set  
+    它之所以有效是因为来自一个小批量的梯度是来自整个训练集的梯度的一个很好的近似值
+
+##### Stochastic Gradient Descent (SGD) 随机梯度下降
+
+- SGD uses mini-batches that consist of a single input example  
+  SGD 使用由单个输入示例组成的迷你批处理
+
+- Although this method is very fast, it may cause significant fluctuations in the loss function  
+  虽然这种方法很快，但可能会造成损失函数的显著波动
+  
+  - Therefore, it is less commonly used, and mini-batch GD is preferred  
+    因此，它较少被使用，而小批量的 GD 是首选
+
+- In most DL libraries, SGD typically means a mini-batch GD (with an option to add  momentum)  
+  在大多数深度学习库中，SGD 通常意味着一个小批量的迷你梯度下降(可以选择增加动力)
+
+##### Problems with Gradient Descent  梯度下降法的问题
+
+Besides the local minima problem, the GD algorithm can be very slow at plateaus, and it can get stuck at saddle points  
+除了局部极小问题外，GD 算法在高原时速度很慢，并且在鞍点处会卡住
+
+<img title="" src="./images/74915f00-5f84-4dc5-bcc9-957b10ddb391.png" alt="74915f00-5f84-4dc5-bcc9-957b10ddb391" style="zoom:33%;">
+
+##### Gradient Descent with Momentum  动量梯度下降法
+
+Gradient descent with momentum uses the momentum of the gradient for parameter optimization  
+动量梯度下降法利用梯度的动量进行参数优化  
+
+$$
+Movement = Negative \ of \ Gradient + Momentum
+$$
+
+<img title="" src="./images/f067d710-fcef-45a1-b9fd-7d2f1a6f29f6.png" alt="f067d710-fcef-45a1-b9fd-7d2f1a6f29f6" style="zoom:33%;" data-align="center">
+
+- Parameters update in GD with momentum at iteration  
+  基于动量迭代的 GD 参数更新
+  
+  $$
+  \theta^t = \theta^{t-1} - V^t
+\\
+V^t = \beta V^{t-1} + \alpha \nabla \mathcal{L}(\theta^{t-1})
+\\
+\text{i.e., } \theta^t = \theta^{t-1} - \alpha \nabla \mathcal{L}(\theta^{t-1}) - \beta V^{t-1}
+
+  $$
+
+- The parameter 𝛽 is referred to as a coefficient of momentum   
+  参数 β 被称为动量系数
+  
+  - A typical value of the parameter 𝛽 is 0.9  
+    参数 β 的典型值为0.9
+
+- This method updates the parameters 𝜃 in the direction of the weighted average of the past gradients  
+  这种方法沿着过去梯度加权平均数的方向更新参数 θ
+
+##### Adaptive Moment Estimation (Adam) 自适应矩估计
+
+Adam combines insights from the momentum optimizers that accumulate the values of past gradients, and it also introduces new terms based on the second moment of the gradient  
+Adam 结合了积累过去梯度值的动量优化器的见解，并且还引入了基于梯度第二阶段的新术语
+
+- Similar to GD with momentum, Adam computes a weighted average of past gradients (first moment of the gradient)  
+  与动量的 GD 类似，亚当计算了过去梯度的加权平均数(梯度的第一个时刻)
+
+- Adam also computes a weighted average of past squared gradients (second moment of the gradient)  
+  亚当还计算了过去平方梯度的加权平均数(梯度的第二个时刻)
+
+$$
+\theta^t = \theta^{t-1} - \alpha \frac{\hat{V}^t}{\sqrt{\hat{U}^t + \epsilon}}
+\\
+\text{Where: } \hat{V}^t = \frac{V^t}{1 - \beta_1} \text{ and } \hat{U}^t = \frac{U^t}{1 - \beta_2}
+\\ \ \\
+\text{The proposed default values are （建议的默认值为） } \\ \beta_1 = 0.9, \beta_2 = 0.999, \text{ and } \epsilon = 10^{-8}
+
+
+$$
+
+- Other commonly used optimization methods include:   
+  其他常用的优化方法包括:
+  
+  - Adagrad, Adadelta, RMSprop, Nadam, etc.
+  
+  - Most commonly used optimizers nowadays are Adam and SGD with momentum.   
+    目前最常用的优化器是 Adam 和带动量的 SGD
+
+##### Optimizer 优化器
+
+- How to update the weights based on the loss function  
+  如何根据损失函数更新权重
+
+- Learning rate (+scheduling)  
+  学习率(+ 进度)
+
+- Stochastic gradient descent, momentum, and their variants  
+  随机梯度下降、动量及其变体
+  
+  - RMSProp is usually a good first choice   
+    RMSProp 通常是不错的首选
+
+---
+
+<img title="" src="./images/cfa3c9c6-a92c-4057-abfa-5a92a48e5892.png" alt="cfa3c9c6-a92c-4057-abfa-5a92a48e5892" style="zoom:50%;">
+
+这张图显示了不同优化算法在一个典型的凸函数中的优化路径。图中的五角星通常表示目标最小值点，而黑点是优化的起始点。彩色的曲线图示了不同算法在优化过程中的轨迹。
+
+图例中的标识符表示每种优化算法：
+
+1. **SGD (Stochastic Gradient Descent)**：红色线条，显示了基本的梯度下降路径。
+2. **Momentum**：绿色线条，加入了动量项，使路径平滑，加快收敛速度。
+3. **NAG (Nesterov Accelerated Gradient)**：紫色线条，改进了动量法，通过在预期方向上进行梯度计算来加速收敛。
+4. **Adagrad**：蓝色线条，自适应学习率方法，更适合处理稀疏数据。
+5. **Adadelta**：黄色线条，解决了Adagrad学习率衰减过快的问题。
+6. **RMSprop**：黑色线条，通过指数加权平均来调整学习率，避免了过快的学习率衰减。
+
+这张图可以帮助对比不同优化算法的特性，例如它们的收敛速度和路径平滑程度。这在机器学习模型训练中有助于选择合适的优化器。
+
+---
+
+##### Learning Rate  学习率
+
+- The gradient tells us the direction in which the loss has the steepest rate of increase, but it does not tell us how far along the opposite direction we should step  
+  梯度告诉我们损失增长速度最快的方向，但它并不告诉我们应该沿着相反的方向走多远
+
+- Choosing the learning rate (also called the **step size**) is one of the most important hyper-parameter settings for NN training    
+  选择学习率(也称为步长)是神经网络训练中最重要的超参数设置之一
+
+<img title="" src="./images/dd6b8d7e-a879-46e5-b392-2358a6883872.png" alt="dd6b8d7e-a879-46e5-b392-2358a6883872" style="zoom:50%;">
+
+- Training loss for different learning rates 
+  
+  - High learning rate: the loss increases or plateaus too quickly  
+    高学习率: 损失增加或停滞过快
+  
+  - Low learning rate: the loss decreases too slowly (takes many epochs to reach a solution)  
+    学习率低: 损失降低得太慢(需要很多时期才能达到解决方案)
+
+<img title="" src="./images/9de91125-453f-4062-87a8-da05ed688ed1.png" alt="9de91125-453f-4062-87a8-da05ed688ed1" style="zoom:33%;" data-align="center">
+
+##### Vanishing Gradient Problem 梯度消失问题
+
+- In some cases, during training, the gradients can become either very small (vanishing gradients) of very large (exploding gradients) 
+  在某些情况下，在训练期间，梯度可以变得非常小(消失的梯度)非常大(爆炸梯度)
+  
+  - They result in very small or very large update of the parameters   
+    它们会导致非常小或非常大的参数更新
+  
+  - Solutions: change learning rate, ReLU activations, regularization, LSTM units in RNNs  
+    解决方案: 改变学习速率，ReLU 激活，正则化，在 RNN 中的 LSTM 单位
+
+##### Generalization
+
+- Underfitting 欠拟合
+  
+  - The model is too “simple” to represent all the relevant class characteristics   
+    模型过于“简单”，不能代表所有相关的类别特征
+  
+  - Produces high error on the training set and high error on the validation set  
+    在训练集上产生高误差，在验证集上产生高误差
+  
+  <img src="./images/e86eff30-1411-47f1-bee7-3ae6f040faf2.png" title="" alt="e86eff30-1411-47f1-bee7-3ae6f040faf2" style="zoom:33%;">
+
+- Overfitting 过拟合
+  
+  - The model is too “complex” and fits irrelevant characteristics (noise) in the data    
+    该模型过于“复杂”，适合数据中不相关的特征(噪声)
+  - Produces low error on the training error and high error on the validation set  
+    在训练错误上产生较低的错误，在验证集上产生较高的错误
+  
+  <img title="" src="./images/58fd5e5b-8abd-4536-8311-ef0f93ed1121.png" alt="58fd5e5b-8abd-4536-8311-ef0f93ed1121" style="zoom:33%;">
+
+#### Regularization methods 正则化方法
+
+##### Overfitting 过拟合
+
+- Overfitting – a model with high capacity fits the noise in the data instead of the underlying relationship  
+  过度拟合-一个高容量的模型拟合数据中的噪声，而不是潜在的关系
+  
+  <img src="./images/ad181e6d-1551-4324-ba3e-83c623012693.png" title="" alt="ad181e6d-1551-4324-ba3e-83c623012693" style="zoom:33%;">
+  
+  The model may fit the training data very  well, but fails to generalize to new  examples (test or validation data)  
+  该模型可能非常适合训练数据，但不能推广到新的例子(测试或验证数据)
+
+##### Regularization: Early Stopping  正规化: 提前停止
+
+- During model training, use **a validation set**  
+  在模型训练期间，使用验证集 
+
+- Stop when the validation accuracy (or loss) has not improved after n epochs   
+  当验证精度(或损失)在 n 个纪元后没有改善时停止
+  
+  - The parameter n is called **patience**  
+    参数 n 叫做耐心
+
+<img src="./images/eb518d07-9024-479a-a7e7-5d4286fb7580.png" title="" alt="eb518d07-9024-479a-a7e7-5d4286fb7580" style="zoom:33%;">
+
+##### Regularization: Weight Decay 正则化: 权重衰减
+
+- $\mathcal{l}_2$ weight decay
+   A regularization term that penalizes large weights is added to the loss function  
+  在损失函数中加入惩罚大权重的正则化项
+  
+  $$
+  \mathcal{L}_{\text{reg}}(\theta) = \mathcal{L}(\theta) + \lambda \sum_k \theta_k^2
+\\ \ \\ 
+\text{Data loss} + \text{Regularization loss}
+  $$
+  
+  - For every weight in the network, we add the regularization term to the loss value  
+    对于网络中的每个权重，我们将正则项加到损失值中
+    
+    - During gradient descent parameter update, every weight is decayed linearly toward zero   
+      在梯度下降法参数更新过程中，每个权重都呈线性衰减趋于零
+  
+  - The **weight decay coefficient 𝜆** determines how dominant the regularization is during the gradient computation  
+    权衰减系数 λ 决定了在梯度计算过程中正则化的优势程度
+    
+    - Large weight decay coefficient → penalty for weights with large values  
+      大权重衰减系数→大值权重的惩罚
+
+- $\mathcal{l}_1$ weight decay
+  The regularization term is based on the $\mathcal{l}_1$ norm of the weights  
+  正则化项基于权重的 $\mathcal{ l } _ 1 $范数
+  
+  $$
+  \mathcal{L}_{\text{reg}}(\theta) = \mathcal{L}(\theta) + \lambda \sum_k |\theta_k|
+  $$
+  
+  - $\mathcal{ l } _ 1 $ weight decay is less common with NN   
+    这一种方法不常见
+    
+    - Often performs worse than $\mathcal{ l } _ 2 $ weight decay   
+      通常比上一种方法效果好
+  
+  - It is also possible to combine $\mathcal{ l } _ 1 $ and $\mathcal{ l } _ 2 $ regularization   
+    两种方法可以混合使用
+    
+    - Called **elastic net regularization**  
+      称为弹性网正则化
+    
+    - $$
+      \mathcal{L}_{\text{reg}}(\theta) = \mathcal{L}(\theta) + \lambda_1 \sum_k |\theta_k| + \lambda_2 \sum_k \theta_k^2
+      $$
+
+##### Regularization: Dropout
+
+- Randomly drop units (along with their connections) during training   
+  在训练期间随机放弃单位(连同他们的连接)
+
+- Each unit is retained with a fixed **dropout rate p**, independent of other units   
+  每个单元保留一个固定的dropout概率独立于其它单元
+
+- The hyper-parameter p needs to be chosen (tuned)   
+  需要选择(调整)超参数 p
+  
+  - Often, between 20% and 50% of the units are dropped  
+    通常，20% 至50% 的单位被丢弃
+  
+  <img src="./images/86eba97e-c55c-45e2-a095-f9229b0ba627.png" title="" alt="86eba97e-c55c-45e2-a095-f9229b0ba627" style="zoom:33%;">
+
+- Dropout is a kind of ensemble learning   
+  dropout是一种集成学习
+  
+  - Using one mini-batch to train one network with a slightly different architecture  
+    使用一个小批量培训一个架构略有不同的网络
+    
+    <img src="./images/a9c6113b-b384-4e24-8369-8fc2ff745597.png" title="" alt="a9c6113b-b384-4e24-8369-8fc2ff745597" style="zoom:33%;">
+
+#### NN architectures 神经网络体系结构
+
+##### Batch Normalization 批归一化
+
+- Batch normalization layers act similar to the data preprocessing steps mentioned earlier   
+  批量标准化层的作用类似于前面提到的数据预处理步骤
+  
+  - They calculate the mean μ and variance σ of a batch of input data, and normalize the data x to a zero mean and unit variance  
+    他们计算一批输入数据的平均 μ 和方差 σ，并将数据 x 归一化为零均值和单位方差
+
+- **BatchNorm layers** alleviate the problems of proper initialization of the parameters and hyper-parameters BatchNorm 层减轻了正确初始化参数和超参数的问题 
+  
+  - Result in faster convergence training, allow larger learning rates 
+  
+  - Reduce the internal covariate shift
+
+- BatchNorm layers are inserted immediately after convolutional layers or fullyconnected layers, and before activation layers  
+  BatchNorm 层插入到卷积层或完全连接层之后，以及激活层之前
+  
+  - They are very common with convolutional NN  
+    它们在卷积神经网络中非常常见
+
+##### Deep vs Shallow Networks  深层网络与浅层网络
+
+- Deeper networks perform better than shallow networks   
+  深层网络比浅层网络性能更好
+  
+  - But only up to some limit: after a certain number of layers, the performance of deeper networks plateaus  
+    但只是达到了一定的限制: 经过一定数量的层次后，网络的性能进一步停滞不前
+
+<img title="" src="./images/8a6d9035-dfc9-404b-b7f9-971436dfe298.png" alt="8a6d9035-dfc9-404b-b7f9-971436dfe298" style="zoom:33%;">
+
+##### Convolutional Neural Networks (CNNs) 卷积神经网络
+
+- Convolutional neural networks (CNNs) were primarily designed for image data  
+  卷积神经网络(CNN)主要是为图像数据而设计的
+
+- CNNs use a convolutional operator for extracting data features  
+  CNN 使用卷积运算符提取数据特征 
+  
+  - Allows parameter sharing 
+    允许参数共享
+  
+  - Efficient to train   
+    训练效率高
+  
+  - Have less parameters than NNs with fully-connected layers   
+    参数少于具有完全连接层的神经网络
+
+- CNNs are robust to spatial translations of objects in images  
+  神经网络对图像中目标的空间转换具有鲁棒性
+
+- A convolutional filter slides (i.e., convolves) across the image  
+  一个卷积滤波器幻灯片(即，卷积)横跨图像
+  
+  <img src="./images/dbdeb1cf-aa17-4ced-ba0a-25f7c3fa7189.png" title="" alt="dbdeb1cf-aa17-4ced-ba0a-25f7c3fa7189" style="zoom:33%;">
+  
+  - When the convolutional filters are scanned over the image, they capture useful features  
+    当卷积滤波器在图像上扫描时，它们捕获有用的特征
+
+- In CNNs, hidden units in a layer are only connected to a small region of the layer before it (called local **receptive field**)   
+  在 CNN 中，一个层中的隐藏单元只连接到该层之前的一个小区域(称为本地接收场)
+  
+  - The depth of each **feature map** corresponds to the number of convolutional filters used at each layer  
+    每个特征图的深度与每一层使用的卷积滤波器数目相对应
+
+- Pooling layer 池化层
+  
+  - Max pooling: reports the maximum output within a rectangular neighborhood   
+    Max pool: 报告矩形邻域内的最大输出
+  
+  - Average pooling: reports the average output of a rectangular neighborhood  
+    Average pooling: 报告一个矩形邻居的平均产出
+  
+  - Pooling layers reduce the spatial size of the feature maps  
+    池层减少了特征映射的空间大小 
+    
+    - Reduce the number of parameters, prevent overfitting  
+      减少参数数目，防止过度配合
+    
+    ![de132f3b-3d44-418e-a7bd-b3e17242d7d4](./images/de132f3b-3d44-418e-a7bd-b3e17242d7d4.png)
+
+- Feature extraction architecture  特征提取体系结构
+  
+  - After 2 convolutional layers, a max-pooling layer reduces the size of the feature maps (typically by 2)   
+    经过2卷积层，最大池层减少特征映射的大小(通常为2)
+  
+  - A fully convolutional and a softmax layers are added last to perform classification  
+    最后添加一个完全卷积层和一个软最大层来执行分类
+  
+  ![a6740ec1-24d7-4324-bd02-0614dbc529ef](./images/a6740ec1-24d7-4324-bd02-0614dbc529ef.png)
+
+#### Residual CNNs (ResNets) 残差神经网络
+
+- Introduce “identity” **skip connections**  
+  引入“标识”跳过连接
+  
+  - Layer inputs are propagated and added to the layer output   
+    层输入被传播并添加到层输出
+  
+  - Mitigate the problem of vanishing gradients during training  
+    缓解培训期间梯度消失的问题
+  
+  - Allow training very deep NN (with over 1,000 layers)   
+    允许训练非常深的神经网络(超过1000层)
+
+- Several ResNet variants exist: 18, 34, 50, 101, 152, and 200 layers   
+  存在几种 ResNet 变体: 18、34、50、101、152和200层
+
+- Are used as base models of other state-of-the-art NNs   
+  用作其他最先进神经网络的基本模型
+  
+  - other similar models: ResNeXT, DenseNet  
+    其他类似的模型: ResNeXT，DenseNet
+
+- <img src="./images/28b4283a-f7f2-4182-81f9-926509bbc2d4.png" title="" alt="28b4283a-f7f2-4182-81f9-926509bbc2d4" style="zoom:33%;">
+
+##### Recurrent Neural Networks (RNNs) 回归神经网络
+
+- Recurrent NNs are used for modeling **sequential data** and data with varying length of inputs and outputs  
+  递归神经网络用于对 **顺序数据** 和具有不同输入和输出长度的数据进行建模
+  
+  - Videos, text, speech, DNA sequences, human skeletal data  
+    视频，文本，语音 DNA 序列，人体骨骼数据
+
+- RNNs introduce recurrent connections between the neurons   
+  递归神经网络在神经元之间引入复发性连接
+  
+  - This allows processing sequential data one element at a time by selectively passing information across a sequence   
+    这允许通过有选择地跨序列传递信息来一次处理一个元素的顺序数据
+  
+  - Memory of the previous inputs is stored in the model’s internal state and affect the model predictions   
+    先前输入的内存存储在模型的内部状态中，并影响模型的预测
+  
+  - Can capture correlations in sequential data   
+    可以捕获序列数据中的相关性
+
+- RNNs use backpropagation-through-time for training   
+  递归神经网络使用时间反向传播进行训练
+
+- RNNs are more sensitive to the vanishing gradient problem than CNNs  
+  递归神经网络对消失梯度问题比卷积神经网络更敏感
+
+##### Long Short-Term Memory (LSTM) Networks 长短期记忆网络
+
+- Long Short-Term Memory (LSTM) networks are a variant of RNNs  
+  长短期记忆网络是递归神经网络的一种变形 
+
+- LSTM mitigates the vanishing/exploding gradient problem  
+  LSTM减轻了消失/爆炸梯度
+  
+  - Solution: **a Memory Cell**, updated at each step in the sequence  
+    解决方案:一个存储单元,在每一步更新
+
+- Three gates control the flow of information to and from the Memory Cell   
+  三个门控制信息的流动
+  
+  - **Input Gate**: protects the current step from irrelevant inputs  
+    输入门：通过不相关的输入保护目前的步骤
+  
+  - **Output Gate**: prevents current step from passing irrelevant information to later steps  
+    输出门: 防止当前步骤将不相关的信息传递给后面的步骤
+  
+  - **Forget Gate**: limits information passed from one cell to the next  
+    忘记门: 限制信息从一个单元传递到下一个单元
+
+- Most modern RNN models use either LSTM units or other more advanced types of recurrent units (e.g., GRU units)  
+  大多数现代 RNN 模型使用 LSTM 单元或其他更先进类型的循环单元(例如 GRU 单元)
+
+- LSTM cell 
+  
+  - Input gate, output gate, forget gate, memory cell   
+    输入门，输出门，忘记门，存储单元
+  
+  - LSTM can learn long-term correlations within data sequences  
+    LSTM 可以学习数据序列中的长期相关性
+  
+  - $$
+    \begin{align*}
+\mathbf{i}^{(k)} &= \sigma \left( \mathbf{W}_{oi} \mathbf{o}_m^{(k)} + \mathbf{W}_{hi} \mathbf{h}^{(k-1)} + \mathbf{b}_i \right) \\
+\mathbf{f}^{(k)} &= \sigma \left( \mathbf{W}_{of} \mathbf{o}_m^{(k)} + \mathbf{W}_{hf} \mathbf{h}^{(k-1)} + \mathbf{b}_f \right) \\
+\mathbf{q}^{(k)} &= \sigma \left( \mathbf{W}_{oq} \mathbf{o}_m^{(k)} + \mathbf{W}_{hq} \mathbf{h}^{(k-1)} + \mathbf{b}_q \right) \\
+\mathbf{c}^{(k)} &= \mathbf{f}^{(k)} \mathbf{c}^{(k-1)} + \mathbf{i}^{(k)} \sigma \left( \mathbf{W}_{oc} \mathbf{o}_m^{(k)} + \mathbf{W}_{hc} \mathbf{h}^{(k-1)} + \mathbf{b}_c \right) \\
+\mathbf{h}^{(k)} &= \mathbf{q}^{(k)} \tanh \left( \mathbf{c}^{(k)} \right)
+\end{align*}
+
+    $$
+  
+  <img title="" src="./images/0d8c443e-39fa-4c33-8f49-03fad10960d6.png" alt="0d8c443e-39fa-4c33-8f49-03fad10960d6" style="zoom:50%;">
+
+##### Deep learning frameworks 深度学习框架
+
+- Kinds
+  
+  - Caffe
+  
+  - torch
+  
+  - Chainer
+  
+  - PyTorch
+  
+  - Caffe2
+  
+  - DeepLearning4J
+  
+  - TensorFlow
+  
+  - theano
+  
+  - dmlc-mxnet
+
+- Keras is a high-level neural networks API  
+  Kera 是一个高级神经网络 API
+  
+  - we will use TensorFlow as the compute backend  
+    我们将使用 TensorFlow 作为计算后端
+
+- PyTorch is
+  
+  - a GPU-based tensor library  
+    一个基于图形处理器的张量库
+  
+  - an efficient library for dynamic neural networks  
+    一个高效的动态神经网络库
+  
+  <img src="./images/57dd006d-cdd6-48f7-a608-b1940d59e933.png" title="" alt="57dd006d-cdd6-48f7-a608-b1940d59e933" style="zoom:50%;">
+
+### Part 2: Reinforcement Learning 第二部分: 强化学习
+
+#### Introduction to Reinforcement Learning 强化学习入门
+
+##### 强化学习能解决的问题（和不能解决的问题）
+
+- Idea: An agent (an AI) will learn from the environment by **interacting with it** (through trial and error) and **receiving rewards** (negative or positive) as feedback for performing actions.   
+  想法: 一个智能体(人工智能)将通过与环境互动(通过尝试和错误)来学习，并接受奖励(负面或正面)作为执行行动的反馈。
+
+- Goal: **Maximize the reward** by taking right actions 
+  目标: 通过采取正确的行动使奖励最大化
+
+<img src="./images/581331ea-63b7-4ef7-9532-966361498271.png" title="" alt="581331ea-63b7-4ef7-9532-966361498271" style="zoom:33%;">
+
+##### Markov Decision Processes (MDPs)  马尔可夫决策过程
+
+#### Markov Process and Markov Chain  马尔可夫过程与马尔可夫链
+
+- A Markov process or Markov chain is a **stochastic model** describing a sequence of possible events where the probability of each event depends only on the state attained in the previous event.  
+  马尔可夫过程或马尔可夫链是描述一系列可能事件的随机模型，其中每个事件的概率仅取决于先前事件中所达到的状态。
+
+- Markov property: The state of the system at time $t+1$ depends only on the state of the system at time $t$  
+  Markov 性质: 系统在时间 $t + 1 $时的状态仅取决于系统在时间 $t $时的状态
+  
+  $$
+  P\left[ X_{t+1} = x_{t+1} \mid X_1, X_t = x_1, x_t \right] = P\left[ X_{t+1} = x_{t+1} \mid X_t = x_t \right]
+  $$
+
+```mermaid
+graph LR
+    X1 --> X2
+    X2 --> X3
+    X3 --> X4
+    X4 --> X5
+
+```
+
+- Stationary Assumption: State transition probabilities are **independent of time** (𝑡)  
+  平稳假设: 状态转移概率与时间(t)无关
+  
+  $$
+  P \left[ X_{t+1} = b / X_t = a \right] = p_{ab}
+  $$
+
+---
+
+马尔可夫链的计算
+
+马尔可夫链的核心是转换概率矩阵（Transition Probability Matrix），通常记为 \(P\)。这个矩阵描述了系统在每个状态之间的转换概率。例如，对于一个有三个状态 $(S_1, S_2, S_3)$ 的系统，转换概率矩阵 \(P\) 可能是这样的：
+
+$$
+P = \begin{bmatrix} P(S_1 \to S_1) & P(S_1 \to S_2) & P(S_1 \to S_3) \\ P(S_2 \to S_1) & P(S_2 \to S_2) & P(S_2 \to S_3) \\ P(S_3 \to S_1) & P(S_3 \to S_2) & P(S_3 \to S_3) \end{bmatrix}
+$$
+
+每个元素 $(P(i \to j))$ 表示系统从状态$i$转换到状态$j$的概率。矩阵的每一行的和为1，因为每行表示从某个状态开始的所有可能转换的概率总和。
+
+<img title="" src="./images/2ff74e36-12bc-4d2a-8fd4-671c1c20746f.png" alt="2ff74e36-12bc-4d2a-8fd4-671c1c20746f" style="zoom:33%;">
+
+EXP
+
+- Given that a person’s last cola purchase was Coke, there is a 90% chance that his next cola purchase will also be Coke. If a person’s last cola purchase was Pepsi, there is an 80% chance that his next cola purchase will also be Pepsi.  
+  鉴于一个人上一次购买可乐是可口可乐，那么他下一次购买可乐也有90% 的可能是可口可乐。如果一个人上一次购买可乐是百事可乐，那么他下一次购买可乐的可能性也有80% 是百事可乐。
+  
+  <img title="" src="./images/274cd91a-56ef-4dae-a31d-94ce84b0e688.png" alt="274cd91a-56ef-4dae-a31d-94ce84b0e688" style="zoom:33%;">
+
+- Given that a person is currently a Pepsi purchaser, what is the probability that he will purchase Coke TWO purchases from now?  
+  假设一个人目前是百事可乐的购买者，那么他从现在开始购买可口可乐的可能性有多大？
+  
+  $$
+  P\left[ \text{Pepsi} \rightarrow ? \rightarrow \text{Coke} \right] = P\left[ \text{Pepsi} \rightarrow \text{Coke} \rightarrow \text{Coke} \right] + P\left[ \text{Pepsi} \rightarrow \text{Pepsi} \rightarrow \text{Coke} \right] \\
+= 0.2 \times 0.9 + 0.8 \times 0.2 = 0.34 \\ \ \\
+P^2 = \begin{bmatrix} 0.9 & 0.1 \\ 0.2 & 0.8 \end{bmatrix} \begin{bmatrix} 0.9 & 0.1 \\ 0.2 & 0.8 \end{bmatrix} = \begin{bmatrix} 0.83 & 0.17 \\ 0.34 & 0.66 \end{bmatrix}
+  $$
+
+- Assume each person makes one cola purchase per week;  Suppose 60% of all people now drink Coke, and 40% drink Pepsi; What fraction of people will be drinking Coke three weeks from now?  
+  假设每个人每周购买一杯可乐; 假设60% 的人现在喝可口可乐，40% 的人喝百事可乐; 从现在开始的三周内，有多少人会喝可口可乐？
+  
+  $$
+  P = \begin{bmatrix} 0.9 & 0.1 \\ 0.2 & 0.8 \end{bmatrix} \quad P^3 = \begin{bmatrix} 0.781 & 0.219 \\ 0.438 & 0.562 \end{bmatrix} \\P \left[X_3 = \text{Coke}\right] = 0.6 \times 0.781 + 0.4 \times 0.438 = 0.6438
+  $$
+
+- * **初始状态分布 initial distribution $Q_0$**：初始状态分布$Q_0$给出了当前选择 Coke 和 Pepsi 的比例。这里是：
+    
+    $$
+    Q_0 = \begin{bmatrix} 0.6 & 0.4 \end{bmatrix}
+    $$
+    
+    表示当前有 60% 的人喝 Coke，40% 的人喝 Pepsi。
+  
+  * **三周后的分布 $P^3$**：要计算三周后的分布，我们需要计算转移矩阵的三次方$P^3$。根据题目给出的信息，已知：
+    
+    $$
+    P^3 = \begin{bmatrix} 0.781 & 0.219 \\ 0.438 & 0.562 \end{bmatrix}
+    $$
+    
+    这个矩阵表示在经过三次转移后（即三周后），从 Coke 转移到 Coke 的累计概率为 0.781，从 Coke 转移到 Pepsi 的累计概率为 0.219，等等。
+  
+  * **计算三周后选择 Coke 的比例**：使用初始分布 $Q_0$ 与 $P^3$ 相乘得到三周后的分布 $Q_3$：具体计算为：
+    
+    $$
+    Q_3 = \begin{bmatrix} 0.6 & 0.4 \end{bmatrix} \times \begin{bmatrix} 0.781 & 0.219 \\ 0.438 & 0.562 \end{bmatrix}
+    $$
+    
+    分别计算每一项：
+    
+    $$
+    Q_3(\text{Coke}) = 0.6 \times 0.781 + 0.4 \times 0.438 = 0.6438 \\ Q_3(\text{Pepsi}) = 0.6 \times 0.219 + 0.4 \times 0.562 = 0.3562
+    $$
+    
+    因此，三周后选择 Coke 的比例为 0.6438，而选择 Pepsi 的比例为 0.3562。
+  - <img title="" src="./images/bb1eaf00-c58b-4db5-b88e-f8f0d30e055f.png" alt="bb1eaf00-c58b-4db5-b88e-f8f0d30e055f" style="zoom:33%;">
+
+---
+
+##### Markov decision process (MDP) definition   马可夫决策过程定义
+
+- Markov decision process (MDP): The mathematical description of reinforcement learning  
+  马可夫决策过程: 强化学习的数学描述
+  
+  $$
+  \langle S, A, R, P, \gamma \rangle
+\\ \ \\
+\textit{S} \text{ is set of possible \textcolor{red}{states}} \\
+\text{一组可能状态的集合}\\
+\textit{A} \text{ is set of possible \textcolor{red}{actions}} \\
+\text{一组可能作动的集合}\\
+\textit{R} \text{ is distribution of \textcolor{red}{reward} given (state, action) pair} \\
+\text{给予(状态，行动)对的报酬分配}\\
+\textit{P} \text{ is \textcolor{red}{transition probability} } \\
+\text{转移概率}\\
+\gamma \text{ is reward \textcolor{red}{discount factor} in } [0,1]\\
+\text{[0,1]中的奖励折扣因子}\\
+
+  $$
+  
+  $\gamma $ Lower value encourages shortterm rewards while higher value promises long-term reward  
+  较低的值鼓励短期回报，而较高的值承诺长期回报
+
+##### Deterministic vs. Stochastic  确定性与随机性
+
+- **Deterministic**: The next state and the corresponding reward are determined **solely by the current state and the action chosen**.   
+  确定性: 下一个状态和相应的奖励完全由当前状态和选择的行动决定。
+
+- Stochastic: The next state and the corresponding reward are **determined by a probability distribution**.  
+  随机: 下一个状态和相应的奖励是由概率分布决定的。
+
+##### Markov decision process (MDP) calculate  马可夫决策过程计算
+
+- 计算方法
+  
+  - Environment initializes a state at time step t=0  
+    环境在时间步骤 t = 0初始化状态
+  
+  - While not done:  
+    当下面的步骤未完成
+    
+    - Agent selects action at $a_t$   
+      智能选择一个操作
+    
+    - Environment returns reward $r_t$   
+      环境给出一个奖励
+    
+    - Environment gives next state $s_{t+1}$   
+      环境给出下一状态
+    
+    - Agent receives reward $r_t$ and next state $s_{t+1}$   
+      智能接受奖励和西医状态
+
+- A policy π is a function from S to A that specifies what action to take in each state:  
+  策略 π 是一个从 S 到 A 的函数，指定在每个状态下采取什么行动:
+  
+  $$
+  \pi(a | s) = \mathbb{P}[A_t = a | S_t = s]
+  $$
+
+- Objective: find optimal policy π* that maximizes accumulative discounted reward:  
+  目标: 寻找最优政策 π * ，最大化累计贴现回报:
+  
+  $$
+  \sum_{t \geq 0} \gamma^t r_t
+  $$
+
+##### The optimal policy π*  最优策略 π *
+
+- The aim is to **find optimal policy π*** that maximizes the accumulative rewards.   
+  目标是找到最优策略 π * ，使累积回报最大化
+
+- How do we **handle the randomness**.   
+  我们如何处理随机性。
+
+- Maximize the expected sum of rewards:  
+  最大化预期回报总额:
+  
+  $$
+  \pi^* = \arg\max_{\pi} \mathbb{E} \left( \sum_{t \geq 0} \gamma^t r_t \mid \pi \right)
+  $$
+  
+  <img title="" src="./images/a3f7ed37-13a7-4d85-9b17-d231a87b722c.png" alt="a3f7ed37-13a7-4d85-9b17-d231a87b722c" style="zoom:33%;">
+
+##### Value function  价值函数
+
+- The relationship between state value function and Q-value function:  
+  状态值函数与 Q 值函数的关系:
+  
+  $$
+  Q(s, a) = R + \gamma \sum_{s'} P V(s')\\
+R \ Reward \\
+\gamma \  Discount \ factor \\
+P \ Transition \ probability \\
+V(s') \ Value \ function \ of \ next \  state s’
+  $$
+
+##### The Bellman equation 贝尔曼方程
+
+- Bellman equation helps agent to iterate on value, thus progressively optimizing the policy:  
+  贝尔曼方程帮助代理人迭代价值，从而逐步优化政策:
+
+$$
+V(s) = \mathbb{E} \left[ R_{t+1} + \gamma V(S_{t+1}) \mid S_t = s \right] \\
+s \text{ is the state} \\
+R \text{ is reward, } G_{t+1} \text{ is the accumulative reward from } S_{t+1} \\
+\gamma \text{ is the reward discount factor in } [0,1] 
+
+
+$$
+
+- According to the Bellman Equation,**long-term reward in a given action** is equal to **the reward from the current action combined with the expected reward from the future actions** taken at the following time.  
+  根据贝尔曼方程，一个给定行为的长期回报等于当前行为的回报和下一时间未来行为的预期回报。
+
+#### RL Techniques: From Q-learning to Actor-Critic RL 技术：从 Q-learning 到 Actor-Critic
+
+![e3f7d09a-17ab-4a4c-bd7b-5944b5eb7f75](./images/e3f7d09a-17ab-4a4c-bd7b-5944b5eb7f75.png)
+
+##### Model-Free RL 无模型 RL
+
+- learns strategies directly **without the need for an explicit model of the environment**.  
+  直接学习策略而不需要一个明确的环境模型。 
+
+- Agent interacts with the real environment and relies on real environment feedback and reward for learning, and as a result, it may take irreversible and disruptive actions.  
+  智能体与真实环境相互作用，依赖真实环境的反馈和学习奖励，因此，它可能采取不可逆转和破坏性的行动。
+
+##### Model-Based RL 基于模型的 RL
+
+- attempts to **model the environment** and plan future actions.  
+  试图模拟环境和计划未来的行动。
+
+- Agent constructs a simulated model first. The information an agent receives from the environment for a given state and action is transition probability and reward.  
+  Agent 首先构建一个模拟模型。代理从环境中接收到的关于给定状态和行为的信息是转移概率和报酬。
+
+##### Value-Based RL 基于价值的 RL
+
+- selects actions by learning **value functions** and **efficient in finding optimal policies**.   
+  通过学习价值函数选择行为，有效地找到最优策略。
+  
+  - The agent optimises the policy by selecting the action **that has the highest value function in a given state**.  
+    代理通过选择在一般状态中具有最高价值函数的操作来优化策略。
+  
+  - **Advantage**: it can **find the optimal policy** efficiently and have **high sample efficiency**.   
+    优点: 能有效地找到最优策略，样本效率高。
+  
+  - **Disadvantage**: it **cannot solve problem with continuous action space and sensitive to hyperparameters**.  
+    缺点: 不能解决动作空间连续且对超参数敏感的问题。
+
+##### Policy-Based RL 基于策略的 RL
+
+- selects actions directly by learning **policy functions** with **efficient convergence** and can **handle continuous action spaces**.  
+  通过学习具有高效收敛性的策略函数直接选择动作，并能处理连续动作空间。
+  
+  - Advantage: it can **deal with continuous action spaces**, and it is **easier to converge** in real-world environments.   
+    优点: 它可以处理连续的动作空间，并且在现实环境中更容易收敛。
+  
+  - Disadvantage: it may require **more training data** due to the direct learning of policies, and often converge to a **local optimum**.  
+    缺点: 由于对策略的直接学习，它可能需要更多的训练数据，并且经常收敛到局部最优。
+
+##### On-policy RL
+
+- learns from **the policy that is being currently followed during exploration**.   
+  从目前在勘探过程中所遵循的政策中学习。
+
+##### Off-policy RL
+
+- learns from a **different policy** than the one that the agent is currently following.  
+  从与代理当前遵循的策略不同的策略中学习。
+
+##### Q-learning
+
+![0f68f770-05fb-4659-bb3b-a3a8066d17c5](./images/0f68f770-05fb-4659-bb3b-a3a8066d17c5.png)
+
+- Q-learning: Use a function approximator to estimate the state-action value function, namely the Q-function:  
+  Q 学习: 使用函数逼近器来估计状态作用值函数，即 Q 函数:
+  $$
+  Q(s, a \mid \omega) \approx Q^*(s, a) \\
+
+\omega \text{ is the parameters of the function (weights)}
+
+  $$
+
+- To train this Q-Function, that given a state and action as input, output the Q-value, we initialize and update a Q-table  
+  为了训练这个给定状态和动作作为输入的 Q 函数，输出 Q 值，我们初始化并更新一个 Q 表![34a32813-5989-4c8d-be48-d122a252b2ce](./images/34a32813-5989-4c8d-be48-d122a252b2ce.png)
+
+##### From Q-learning to Deep Q-network 从 Q 学习到深度 Q 网络
+
+- If the function approximator is a deep neural network (DNN)   
+  如果函数逼近器是深度神经网络(DNN)  
+  Deep Q-learning/-network (DQN)  
+  深度 Q 学习/-网络(DQN)
+  
+  <img title="" src="./images/94678e32-2451-4db0-8334-3a5431c56a42.png" alt="94678e32-2451-4db0-8334-3a5431c56a42" style="zoom:33%;">
+
+- **Q-value is the expected accumulative reward** from taking action $a$ at state $s$  
+  Q 值是在状态$s$下采取行动$a$的预期累积报酬
+
+##### Deep Q-network (DQN)
+
+- Using **deep neural network** to help scale up to making decisions in **extremely large domains**.   
+  使用深度神经网络帮助在极大的领域中做出决策。
+
+- For example, when we have **many states** (e.g., every frame of the Atari game) **or even continuous state space**, we **cannot list all** the state-action pair in the Q-table.   
+  例如，当我们有许多状态(例如，雅达利游戏的每一帧) ，甚至连续的状态空间，我们不能列出所有的状态-行动对在 Q 表。
+
+- Represent value function by **Q-network with weights ω**  
+  用权重为 ω 的 Q 网络表示值函数
+  ![c0ce0430-68ae-4907-802b-ef4e5336438a](./images/c0ce0430-68ae-4907-802b-ef4e5336438a.png)
+
+- Optimize loss function by stochastic gradient descent (SGD)  
+  按随机梯度下降优化损失函数
+
+##### Train the DQN   训练DQN
+
+###### Experience replay   经验重播
+
+- To help remove correlations of training data, store dataset D (called a replay buffer) from prior experience.  
+  为了帮助消除训练数据的相关性，从以前的经验中存储数据集 D (称为重播缓冲区)。
+  
+  <img src="./images/67c38004-6ac4-4419-b65c-6d7080593efb.png" title="" alt="67c38004-6ac4-4419-b65c-6d7080593efb" style="zoom:33%;">
+
+- To perform experience replay, repeat the following:   
+  进行经验重播时，请重复以下步骤:
+  
+  - $(s, a, r, s') \sim \mathcal{D}$: **sample** an experience tuple from the dataset    
+    从数据集中抽样一个经验元组
+  
+  - Compute the **target value** for the sampled state:  
+    计算取样状态的目标值:
+    
+    $$
+    y = r + \gamma \max_{a'} \hat{Q}(s', a' \mid \omega)
+    $$
+  
+  - Use SGD to **update** the network weights  
+    使用 SGD 更新网络权重
+
+###### Fixed Q-target 修正Q-目标
+
+- To help **improve stability**, **fix the target network weights** used in the target value calculation for multiple updates   
+  为了帮助提高稳定性，修改用于多次更新的目标值计算中的目标网络权重
+
+- Use a different set of weights to compute target than is being updated   
+  使用一组不同的权重来计算目标，而不是进行更新
+
+- Let parameters $\omega^0$ be the set of **weights used in the target**, and  $\omega$ be the weights that are being updated  
+  设参数 $\omega^0$ 是目标中使用的权重集，$\omega$ 是正在更新的权重集
+
+- Slight change to computation of target value:   
+   目标值的计算略有变化:
+  
+  - $(s, a, r, s') \sim \mathcal{D}$: sample an experience tuple from the dataset   
+    从数据集中抽样一个经验元组
+  
+  - Compute the **target value** for the sampled state:  
+    计算取样状态的目标值:
+    
+    $$
+    y = r + \gamma \max_{a'} \hat{Q}(s', a' \mid \omega^o)
+
+    $$
+  
+  - Use SGD to update the network weights  
+    使用 SGD 更新网络权重
+    
+    
+
+##### Policy gradient 策略梯度
+
+- The **Q-function can be very complicated**    
+  Q 函数可能非常复杂
+
+- Hence, it is **impossible to learn exact value of every state-action pair**.   
+  因此，不可能了解每个状态操作对的确切价值。
+
+- The **policy-based method**  
+  基于策略的方法
+  
+  - e.g., policy gradient, **can learn a policy directly**  
+    例如，政策梯度，可以直接学习政策
+  
+  - e.g., finding the best policy (i.e., **how to choose an action at a state**) from a collection of policies.  
+    例如，从一组策略中找到最佳策略(即，如何在一个状态选择一个操作)。
+
+- steps 
+  
+  1. define a class of parametrized policies:  
+     定义一类参数化策略:
+     
+     $$
+     \Pi = \left\{ \pi_{\theta}, \theta \in \mathbb{R}^m \right\}
+     $$
+  
+  2. For each policy, define its value based on the discounted **accumulative reward**:  
+     对于每份策略，根据折现的累计报酬确定其价值:
+     
+     $$
+     J(\theta) = \mathbb{E} \left[ \sum_{t \geq 0} \gamma^t r_t \mid \pi_{\theta} \right]
+     $$
+  
+  3. We want to find the optimal policy:  
+     我们希望找到最佳政策:
+     
+     $$
+     \theta^* = \arg\max_{\theta} J(\theta)
+     $$
+  
+  4. **Do gradient ascent on policy parameters**  
+     在策略参数上进行梯度上升
+
+##### Actor-critic architecture   “行为者-评价者”模型
+
+- The Actor-Critic model consists of both an **Actor network** and a **Critic network**.   
+  **Actor-Critic模型结构**：该模型包含一个「Actor网络」和一个「Critic网络」
+
+- The Actor network learns the policy, deciding which action to take in a given state.   
+  **Actor网络**：负责学习策略，决定在给定状态下要采取的行动。
+
+- The Critic network estimates the value function, evaluating the value of the action at the state.   
+  **Critic网络**：负责评估价值函数，估算在该状态下某一行动的价值。
+
+- Motivation: This combination allows the agent to learn from both policy and value function aspects, making full use of the advantages of both methods.  
+  **动机**：这种结合使得智能体能够同时从「策略」和「价值函数」两个方面进行学习，充分利用这两种方法的优势。
+
+<img src="./images/977b30b1-d5cc-47ff-a931-706adc2b37fe.png" title="" alt="977b30b1-d5cc-47ff-a931-706adc2b37fe" style="zoom:50%;">
+
+#### Applications of RL  强化学习的应用
+
+- Self-Driving Cars 
+  
+  - Trajectory optimization, motion planning, and controller optimization.   
+    轨迹优化、运动规划和控制器优化。
+  
+  - Learning policies for parking, lane changing, and overtaking.   
+    学习泊车、转线及超车策略。
+  
+  - AWS DeepRacer uses RL in autonomous racing cars.   
+    AWS DeepRacer 在自动赛车中使用 RL。
+
+- Industry Automation 
+  
+  - Robots performing tasks efficiently and safely.   
+    机器人高效安全地执行任务。
+  
+  - Example: DeepMind cooling Google Data Centers using RL.  
+    示例: DeepMind 使用 RL 为 Google 数据中心降温。
+
+- Natural Language Processing (NLP) 
+  
+  - RL used in question answering, text summarization, and machine translation.   
+    RL 用于问答、文本摘要和机器翻译。
+
+- Finance and Trading 
+  
+  - RL agents making financial decisions (buy, sell, hold).   
+    RL 代理人作出财务决策(买入、卖出、持有)。
+  
+  - IBM's reinforcement learning-based platform for financial trades.  
+    IBM 基于强化学习的金融交易平台。
+
+- Healthcare 
+  
+  - RL systems providing treatment policies for patients.   
+    为病人提供治疗政策的 RL 系统。
+  
+  - RL in dynamic treatment regimes and medical diagnosis.   
+    动态治疗制度和医疗诊断中的 RL。
+
+- Engineering 
+  
+  - Facebook's Horizon - RL platform optimizing large-scale systems.   
+    Facebook 的 Horizon-RL 平台优化大规模系统。
+
+- News Recommendation 
+  
+  - RL tracking user preferences for personalized news recommendations.   
+    RL 跟踪个性化新闻推荐的用户偏好。
+  
+  - Factors considered: news features, reader behavior, and context.  
+    考虑因素: 新闻特点、读者行为和上下文。
+
+- Gaming 
+  
+  - AlphaGo Zero - RL mastering the game of Go through self-play.   
+    AlphaGo Zero-RL 通过自玩掌握围棋游戏。
+
+- Bidding and Marketing 
+  
+  - Multi-agent RL enables real-time bidding to balance the trade-off between the competition and cooperation among advertisers.   
+    多代理 RL 实现了实时竞价，平衡了广告商之间的竞争与合作。
+
+- Robotics Manipulation 
+  
+  - Deep RL enabling robots to grasp various objects unseen during training.   
+    深 RL 使机器人能够抓住训练中看不见的各种物体。
+  
+  - Google AI's approach to robotics grasping using QT-Opt.  
+    谷歌人工智能利用 QT-Opt 抓取机器人的方法。
 
 
