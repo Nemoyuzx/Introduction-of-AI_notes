@@ -152,7 +152,9 @@ interaction tools
   - Watson's performance in the Jeopardy Challenge: **Comprehending questions, analysing information, and selecting the most probable answer**.  
     沃森在危险挑战中的表现: 理解问题，分析信息，选择最可能的答案。
   
-  - IBM's Jeopardy Challenge provided a demonstration of **a technological breakthrough related to the Turing Test**, proving the potential of machines to process natural language and reasoning, and driving further development in the field of artificial intelligence.  
+  - IBM's Jeopardy Challenge provided a demonstration of **a technological breakthrough related to
+  
+  - the Turing Test**, proving the potential of machines to process natural language and reasoning, and driving further development in the field of artificial intelligence.  
     IBM 的 Jeopardy Challenge 展示了与图灵测试相关的技术突破，证明了机器处理自然语言和推理的潜力，并推动了人工智能领域的进一步发展。
 
 ##### The Four potential goals or definitions of AI 人工智能的四个潜在目标或定义
@@ -2165,6 +2167,7 @@ a = \sigma(z)
 - hidden layer（图片中间的层）
   
   <img title="" src="./images/62ba9238-5f3e-4046-90dd-a55dd5cf485d.png" alt="62ba9238-5f3e-4046-90dd-a55dd5cf485d" style="zoom:33%;">
+  
   $hidden \ layer \ h=\sigma (W_1x+b_1)$
   
   - 图片中：
@@ -2831,7 +2834,7 @@ $$
     这一种方法不常见
     
     - Often performs worse than $\mathcal{ l } _ 2 $ weight decay   
-      通常比上一种方法效果好
+      通常比上一种方法效果不好
   
   - It is also possible to combine $\mathcal{ l } _ 1 $ and $\mathcal{ l } _ 2 $ regularization   
     两种方法可以混合使用
@@ -2879,9 +2882,11 @@ $$
 
 - **BatchNorm layers** alleviate the problems of proper initialization of the parameters and hyper-parameters BatchNorm 层减轻了正确初始化参数和超参数的问题 
   
-  - Result in faster convergence training, allow larger learning rates 
+  - Result in faster convergence training, allow larger learning rates   
+    结果更快的收敛训练，允许更大的学习率
   
-  - Reduce the internal covariate shift
+  - Reduce the internal covariate shift  
+    减小内部协变量移位
 
 - BatchNorm layers are inserted immediately after convolutional layers or fullyconnected layers, and before activation layers  
   BatchNorm 层插入到卷积层或完全连接层之后，以及激活层之前
@@ -3607,6 +3612,5 @@ $$
     深 RL 使机器人能够抓住训练中看不见的各种物体。
   
   - Google AI's approach to robotics grasping using QT-Opt.  
-    谷歌人工智能利用 QT-Opt 抓取机器人的方法。
 
 
