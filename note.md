@@ -1255,7 +1255,6 @@ $$
 𝑃(𝐴 ∩ 𝐵) = 𝑃(𝐴 | 𝐵)𝑃(𝐵) = 𝑃(𝐵 | 𝐴)𝑃(𝐴)\\ 
 \ \\
 𝑃(𝐵 | 𝐴) = \frac{𝑃(𝐴 | 𝐵) 𝑃(𝐵)}{𝑃(𝐴)}
-
 $$
 
 - 通常是知道在B发生的情况下A发生的概率有多少，反过来难求  
@@ -1315,7 +1314,6 @@ $$
   
   $$
   𝑃(𝐴,𝐵) = 𝑃(𝐴 | 𝐵)𝑃(𝐵) = 𝑃(𝐴)𝑃(𝐵) \\ \ \\ Therefore \ 𝑃(𝐴 | 𝐵) = 𝑃(𝐴)
-
   $$
 
 - If 𝑛 Boolean variables are independent, the full JPD is:  
@@ -1696,7 +1694,6 @@ EXAMPLES：
   
   $$
   H(P(h), P(t)) = H\left( \frac{1}{2}, \frac{1}{2} \right) = -\frac{1}{2} \log_2 \frac{1}{2} - \frac{1}{2} \log_2 \frac{1}{2} = \frac{1}{2} + \frac{1}{2} = 1 \ \text{bit}
-
   $$
 
 - Entropy of a loaded coin toss where $P(head) = 0.99$  加载后抛硬币的熵，其中 $P (head) = 0.99 $
@@ -1709,7 +1706,6 @@ EXAMPLES：
   
   $$
   H(P(h), P(t)) = H(1, 0) = -1 \log_2 1 - 0 \log_2 0 = 0 - 0 = 0 \ \text{bits}
-
   $$
 
 - What is the entropy of a group in which all examples belong to the same 一个群的熵是多少，其中所有的例子都属于同一个群
@@ -1746,7 +1742,6 @@ EXAMPLES：
   
   $$
   P(\text{yes}) = \frac{p}{p + n} \quad \quad P(\text{no}) = \frac{n}{p + n}
-
   $$
 
 - Entropy of a correct decision tree: 正确决策树的熵:
@@ -1762,7 +1757,6 @@ Measures the reduction in entropy or surprise by splitting a dataset according t
 
 $$
 I(X_n, Y) = H(Y) - H(Y | X_n)
-
 $$
 
 𝑛 = number of splits  N = 分割的次数
@@ -2159,7 +2153,6 @@ Handwritten digit recognition (MNIST dataset)
   z = a_1 w_1 + a_2 w_2 + \cdots + a_K w_K + b
 \\
 a = \sigma(z)
-
   $$
   
   $a_i$ input 输入, $w_k$ weights 权重, $b$ bias 基础值, $\sigma (z)$ avtivation function 激活函数, $a$ output输出.
@@ -2197,7 +2190,6 @@ a = \sigma(z)
 \\ \
 \\
 \sigma \left( \begin{bmatrix} 1 & -2 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \end{bmatrix} + \begin{bmatrix} 1 \\ 0 \end{bmatrix} \right) = \begin{bmatrix} 0.98 \\ 0.12 \end{bmatrix}
-
   $$
 
 - Multilayer NN, matrix calculations for the first layer  
@@ -2266,7 +2258,6 @@ a = \sigma(z)
   
   $$
   \tanh(x) = \frac{2}{1 + e^{-2x}} - 1, \mathbb{R}^n \rightarrow [-1, 1]
-
   $$
   
   - Like sigmoid, tanh neurons saturate 饱和
@@ -2365,7 +2356,6 @@ $$
 z_i \text{ 是每个类别的输入值。} \\
 \sum_{j=1}^n e^{z_j} \text{ 是所有类别输入值的指数和，用于归一化。}
 
-
 $$
 
 <img title="" src="./images/4daef102-6e01-4e1d-81f8-6946a5d998f1.png" alt="4daef102-6e01-4e1d-81f8-6946a5d998f1" style="zoom:33%;" data-align="center">
@@ -2377,7 +2367,6 @@ $$
   
   $$
   \theta = \{ W^1, b^1, W^2, b^2, \dots, W^L, b^L \}
-
   $$
   
   Often, the model parameters 𝜃 are referred to as weights  
@@ -2444,7 +2433,6 @@ N \text{ 个输入 } x_i \text{ 与真实类别标签 } y_i \text{ 的配对}
   
   $$
   P(y = j \mid \mathbf{x}) = \frac{e^{\mathbf{x}^\top \mathbf{w}_j}}{\sum_{k=1}^K e^{\mathbf{x}^\top \mathbf{w}_k}}
-
   $$
 
 - Loss function 损失函数
@@ -2454,7 +2442,6 @@ N \text{ 个输入 } x_i \text{ 与真实类别标签 } y_i \text{ 的配对}
   \mathcal{L}(\theta) = -\frac{1}{N} \sum_{i=1}^N \sum_{k=1}^K \left[ y_k^{(i)} \log \hat{y}_k^{(i)} + \left( 1 - y_k^{(i)} \right) \log \left( 1 - \hat{y}_k^{(i)} \right) \right]
 \\
 \text{Ground-truth class labels （实际值） } y_i \text{ and model predicted class labels （模型预测值） } \hat{y}_i
-
   $$
 
 ###### Regression tasks  回归任务
@@ -2465,7 +2452,6 @@ N \text{ 个输入 } x_i \text{ 与真实类别标签 } y_i \text{ 的配对}
   \text{Pairs of } N \text{ inputs } x_i \text{ and ground-truth output values } y_i
 \\
 N \text{ 个输入 } x_i \text{ 与真实输出值 } y_i \text{ 的对}
-
   $$
 
 - Output Layer 输出层
@@ -2647,7 +2633,6 @@ $$
 V^t = \beta V^{t-1} + \alpha \nabla \mathcal{L}(\theta^{t-1})
 \\
 \text{i.e., } \theta^t = \theta^{t-1} - \alpha \nabla \mathcal{L}(\theta^{t-1}) - \beta V^{t-1}
-
   $$
 
 - The parameter 𝛽 is referred to as a coefficient of momentum   
@@ -2676,7 +2661,6 @@ $$
 \text{Where: } \hat{V}^t = \frac{V^t}{1 - \beta_1} \text{ and } \hat{U}^t = \frac{U^t}{1 - \beta_2}
 \\ \ \\
 \text{The proposed default values are （建议的默认值为） } \\ \beta_1 = 0.9, \beta_2 = 0.999, \text{ and } \epsilon = 10^{-8}
-
 
 $$
 
@@ -3057,7 +3041,6 @@ $$
 \mathbf{c}^{(k)} &= \mathbf{f}^{(k)} \mathbf{c}^{(k-1)} + \mathbf{i}^{(k)} \sigma \left( \mathbf{W}_{oc} \mathbf{o}_m^{(k)} + \mathbf{W}_{hc} \mathbf{h}^{(k-1)} + \mathbf{b}_c \right) \\
 \mathbf{h}^{(k)} &= \mathbf{q}^{(k)} \tanh \left( \mathbf{c}^{(k)} \right)
 \end{align*}
-
     $$
   
   <img title="" src="./images/0d8c443e-39fa-4c33-8f49-03fad10960d6.png" alt="0d8c443e-39fa-4c33-8f49-03fad10960d6" style="zoom:50%;">
@@ -3232,7 +3215,6 @@ P^2 = \begin{bmatrix} 0.9 & 0.1 \\ 0.2 & 0.8 \end{bmatrix} \begin{bmatrix} 0.9 &
 \text{转移概率}\\
 \gamma \text{ is reward \textcolor{red}{discount factor} in } [0,1]\\
 \text{[0,1]中的奖励折扣因子}\\
-
   $$
   
   $\gamma $ Lower value encourages shortterm rewards while higher value promises long-term reward  
@@ -3323,7 +3305,6 @@ s \text{ is the state} \\
 R \text{ is reward, } G_{t+1} \text{ is the accumulative reward from } S_{t+1} \\
 \gamma \text{ is the reward discount factor in } [0,1] 
 
-
 $$
 
 - According to the Bellman Equation,**long-term reward in a given action** is equal to **the reward from the current action combined with the expected reward from the future actions** taken at the following time.  
@@ -3390,14 +3371,13 @@ $$
 
 - Q-learning: Use a function approximator to estimate the state-action value function, namely the Q-function:  
   Q 学习: 使用函数逼近器来估计状态作用值函数，即 Q 函数:
+  
   $$
   Q(s, a \mid \omega) \approx Q^*(s, a) \\
-
 \omega \text{ is the parameters of the function (weights)}
-
   $$
 
-- To train this Q-Function, that given a state and action as input, output the Q-value, we initialize and update a Q-table  
+- To train this Q-Function, that **given a state and action as input, output the Q-value**, we initialize and update a **Q-table**  
   为了训练这个给定状态和动作作为输入的 Q 函数，输出 Q 值，我们初始化并更新一个 Q 表![34a32813-5989-4c8d-be48-d122a252b2ce](./images/34a32813-5989-4c8d-be48-d122a252b2ce.png)
 
 ##### From Q-learning to Deep Q-network 从 Q 学习到深度 Q 网络
@@ -3474,7 +3454,6 @@ $$
     
     $$
     y = r + \gamma \max_{a'} \hat{Q}(s', a' \mid \omega^o)
-
     $$
   
   - Use SGD to update the network weights  
